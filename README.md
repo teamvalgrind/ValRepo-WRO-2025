@@ -1,92 +1,131 @@
-#  **Camino hacia Singapur 2025 - WRO**
-
-¡Bienvenidos al repositorio oficial de nuestro proyecto para la **World Robot Olympiad (WRO) 2025**! 🌏 Este equipo talentoso ha clasificado para representar a nuestra región en **Singapur**, llevando innovación y creatividad al siguiente nivel.
 
 ---
 
-## 📋 **Índice**
-1. [🎉 Clasificación a la WRO](#-clasificación-a-la-wro)
-2. [📚 Proyecto Competitivo](#-proyecto-competitivo)
-   - [🏗️ Diseño e Innovación](#️-diseño-e-innovación)
-   - [🤖 Programación y Tecnología](#-programación-y-tecnología)
-3. [🌍 Singapur 2025: Preparativos](#-singapur-2025-preparativos)
-4. [📸 Galería Visual del Proyecto](#-galería-visual-del-proyecto)
-5. [📞 Contacto y Reconocimientos](#-contacto-y-reconocimientos)
+# Equipo [Team ValGrind] – WRO 2025
+
+<img src="https://github.com/damuec/ValRepo1/assets/logo-equipo.png" alt="Logo del equipo" width="200"/>
 
 ---
 
-## 🎉 **Clasificación a la WRO**
-El arduo trabajo y la dedicación de nuestro equipo nos han llevado a clasificar para la **WRO 2025**, un evento mundial que reúne a los mejores equipos de robótica del planeta. 🌟
+##  Índice
 
-- 🌟 **Competencia Nacional**: ¡Ganamos el primer lugar en nuestra categoría!
-- 🏆 **Objetivo**: Llevar una solución innovadora y sostenible que impacte positivamente a las comunidades.
-
----
-
-## 📚 **Proyecto Competitivo**
-### 🏗️ **Diseño e Innovación**
-Nuestro proyecto combina **diseño robótico avanzado** y **tecnología de vanguardia** para resolver un problema global. Hemos trabajado en cada detalle para garantizar que sea efectivo y escalable.
-
-- ✅ **Diseño modular** para adaptabilidad.
-- ✅ **Materiales sostenibles** para contribuir al medio ambiente.
-- ✅ Enfoque en **impacto social y accesibilidad**.
-
-### 🤖 **Programación y Tecnología**
-El corazón de nuestro proyecto es un sistema inteligente y autónomo que utiliza:
-- **Visión por computadora** para detección de objetos.
-- **Algoritmos de IA** para toma de decisiones.
-- **Sensores avanzados** para precisión y confiabilidad.
-
-Puedes explorar el código fuente en la carpeta [`/src`](./src).
+1. [Nuestro Equipo](#nuestro-equipo)
+2. [Nuestro Objetivo](#nuestro-objetivo)
+3. [El Robot](#el-robot)
+    - [Apartado Mecánico](#apartado-mecánico)
+        - [Movilidad](#movilidad)
+        - [Chasis e Impresión 3D](#chasis-e-impresión-3d)
+    - [Apartado Electrónico](#apartado-electrónico)
+        - [Baterías](#baterías)
+        - [Sensores Ultrasónicos](#sensores-ultrasónicos)
+        - [Conexiones y Circuitos](#conexiones-y-circuitos)
+        - [PCB](#pcb)
+        - [Microcontroladores](#microcontroladores)
+    - [Apartado Programático](#apartado-programático)
+        - [Código por Componente](#código-por-componente)
+        - [Diagramas de Flujo](#diagramas-de-flujo)
+        - [Algoritmos y Teoría](#algoritmos-y-teoría)
+        - [Compiladores y Comunicación](#compiladores-y-comunicación)
+4. [Recursos para Hacer el Robot](#recursos-para-hacer-el-robot)
+5. [Licencia](#licencia)
 
 ---
 
-## 🌍 **Singapur 2025: Preparativos**
-Nos estamos preparando para el evento en Singapur con:
-- 🌟 **Presentaciones en vivo** para jueces y público.
-- 📊 **Análisis de datos** para optimizar el rendimiento de nuestro robot.
-- 🌐 **Colaboración internacional** con otros equipos.
+## Nuestro Equipo
 
-**Fecha del evento**: 7 al 10 de noviembre de 2025.  
-**Ubicación**: [Singapur Expo](https://www.singaporeexpo.com.sg/).
+<img src="https://github.com/damuec/ValRepo1/assets/foto-equipo.jpg" alt="Foto del equipo" width="400"/>
 
----
+Somos **[Team ValGrind]**, entusiastas de la robótica y la innovación. Representamos a nuestra institución en la fase regional de la **WRO 2025**, ¡con la meta de clasificar a la nacional!
 
-## 📸 **Galería Visual del Proyecto**
-Aquí presentamos algunos avances y momentos destacados de nuestro proyecto:
-
-![Robot Prototipo](https://via.placeholder.com/800x400.png?text=Prototipo+del+Robot)  
-*Prototipo inicial de nuestro robot en acción.*
-
-![Equipo Nacional](https://via.placeholder.com/800x400.png?text=Equipo+Ganador+Nacional)  
-*Celebrando la clasificación al mundial.*
+-  Institución: [Nombre de la escuela/colegio]
+-  [Instagram Oficial](https://instagram.com/EquipoOficial)
+-  [Twitter Oficial](https://twitter.com/EquipoOficial)
+- Contáctanos: [correo@equipo.com](mailto:correo@equipo.com)
 
 ---
 
-## 📞 **Contacto y Reconocimientos**
+## Nuestro Objetivo
 
-### **Equipo**
-- **Nombre del equipo**: Innovadores del Futuro 🌟
-- **Integrantes**:
-  - Juan Pérez
-  - María López
-  - Carlos Sánchez
-
-### **Contacto**
-Si deseas más información, puedes contactarnos en:  
-📧 **Correo electrónico**: [equipo@innovadoresfuturo.com](mailto:equipo@innovadoresfuturo.com)  
-🌐 **Sitio web oficial**: [www.innovadoresfuturo.com](https://www.innovadoresfuturo.com)
+Diseñar, construir y programar un robot autónomo capaz de superar los desafíos de la WRO 2025, utilizando innovación y trabajo en equipo para lograr un desempeño sobresaliente en la etapa regional y avanzar a la nacional.
 
 ---
 
-### **Reconocimientos**
-Agradecemos profundamente a:
-- Nuestros **mentores** por su guía y apoyo.
-- Los **patrocinadores** que hacen posible este increíble viaje.
-- La **comunidad educativa** por inspirarnos a soñar en grande.
+## El Robot
+
+### Apartado Mecánico
+
+#### Movilidad
+
+Nuestro robot emplea un sistema de tracción diferencial, ofreciendo maniobrabilidad precisa para enfrentar los retos del campo de competencia. El sistema de cruces se realiza mediante un servo que ajusta la dirección del robot en intersecciones críticas.
+
+#### Chasis e Impresión 3D
+
+El chasis fue diseñado en software CAD y fabricado mediante impresión 3D en PLA, optimizando peso, resistencia y estética.  
+![Chasis 3D](https://github.com/damuec/ValRepo1/assets/chasis-3d.png)
 
 ---
 
-¡Gracias por seguir nuestro camino hacia Singapur 2025! 🥳  
-¡Nos vemos en el mundial! 🌏
+### Apartado Electrónico
 
+#### Baterías
+
+Utilizamos baterías LiPo de 7.4V para asegurar la autonomía y potencia necesarias durante la competencia.
+
+#### Sensores Ultrasónicos
+
+El robot cuenta con múltiples sensores ultrasónicos ubicados estratégicamente para la detección de obstáculos y el cálculo de distancias, permitiendo navegación autónoma y segura.
+
+#### Conexiones y Circuitos
+
+Todos los módulos están conectados en un circuito organizado, minimizando interferencias y facilitando el mantenimiento.  
+[Ver diagrama del circuito](./docs/diagrama-electronico.png)
+
+
+#### Microcontroladores
+
+El corazón del robot es un **Arduino Mega 2560**, que coordina los sensores ultrasónicos, el servo, los motores y la lógica de navegación.
+
+---
+
+### Apartado Programático
+
+#### Código por Componente
+
+- [Control de motores](./src/motor_control.ino)
+- [Lectura de sensores ultrasónicos](./src/sensor_ultrasonico.ino)
+- [Control de servo para cruces](./src/servo_cruce.ino)
+- [Algoritmo principal de navegación](./src/main_algorithm.ino)
+
+#### Diagramas de Flujo
+
+![Diagrama de Flujo](./docs/diagrama-flujo.png)
+
+#### Algoritmos y Teoría
+
+Aplicamos algoritmos de evasión de obstáculos, control PID para estabilizar la trayectoria y lógica para detección y toma de decisiones en cruces. La interacción entre sensores y actuadores está cuidadosamente programada para garantizar eficiencia y precisión.
+
+#### Compiladores y Comunicación
+
+- **Lenguaje principal:** C++ (Arduino IDE)
+- **Compilador:** [Arduino IDE](https://www.arduino.cc/en/software)
+- **Comunicación entre módulos:** Bus I2C y UART
+
+---
+
+## 🛒 Recursos para Hacer el Robot
+
+- [Lista de materiales detallada](./docs/lista-componentes.md)
+- [Guía de armado paso a paso](./docs/guia-armado.md)
+- [Archivos STL para impresión 3D](./3d/)
+
+---
+
+## ⚖️ Licencia
+
+Este proyecto está licenciado bajo la [MIT License](./LICENSE).
+
+---
+
+> _¿Quieres contribuir o seguir nuestro avance? Síguenos en nuestras redes oficiales y revisa este repositorio para novedades y recursos._
+
+---
