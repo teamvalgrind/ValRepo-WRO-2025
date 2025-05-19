@@ -1,4 +1,4 @@
-# 🚀 **Camino hacia Singapur 2025 - WRO**
+#  **Camino hacia Singapur 2025 - WRO**
 
 ¡Bienvenidos al repositorio oficial de nuestro proyecto para la **World Robot Olympiad (WRO) 2025**! 🌏 Este equipo talentoso ha clasificado para representar a nuestra región en **Singapur**, llevando innovación y creatividad al siguiente nivel.
 
