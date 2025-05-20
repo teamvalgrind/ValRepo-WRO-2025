@@ -38,16 +38,16 @@
 
 Somos **[Team ValGrind]**, entusiastas de la robótica y la innovación. Representamos a nuestra institución en la fase regional de la **WRO 2025**, ¡con la meta de clasificar a la nacional!
 
--  Institución: []
--  [Instagram Oficial](https://instagram.com/EquipoOficial)
--  [Twitter Oficial](https://twitter.com/EquipoOficial)
-- Contáctanos: [correo@equipo.com](mailto:correo@equipo.com)
+-  [Institución]: [https://www.instagram.com/colegiosaltoangel]
+-  [Instagram Oficial]:
+(https://instagram.com/team_valgrind)
+-  [Contáctanos]: [valgrind2025@gmail.com](mailto: valgrind2025@gmail.com)
 
 ---
 
 ## Nuestro Objetivo
 
-Diseñar, construir y programar un robot autónomo capaz de superar los desafíos de la WRO 2025, utilizando innovación y trabajo en equipo para lograr un desempeño sobresaliente en la etapa regional y avanzar a la nacional.
+Diseñar, construir y programar un robot autónomo capaz de superar los desafíos de la WRO 2025, utilizando innovación y trabajo en equipo para lograr un desempeño sobresaliente en la etapa regional y avanzar a la nacional. Para llegar a esto, hemos pasado los últimos meses diseñando, construyendo, armando y programando nuestro más nuevo proyecto "Heimdall" 
 
 ---
 
