@@ -10,6 +10,7 @@
 ##  Índice
 
 1. [Nuestro Equipo](#nuestro-equipo)
+    - [Integrantes](#integrantes)
 2. [Nuestro Objetivo](#nuestro-objetivo)
 3. [El Robot](#el-robot)
     - [Apartado Mecánico](#apartado-mecánico)
@@ -37,7 +38,7 @@
 
 Somos **[Team ValGrind]**, entusiastas de la robótica y la innovación. Representamos a nuestra institución en la fase regional de la **WRO 2025**, ¡con la meta de clasificar a la nacional!
 
--  Institución: [Nombre de la escuela/colegio]
+-  Institución: []
 -  [Instagram Oficial](https://instagram.com/EquipoOficial)
 -  [Twitter Oficial](https://twitter.com/EquipoOficial)
 - Contáctanos: [correo@equipo.com](mailto:correo@equipo.com)
