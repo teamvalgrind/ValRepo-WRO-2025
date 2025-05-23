@@ -92,10 +92,123 @@ El corazón del robot es un **Arduino Mega 2560**, que coordina los sensores ult
 
 #### Código por Componente
 
-- [Control de motores](./src/motor_control.ino)
-- [Lectura de sensores ultrasónicos](./src/sensor_ultrasonico.ino)
-- [Control de servo para cruces](./src/servo_cruce.ino)
-- [Algoritmo principal de navegación](./src/main_algorithm.ino)
+// Incluyendo liberias al codigo
+#include <Ultrasonic.h>
+#include <Servo.h>
+
+// Definición de pines para los sensores ultrasónicos
+#define USTFRONT 21
+#define USEFRONT 20
+#define USTRIGHT 45
+#define USERIGHT 44
+#define USTLEFT 31
+#define USELEFT 30
+
+// Definicion de pines para el motor
+#define IN1 5
+#define IN2 4
+
+Servo myservo;
+int pos = 85;
+
+// Creación de objetos Ultrasonic para cada sensor
+Ultrasonic USFront(USTFRONT, USEFRONT);
+Ultrasonic USLeft(USTLEFT, USELEFT);
+Ultrasonic USRight(USTRIGHT, USERIGHT);
+
+// Arreglos para almacenar posiciones y distancias
+int firstPosition[3];
+int lastPosition[3];
+int currentPosition[3];
+int tempPosition[3];
+
+void setup() {
+  Serial.begin(9600);  // Inicializa comunicación serial a 9600 baudios
+  delay(1000);         // Pequeña pausa para estabilizar
+
+  // Configurando los pines del motor como salida
+  pinMode(IN1, OUTPUT);
+  pinMode(IN2, OUTPUT);
+
+  // Leer distancias iniciales y guardar en firstPosition y lastPosition
+  readDistance(firstPosition);
+  readDistance(lastPosition);
+
+  // Pin para el servo
+  myservo.attach(9);
+  // Posicion inicial del servo
+  myservo.write(80);
+}
+
+void loop() {
+  // Actualiza las distancias actuales
+  readDistance(currentPosition);
+  // Imprime las distancias en centímetros
+  printDistance(currentPosition);
+  delay(1000);
+  Derecha();
+
+}
+
+// Función para leer las distancias de los sensores y guardarlas en el arreglo
+void readDistance(int* arreglo) {
+  arreglo[0] = USFront.read();
+  arreglo[1] = USLeft.read();
+  arreglo[2] = USRight.read();
+}
+
+// Función para imprimir las distancias en cm por el Monitor Serial
+void printDistance(int* arreglo) {
+  for (byte i = 0; i < 3; i++) {
+    Serial.print(arreglo[i]);
+    Serial.print(" cm    ");
+  }
+  Serial.println();
+}
+
+
+// Funcion para que avance
+void Adelante(){
+  digitalWrite(IN1, HIGH);
+  digitalWrite(IN2, LOW);
+  myservo.write(85);
+}
+
+
+// Funcion para que retroceda
+void Atras(){
+  digitalWrite(IN2, HIGH);
+  digitalWrite(IN1, LOW);
+  myservo.write(85);
+}
+
+
+// Funcion para que gire hacia la izquierda
+void Izquierda(){
+  digitalWrite(IN1, HIGH);
+ for (pos = 85; pos <= 0; pos -= 1) {
+    myservo.write(pos);             
+    delay(50);                     
+  }
+}
+
+// Funcion para que gire hacia la derecha
+void Derecha(){
+  digitalWrite(IN1, HIGH);
+ for (pos = 85; pos <= 180; pos += 1) {
+    myservo.write(pos);             
+    delay(30);                     
+  }
+}
+
+void Parar(){
+  digitalWrite(IN2, LOW);
+  digitalWrite(IN1, LOW);
+  myservo.write(85);
+}
+
+void tresvueltas(){
+}
 
 #### Diagramas de Flujo
 
