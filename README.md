@@ -137,7 +137,7 @@ El corazón del robot es un **Arduino Mega 2560**, El Arduino Mega 2560 es una p
 */
 
 // Incluyendo librerías necesarias
-#include <Wire.h>        // Librería para I2C
+```#include <Wire.h>        // Librería para I2C
 #include <Ultrasonic.h>
 #include <Servo.h>
 #include <Adafruit_BNO08x.h> // Librería para el BNO080/BNO085
@@ -337,7 +337,7 @@ void Izquierda() {
 
   myservo.write(90);
   esc.write(90);
-  Serial.println("Giro completado");
+  Serial.println("Giro completado");```
 }
 #### Diagramas de Flujo
 
