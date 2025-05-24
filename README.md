@@ -337,15 +337,14 @@ void Izquierda() {
 
   myservo.write(90);
   esc.write(90);
-  Serial.println("Giro completado");```
+  Serial.println("Giro completado");
 }
+```
+
 #### Diagramas de Flujo
 
 ![Diagrama de Flujo](./docs/diagrama-flujo.png)
 
-#### Algoritmos y Teoría
-
-Aplicamos algoritmos de evasión de obstáculos, control PID para estabilizar la trayectoria y lógica para detección y toma de decisiones en cruces. La interacción entre sensores y actuadores está cuidadosamente programada para garantizar eficiencia y precisión.
 
 #### Compiladores y Comunicación
 
