@@ -117,7 +117,7 @@ Todos los módulos están conectados en un circuito organizado, minimizando inte
 
 #### Microcontroladores
 
-El corazón del robot es un **Arduino Mega 2560**, El Arduino Mega 2560 es una placa de desarrollo de hardware libre basada en el microcontrolador ATmega2560, diseñada para proyectos complejos que requieren una amplia capacidad de entrada y salida; funciona a 5 V lógicos, operando con un cristal de 16 MHz y dispone de 256 KB de memoria flash (de los cuales 8 KB están reservados para el bootloader), 8 KB de SRAM y 4 KB de EEPROM. La placa cuenta con 54 pines digitales –15 de los cuales soportan salidas PWM– y 16 entradas analógicas, además de 4 puertos seriales (UART) que facilitan la comunicación con diversos dispositivos y sensores. Equipado con un puerto USB para programación y comunicación, un conector de alimentación externa (compatible con voltajes entre 7 y 12 V) y un cabezal ICSP, este dispositivo permite la integración de numerosos escudos y módulos, convirtiéndolo en una opción ideal para aplicaciones en robótica, automatización e instalaciones electrónicas avanzadas.
+esp-32.
 
 ---
 
