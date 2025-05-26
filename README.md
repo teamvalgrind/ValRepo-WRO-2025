@@ -125,69 +125,82 @@ esp-32.
 
 /*
   Código de Heimdall para la categoría futuros ingenieros de la WRO 2025
-  Hecho por Cristobal Mogollon
+  Hecho por Cristobal Mogollon y Samuel Burgos
 
   El código hace que el robot al prenderse avance y de 3 vueltas a la pista
   de futuros ingenieros en la etapa abierta y al completar la cantidad de 12
   giros a la pista avanzará dos segundos más y se detiene automáticamente
 
-  Mayo 21 2025
-  5:18 PM
+  Version del codigo: 5
+  En esta version del codigo se cambia de placa pasamos de usar un arduino 
+  mega a cambiar a esp32 por el tema de la diferencia de tamaño entre ambas 
+  la esp32 al ser mas pequeña reducimos peso y ahorramos mas espacio tambien 
+  cuenta con la ventaja de la memoria que es mas extensa a la de un arduino mega
 
+  Mayo 23 2025
+  11:30 AM
 */
 
-// Incluyendo librerías necesarias
-```#include <Wire.h>        // Librería para I2C
+#include <Wire.h>              
 #include <Ultrasonic.h>
-#include <Servo.h>
-#include <Adafruit_BNO08x.h> // Librería para el BNO080/BNO085
+#include <ESP32Servo.h>        // Librería para ESP32
+#include <Adafruit_BNO08x.h>   
 
-// Definición de pines para los sensores ultrasónicos
-#define USTFRONT 23
-#define USEFRONT 22
-#define USTRIGHT 45
-#define USERIGHT 44
-#define USTLEFT 31
-#define USELEFT 30
+// Configuración de pines ESP32
+#define USTFRONT 13     // GPIO13 como Trigger frontal
+#define USEFRONT 12     // GPIO12 como Echo frontal
+#define USTLEFT 14      // GPIO14 como Trigger izquierdo
+#define USELEFT 27      // GPIO27 como Echo izquierdo
+#define USTRIGHT 26     // GPIO26 como Trigger derecho
+#define USERIGHT 25     // GPIO25 como Echo derecho
 
-// Creación de objetos Ultrasonic para cada sensor
+// Pines para servos y ESC
+#define PIN_ESC 18      // GPIO18 para ESC
+#define PIN_SERVO 19    // GPIO19 para servo direccional
+
 Ultrasonic USFront(USTFRONT, USEFRONT);
 Ultrasonic USLeft(USTLEFT, USELEFT);
 Ultrasonic USRight(USTRIGHT, USERIGHT);
 
-const int DISTANCIA_OBSTACULO_FRONTAL = 15; // Distancia en cm para el sensor frontal
-const int DISTANCIA_OBSTACULO_LATERAL = 50; // Distancia en cm para los sensores laterales
+const int DISTANCIA_OBSTACULO_FRONTAL = 15;
+const int DISTANCIA_OBSTACULO_LATERAL = 50;
 
 Servo esc;
 Servo myservo;
 
 int pos = 85;
 bool motorEnMarcha = false;
-int contadorVueltas = 0;         // Contador de vueltas
-bool giroDetectado = false;       // Para evitar contar el mismo giro varias veces
-bool robotDetenido = false;       // Variable para detener el robot después de 12 giros
+int contadorVueltas = 0;
+bool giroDetectado = false;
+bool robotDetenido = false;
 
-// BNO085
+// BNO085 (I2C personalizado)
+#define SDA_PIN 21      // GPIO21 como SDA
+#define SCL_PIN 22      // GPIO22 como SCL
 Adafruit_BNO08x bno08x;
-#define BNO08X_RESET -1           // Si no usas el pin de reset
 sh2_SensorValue sensorValue;
 
+float anguloAcumuladoZ = 0.0;
+unsigned long tiempoAnterior = 0;
+
 void setup() {
-  Wire.begin();                    // Inicializa la comunicación I2C para el BNO085 en Arduino Mega
-  esc.attach(9, 1000, 2000);
-  myservo.attach(11);
+  Wire.begin(SDA_PIN, SCL_PIN);  // Inicializar I2C con pines específicos
+  esc.attach(PIN_ESC, 1000, 2000);
+  myservo.attach(PIN_SERVO);
   Serial.begin(115200);
 
-  // Inicializar el BNO085
-  if (!bno08x.begin_I2C()) {
+  // Inicializar BNO085
+  if (!bno08x.begin_I2C(0x4B, &Wire)) {
     Serial.println("¡No se pudo iniciar el BNO08x!");
-    while (1) delay(1);
+    while(1);
   }
-  bno08x.enableReport(SH2_GYROSCOPE_CALIBRATED, 10000); // Reporte cada 10ms
+  bno08x.enableReport(SH2_GYROSCOPE_CALIBRATED, 10000);
 
   // Armar el ESC al iniciar
   esc.write(90);
   delay(3000);
+
+  tiempoAnterior = millis();
 }
 
 void loop() {
@@ -204,18 +217,37 @@ void doceVueltas() {
   int izquierda = USLeft.read();
   int derecha = USRight.read();
 
-  // Leer datos del giroscopio del BNO085
-  float gyroZ = 0.0;
+  // Leer datos del giroscopio del BNO085 y acumular el ángulo girado en el eje Z
+  unsigned long tiempoActual = millis();
+  float deltaTime = (tiempoActual - tiempoAnterior) / 1000.0; // segundos
+  tiempoAnterior = tiempoActual;
+
   if (bno08x.getSensorEvent(&sensorValue)) {
     if (sensorValue.sensorId == SH2_GYROSCOPE_CALIBRATED) {
-      gyroZ = sensorValue.un.gyroscope.z * 57.3; // Convertir a dps
+      float gyroZ = sensorValue.un.gyroscope.z * 57.3; // Convertir a dps
+      anguloAcumuladoZ += gyroZ * deltaTime; // Acumula el ángulo en el eje Z (con signo)
     }
+  }
+
+  // Si el ángulo acumulado supera +89° o -89°, cuenta como un giro
+  if (abs(anguloAcumuladoZ) > 89) {
+    contadorVueltas++;
+    // (Opcional) Muestra el sentido del giro
+    if (anguloAcumuladoZ > 0) {
+      Serial.print("Giro a la derecha detectado. ");
+    } else {
+      Serial.print("Giro a la izquierda detectado. ");
+    }
+    anguloAcumuladoZ = 0; // Resetea el acumulador
+    Serial.print("Giros: ");
+    Serial.println(contadorVueltas);
   }
 
   Serial.print("Frontal: "); Serial.print(frontal);
   Serial.print("cm | Izq: "); Serial.print(izquierda);
   Serial.print("cm | Der: "); Serial.print(derecha);
-  Serial.print("cm | GyroZ: "); Serial.println(gyroZ);
+  Serial.print("cm | Ángulo acumulado Z: ");
+  Serial.println(anguloAcumuladoZ);
 
   if (frontal > DISTANCIA_OBSTACULO_FRONTAL) {
     if (!motorEnMarcha) {
@@ -241,33 +273,20 @@ void doceVueltas() {
     myservo.write(90);
   }
 
-  // Calcular el número de vueltas (simplificado)
-  // Usamos una variable giroDetectado para evitar contar el mismo giro varias veces
-  if (abs(gyroZ) > 50 && !giroDetectado) { // Ajustar este valor según la sensibilidad del giroscopio
-    giroDetectado = true;                   // Marcamos que se ha detectado un giro
-    if (gyroZ > 0) {                        // Giro en sentido horario (ejemplo)
-      contadorVueltas++;                     // Incrementamos el contador de vueltas
-      Serial.print("Vueltas: ");
-      Serial.println(contadorVueltas);
-    }
-  } else if (abs(gyroZ) < 20) {             // Si la velocidad angular es baja, reseteamos giroDetectado
-    giroDetectado = false;
-  }
-
   // Si contadorVueltas llega a 12, avanzar 2 segundos y parar
   if (contadorVueltas >= 12) {
     Adelante(); // Avanzamos
     delay(2000);  // Esperamos 2 segundos
     Parar();    // Detenemos el motor
-    Serial.println("¡Completadas 12 vueltas!");
+    Serial.println("¡Completados 12 giros!");
     robotDetenido = true;  // Bloquea para que no siga ejecutando
   }
 }
 
-void Adelante(){
+void Atras(){
   Serial.println("Armando ESC...");
   esc.write(90);     // Pulso mínimo para armar ESC
-  delay(10);                     // Espera breve para armar
+  delay(10);         // Espera breve para armar
 
   Serial.println("Aumentando velocidad...");
   for (int speed = 90; speed <= 130; speed += 10) {
@@ -281,18 +300,18 @@ void Adelante(){
   esc.write(130);     // Mantiene velocidad fija
 }
 
-void Atras(){
+void Adelante(){
   Serial.println("Aumentando velocidad hacia atrás...");
   esc.write(90);     // Pulso mínimo para armar ESC
   delay(10);
-  for (int speed = 90; speed >= 0; speed -= 50) { 
+  for (int speed = 90; speed >= 30; speed -= 10) { 
     esc.write(speed);
     Serial.print("Velocidad atrás: ");
     Serial.println(speed);
-    delay(200);
+    delay(250);
   }
   Serial.println("Manteniendo velocidad fija hacia atrás");
-  esc.write(0);      // Mantiene velocidad fija hacia atrás
+  esc.write(30);      // Mantiene velocidad fija hacia atrás
 }
 
 void Parar() {
@@ -339,7 +358,6 @@ void Izquierda() {
   esc.write(90);
   Serial.println("Giro completado");
 }
-```
 
 #### Diagramas de Flujo
 
