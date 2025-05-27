@@ -3,8 +3,7 @@
 
 # Equipo [Team ValGrind] – WRO 2025
 
-<img src="https://github.com/damuec/ValRepo1/assets/logo-equipo.png" alt="Logo del equipo" width="200"/>
-
+[![SAVE-20250527-193558.jpg](https://i.postimg.cc/VvXNFbns/SAVE-20250527-193558.jpg)](https://postimg.cc/fSTZzy81)
 ---
 
 ##  Índice
