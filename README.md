@@ -361,7 +361,7 @@ void Izquierda() {
 
 #### Diagramas de Flujo
 
-![Diagrama de Flujo](./docs/diagrama-flujo.png)
+[![IMG-20250523-WA0008.jpg](https://i.postimg.cc/QxYhNwBT/IMG-20250523-WA0008.jpg)](https://postimg.cc/YhFJbXzr)
 
 
 #### Compiladores y Comunicación
