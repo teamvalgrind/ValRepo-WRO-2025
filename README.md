@@ -67,7 +67,7 @@ Un resumen corto
 
 El nombre de nuestro equipo fue decidido por los 3 a partir de un clásico compilador de C++ llamado de la misma forma, el cual es representado por un logotipo desértico y un dragón rojo hecho mediante origami. Al mismo tiempo, tanto el apartado estético como la identidad de nuestro equipo también muestra simbolismos y elementos de la mitología nórdica, razón por la cual también decidimos que nuestro robot se llamara "Heimdall", ya que no solo es un guiño a la mitología en cuestión sino que también cabe destacar que su personaje es un dios conocido como el guardián de las puertas de Asgard y el puente Bifröst, que conecta los Nueve Mundos. Al ser un personaje imponente consideramos que es un nombre apropiado para nuestro robot, así también completando el guiño a la cultura nórdica que queremos conseguir 
 
-# Foto de Heimdall
+### Foto de Heimdall
 <foto del robot>
 
 ---
@@ -82,11 +82,11 @@ Diseñar, construir y programar un robot autónomo capaz de superar los desafío
 
 ---
 
-### El Robot
+# El Robot
 
 ## Apartado Mecánico
 
-# Diseño e Impresión 3D 
+### Diseño e Impresión 3D 
 
 Fusion 360 es una plataforma de software de modelado 3D, CAD, CAM, CAE y PCB basada en la nube destinada al diseño y la fabricación de productos. Nos permite diseñar y crear productos de acuerdo a sus especificaciones particulares, garantizando que cada pieza cumpla con los más exigentes criterios de estética, forma, ajuste y funcionalidad. Además, incorpora un conjunto integral de herramientas avanzadas para el diseño de placas de circuito impreso y componentes electrónicos, lo que facilita la conceptualización y materialización de cualquier idea, incluso las más complejas. Al implementar estas funciones, la plataforma optimiza significativamente tanto el tiempo como los costos asociados, asegurando que el proceso de producción se realice de manera eficiente y que las piezas obtenidas sean de la más alta calidad. Nosotros usamos esta herramienta gráfica y de diseño para poder realizar los diseños del chasis y aquellas piezas personalizadas para nuestro robot
 
