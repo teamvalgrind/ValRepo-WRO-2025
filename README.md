@@ -11,7 +11,7 @@
 
 1. [Nuestro Equipo](#nuestro-equipo)
     - [Integrantes](#integrantes)
-    - [Nuestro Origen](#nuestro-origen)
+    - [Orígen](#orígen)
 2. [Nuestro Objetivo](#nuestro-objetivo)
 3. [El Robot](#el-robot)
     - [Apartado Mecánico](#apartado-mecánico)
