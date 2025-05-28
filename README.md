@@ -11,18 +11,19 @@
 
 1. [Nuestro Equipo](#nuestro-equipo)
     - [Integrantes](#integrantes)
-    - [Orígen](#orígen)
-2. [Nuestro Objetivo](#nuestro-objetivo)
-3. [El Robot](#el-robot)
-    - [Apartado Mecánico](#apartado-mecánico)
+    - [Origen](#origen)
+    - [Nuestro Objetivo](#nuestro-objetivo)
+
+2. [El Robot](#el-robot)
+  2.1  - [Apartado Mecánico](#apartado-mecánico)
         - [Movilidad](#movilidad)
         - [Chasis e Impresión 3D](#chasis-e-impresión-3d)
-    - [Apartado Electrónico](#apartado-electrónico)
+  2.2 - [Apartado Electrónico](#apartado-electrónico)
         - [Baterías](#baterías)
         - [Sensores Ultrasónicos](#sensores-ultrasónicos)
         - [Conexiones y Circuitos](#conexiones-y-circuitos)
         - [Microcontroladores](#microcontroladores)
-    - [Apartado Programático](#apartado-programático)
+  2.3  - [Apartado Programático](#apartado-programático)
         - [Código por Componente](#código-por-componente)
         - [Diagramas de Flujo](#diagramas-de-flujo)
         - [Algoritmos y Teoría](#algoritmos-y-teoría)
@@ -63,7 +64,7 @@ Un resumen corto
 (https://instagram.com/team_valgrind)
 -  [Contáctanos]: [valgrind2025@gmail.com]
 
-## Orígen
+## Origen
 
 El nombre de nuestro equipo fue decidido por los 3 a partir de un clásico compilador de C++ llamado de la misma forma, el cual es representado por un logotipo desértico y un dragón rojo hecho mediante origami. Al mismo tiempo, tanto el apartado estético como la identidad de nuestro equipo también muestra simbolismos y elementos de la mitología nórdica, razón por la cual también decidimos que nuestro robot se llamara "Heimdall", ya que no solo es un guiño a la mitología en cuestión sino que también cabe destacar que su personaje es un dios conocido como el guardián de las puertas de Asgard y el puente Bifröst, que conecta los Nueve Mundos. Al ser un personaje imponente consideramos que es un nombre apropiado para nuestro robot, así también completando el guiño a la cultura nórdica que queremos conseguir 
 
