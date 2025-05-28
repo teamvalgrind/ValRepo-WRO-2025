@@ -42,21 +42,18 @@ En esta primera sección , se encuentra toda la información básica acerca de n
 ## [Integrantes]
      Samuel Burgos 
      _png_
+ 17 años, 09/01/2008
+ Un resumen corto
 
-# 17 años, 09/01/2008
-#  Un resumen corto
-
-Samuel Burgos 
+Sebastián Salina
      _png_
+ 17 años, 09/01/2008
+ Un resumen corto
 
-# 17 años, 09/01/2008
-#  Un resumen corto
-
-Samuel Burgos 
+Cristobal Mogollón 
      _png_
-
-# 17 años, 09/01/2008
-#  Un resumen corto
+17 años, 09/01/2008
+Un resumen corto
 
 
 -  [Institución]: [https://www.instagram.com/colegiosaltoangel]
@@ -184,7 +181,6 @@ void doceVueltas() {
   unsigned long tiempoActual = millis();
   float deltaTime = (tiempoActual - tiempoAnterior) / 1000.0; // segundos
   tiempoAnterior = tiempoActual;
-```
 
   if (bno08x.getSensorEvent(&sensorValue)) {
     if (sensorValue.sensorId == SH2_GYROSCOPE_CALIBRATED) {
