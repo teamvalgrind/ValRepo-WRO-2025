@@ -66,8 +66,9 @@ Samuel Burgos
 
 ## Origenes
 
-El nombre de nuestro equipo fue decidido por los 3 a partir de un clásico compilador de C++ llamado de la misma forma, el cual es representado por un logotipo desértico y un dragón rojo hecho mediante origami. Al mismo tiempo, tanto el apartado estético como la identidad de nuestro equipo también muestra simbolismos y elementos de la mitología nórdica, razón por la cual también decidimos que nuestro robot se llamara "Heimdall", ya que no solo es un guiño a la mitología nórdica en cuestión sino que también cabe destacar que su personaje es un dios en la mitología nórdica, conocido como el guardián de las puertas de Asgard y el puente Bifröst, que conecta los Nueve Mundos. y asimismo También es responsable de anunciar el inicio del Ragnarök. Al ser un personaje imponente, fue elegido como el nombre que representará a nuestro proyecto dentro de la World Robotic Olympiad 2025 (WRO)
+El nombre de nuestro equipo fue decidido por los 3 a partir de un clásico compilador de C++ llamado de la misma forma, el cual es representado por un logotipo desértico y un dragón rojo hecho mediante origami. Al mismo tiempo, tanto el apartado estético como la identidad de nuestro equipo también muestra simbolismos y elementos de la mitología nórdica, razón por la cual también decidimos que nuestro robot se llamara "Heimdall", ya que no solo es un guiño a la mitología en cuestión sino que también cabe destacar que su personaje es un dios conocido como el guardián de las puertas de Asgard y el puente Bifröst, que conecta los Nueve Mundos. Al ser un personaje imponente consideramos que es un nombre apropiado para nuestro robot, así también completando el guiño a la cultura nórdica que queremos conseguir 
 
+# Foto de Heimdall
 <foto del robot>
 
 ---
@@ -136,66 +137,11 @@ esp-32.
 
 ### Apartado Programático
 
-/*
-  Código de Heimdall para la categoría futuros ingenieros de la WRO 2025
-  Hecho por Cristobal Mogollon y Samuel Burgos
+## Open Challenge
+En cuanto al código utilizado para manejar al robot, consiste de una parte en la que se definen los pines del BNO085, del ESC, y de los ultrasónicos; Dentro del código se arma el ESC, se inicializan los sensores, y se inicializa una función llamada 12 giros la cual se encarga de hacer una lectura constante de los sensores ultrasónicos para decidir en qué momento girar, así como de registrar los giros para que el robot se detenga al completar exitosamente 3 vueltas.
 
-  El código hace que el robot al prenderse avance y de 3 vueltas a la pista
-  de futuros ingenieros en la etapa abierta y al completar la cantidad de 12
-  giros a la pista avanzará dos segundos más y se detiene automáticamente
-
-  Version del codigo: 5
-  En esta version del codigo se cambia de placa pasamos de usar un arduino 
-  mega a cambiar a esp32 por el tema de la diferencia de tamaño entre ambas 
-  la esp32 al ser mas pequeña reducimos peso y ahorramos mas espacio tambien 
-  cuenta con la ventaja de la memoria que es mas extensa a la de un arduino mega
-
-  Mayo 23 2025
-  11:30 AM
-*/
-
-#include <Wire.h>              
-#include <Ultrasonic.h>
-#include <ESP32Servo.h>        // Librería para ESP32
-#include <Adafruit_BNO08x.h>   
-
-// Configuración de pines ESP32
-#define USTFRONT 13     // GPIO13 como Trigger frontal
-#define USEFRONT 12     // GPIO12 como Echo frontal
-#define USTLEFT 14      // GPIO14 como Trigger izquierdo
-#define USELEFT 27      // GPIO27 como Echo izquierdo
-#define USTRIGHT 26     // GPIO26 como Trigger derecho
-#define USERIGHT 25     // GPIO25 como Echo derecho
-
-// Pines para servos y ESC
-#define PIN_ESC 18      // GPIO18 para ESC
-#define PIN_SERVO 19    // GPIO19 para servo direccional
-
-Ultrasonic USFront(USTFRONT, USEFRONT);
-Ultrasonic USLeft(USTLEFT, USELEFT);
-Ultrasonic USRight(USTRIGHT, USERIGHT);
-
-const int DISTANCIA_OBSTACULO_FRONTAL = 15;
-const int DISTANCIA_OBSTACULO_LATERAL = 50;
-
-Servo esc;
-Servo myservo;
-
-int pos = 85;
-bool motorEnMarcha = false;
-int contadorVueltas = 0;
-bool giroDetectado = false;
-bool robotDetenido = false;
-
-// BNO085 (I2C personalizado)
-#define SDA_PIN 21      // GPIO21 como SDA
-#define SCL_PIN 22      // GPIO22 como SCL
-Adafruit_BNO08x bno08x;
-sh2_SensorValue sensorValue;
-
-float anguloAcumuladoZ = 0.0;
-unsigned long tiempoAnterior = 0;
-
+En este apartado se inicializan los Pines
+```
 void setup() {
   Wire.begin(SDA_PIN, SCL_PIN);  // Inicializar I2C con pines específicos
   esc.attach(PIN_ESC, 1000, 2000);
@@ -215,7 +161,11 @@ void setup() {
 
   tiempoAnterior = millis();
 }
+```
 
+En este apartado, se llama a la función ContadorGiros, se hace una lectura de los sensores y se calibra el giroscipio
+
+```
 void loop() {
   doceVueltas();
 }
@@ -234,6 +184,7 @@ void doceVueltas() {
   unsigned long tiempoActual = millis();
   float deltaTime = (tiempoActual - tiempoAnterior) / 1000.0; // segundos
   tiempoAnterior = tiempoActual;
+```
 
   if (bno08x.getSensorEvent(&sensorValue)) {
     if (sensorValue.sensorId == SH2_GYROSCOPE_CALIBRATED) {
@@ -241,161 +192,30 @@ void doceVueltas() {
       anguloAcumuladoZ += gyroZ * deltaTime; // Acumula el ángulo en el eje Z (con signo)
     }
   }
+```
 
-  // Si el ángulo acumulado supera +89° o -89°, cuenta como un giro
-  if (abs(anguloAcumuladoZ) > 89) {
-    contadorVueltas++;
-    // (Opcional) Muestra el sentido del giro
-    if (anguloAcumuladoZ > 0) {
-      Serial.print("Giro a la derecha detectado. ");
-    } else {
-      Serial.print("Giro a la izquierda detectado. ");
-    }
-    anguloAcumuladoZ = 0; // Resetea el acumulador
-    Serial.print("Giros: ");
-    Serial.println(contadorVueltas);
-  }
+ Dentro de Open.ino está el resto de funciones descritas, y la lógica de programación mediante la cual el robot completa el desafío abierto.
 
-  Serial.print("Frontal: "); Serial.print(frontal);
-  Serial.print("cm | Izq: "); Serial.print(izquierda);
-  Serial.print("cm | Der: "); Serial.print(derecha);
-  Serial.print("cm | Ángulo acumulado Z: ");
-  Serial.println(anguloAcumuladoZ);
+# Diagrama de Flujo
 
-  if (frontal > DISTANCIA_OBSTACULO_FRONTAL) {
-    if (!motorEnMarcha) {
-      Adelante();
-      motorEnMarcha = true;
-    }
-  } else {
-    if (motorEnMarcha) {
-      Parar();
-      motorEnMarcha = false;
-    }
-
-    if (izquierda > DISTANCIA_OBSTACULO_LATERAL && izquierda > derecha) {
-      Izquierda();
-    } else if (derecha > DISTANCIA_OBSTACULO_LATERAL && derecha > izquierda) {
-      Derecha();
-    } else {
-      Atras();
-      delay(500);
-      Parar();
-    }
-    delay(1000);
-    myservo.write(90);
-  }
-
-  // Si contadorVueltas llega a 12, avanzar 2 segundos y parar
-  if (contadorVueltas >= 12) {
-    Adelante(); // Avanzamos
-    delay(2000);  // Esperamos 2 segundos
-    Parar();    // Detenemos el motor
-    Serial.println("¡Completados 12 giros!");
-    robotDetenido = true;  // Bloquea para que no siga ejecutando
-  }
-}
-
-void Atras(){
-  Serial.println("Armando ESC...");
-  esc.write(90);     // Pulso mínimo para armar ESC
-  delay(10);         // Espera breve para armar
-
-  Serial.println("Aumentando velocidad...");
-  for (int speed = 90; speed <= 130; speed += 10) {
-    esc.write(speed);
-    Serial.print("Velocidad: ");
-    Serial.println(speed);
-    delay(250);
-  }
-  
-  Serial.println("Manteniendo velocidad fija");
-  esc.write(130);     // Mantiene velocidad fija
-}
-
-void Adelante(){
-  Serial.println("Aumentando velocidad hacia atrás...");
-  esc.write(90);     // Pulso mínimo para armar ESC
-  delay(10);
-  for (int speed = 90; speed >= 30; speed -= 10) { 
-    esc.write(speed);
-    Serial.print("Velocidad atrás: ");
-    Serial.println(speed);
-    delay(250);
-  }
-  Serial.println("Manteniendo velocidad fija hacia atrás");
-  esc.write(30);      // Mantiene velocidad fija hacia atrás
-}
-
-void Parar() {
-  Serial.println("Deteniendo motor...");
-  esc.write(90);  // Pulso mínimo para detener el motor (igual que armar)
-}
-
-void Derecha() {
-  Serial.println("Motor en marcha y girando a la derecha gradualmente...");
-
-  esc.write(90);      // Armar motor
-  delay(10);
-
-  esc.write(130);     // Velocidad fija
-
-  for (int ang = 85; ang <= 180; ang++) {
-    myservo.write(ang);
-    Serial.print("Ángulo servo: ");
-    Serial.println(ang);
-    delay(1);
-  }
-
-  myservo.write(90);
-  esc.write(90);
-  Serial.println("Giro completado");
-}
-
-void Izquierda() {
-  Serial.println("Motor en marcha y girando a la Izquierda gradualmente...");
-
-  esc.write(90);      // Armar motor
-  delay(10);
-
-  esc.write(130);     // Velocidad fija
-
-  for (int ang = 85; ang >= 0; ang--) {
-    myservo.write(ang);
-    Serial.print("Ángulo servo: ");
-    Serial.println(ang);
-    delay(1);
-  }
-
-  myservo.write(90);
-  esc.write(90);
-  Serial.println("Giro completado");
-}
-
-#### Diagramas de Flujo
+Dentro de este diagrama de flujo se halla una representación gráfica del funcionamiento lógico de nuestra programación, así como de lo que se espera sea el desempeño del robot a la hora de inicializar el programa.
 
 [![IMG-20250523-WA0008.jpg](https://i.postimg.cc/QxYhNwBT/IMG-20250523-WA0008.jpg)](https://postimg.cc/YhFJbXzr)
 
 
-#### Compiladores y Comunicación
+# Compiladores y Comunicación
 
 - **Lenguaje principal:** C++ (Arduino IDE)
 - **Compilador:** [Arduino IDE](https://www.arduino.cc/en/software)
-- **Comunicación entre módulos:** Bus I2C y UART
+- **Comunicación entre módulos:** Bus I2C y SPI
 
 ---
 
-## 🛒 Recursos para Hacer el Robot
+##  Recursos 
 
 - [Lista de materiales detallada](./docs/lista-componentes.md)
 - [Guía de armado paso a paso](./docs/guia-armado.md)
 - [Archivos STL para impresión 3D](./3d/)
-
----
-
-## ⚖️ Licencia
-
-Este proyecto está licenciado bajo la [MIT License](./LICENSE).
 
 ---
 
