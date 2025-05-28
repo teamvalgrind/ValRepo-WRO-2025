@@ -28,7 +28,7 @@
         - [Algoritmos y Teoría](#algoritmos-y-teoría)
         - [Compiladores y Comunicación](#compiladores-y-comunicación)
 4. [Recursos para Hacer el Robot](#recursos-para-hacer-el-robot)
-5. [Licencia](#licencia)
+5. [Licencia]
 
 ---
 
