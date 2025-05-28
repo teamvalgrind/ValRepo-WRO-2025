@@ -14,7 +14,7 @@
     - [Origen](#origen)
     - [Nuestro Objetivo](#nuestro-objetivo)
 2. [El Robot](#el-robot)
-   - [Apartado Mecánico](#apartado-mecánico)
+   - [Apartado Mecanico](#apartado-mecanico)
         - [Movilidad](#movilidad)
         - [Diseño e Impresión 3D](#diseño-e-impresion-3d)
    - [Apartado Electrónico](#apartado-electrónico)
@@ -84,7 +84,7 @@ Diseñar, construir y programar un robot autónomo capaz de superar los desafío
 
 # El Robot
 
-## Apartado Mecánico
+## Apartado Mecanico
 
 ### Diseño e Impresión 3D 
 
