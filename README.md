@@ -15,8 +15,8 @@
     - [Nuestro Objetivo](#nuestro-objetivo)
 2. [El Robot](#el-robot)
    - [Apartado Mecanico](#apartado-mecanico)
-        - [Movilidad](#movilidad)
         - [Diseño e Impresión 3D](#diseño-e-impresion-3d)
+        - [Movilidad](#movilidad)
    - [Apartado Electrónico](#apartado-electrónico)
         - [Baterías](#baterías)
         - [Sensores Ultrasónicos](#sensores-ultrasónicos)
@@ -91,6 +91,10 @@ Diseñar, construir y programar un robot autónomo capaz de superar los desafío
 Fusion 360 es una plataforma de software de modelado 3D, CAD, CAM, CAE y PCB basada en la nube destinada al diseño y la fabricación de productos. Nos permite diseñar y crear productos de acuerdo a sus especificaciones particulares, garantizando que cada pieza cumpla con los más exigentes criterios de estética, forma, ajuste y funcionalidad. Además, incorpora un conjunto integral de herramientas avanzadas para el diseño de placas de circuito impreso y componentes electrónicos, lo que facilita la conceptualización y materialización de cualquier idea, incluso las más complejas. Al implementar estas funciones, la plataforma optimiza significativamente tanto el tiempo como los costos asociados, asegurando que el proceso de producción se realice de manera eficiente y que las piezas obtenidas sean de la más alta calidad. Nosotros usamos esta herramienta gráfica y de diseño para poder realizar los diseños del chasis y aquellas piezas personalizadas para nuestro robot
 
 ![Chasis 3D](https://github.com/damuec/ValRepo1/assets/chasis-3d.png)
+
+### Movilidad
+
+Nuestro robot emplea un sistema de tracción diferencial, ofreciendo maniobrabilidad precisa para enfrentar los retos del campo de competencia. El sistema de cruces se realiza mediante un servo que ajusta la dirección del robot en intersecciones críticas.
 
 ---
 
