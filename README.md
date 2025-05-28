@@ -41,7 +41,7 @@ Somos **[Team ValGrind]**, entusiastas de la robótica y la innovación. Represe
 
 En esta primera sección , se encuentra toda la información básica acerca de nuestro equipo, desde nuestros orígenes hasta nuestros planes para poder lograr todas nuestras metas.
    
-# Integrantes
+## Integrantes
 
      Samuel Burgos 
      _png_
