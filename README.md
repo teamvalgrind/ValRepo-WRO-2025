@@ -13,7 +13,6 @@
     - [Integrantes](#integrantes)
     - [Origen](#origen)
     - [Nuestro Objetivo](#nuestro-objetivo)
-
 2. [El Robot](#el-robot)
    - [Apartado Mecánico](#apartado-mecánico)
         - [Movilidad](#movilidad)
