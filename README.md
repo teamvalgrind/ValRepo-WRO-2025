@@ -38,11 +38,25 @@
 Somos **[Team ValGrind]**, entusiastas de la robótica y la innovación. Representamos a nuestra institución en la fase regional de la **WRO 2025**, con la meta de clasificar a la nacional.
 
 En esta primera sección , se encuentra toda la información básica acerca de nuestro equipo, desde nuestros orígenes hasta nuestros planes para poder lograr todas nuestras metas.
-    -[Integrantes]
+   
+## [Integrantes]
      Samuel Burgos 
      _png_
-     17 años, 09/01/2008
-     Un resumen corto
+
+# 17 años, 09/01/2008
+#  Un resumen corto
+
+Samuel Burgos 
+     _png_
+
+# 17 años, 09/01/2008
+#  Un resumen corto
+
+Samuel Burgos 
+     _png_
+
+# 17 años, 09/01/2008
+#  Un resumen corto
 
 
 -  [Institución]: [https://www.instagram.com/colegiosaltoangel]
@@ -50,7 +64,7 @@ En esta primera sección , se encuentra toda la información básica acerca de n
 (https://instagram.com/team_valgrind)
 -  [Contáctanos]: [valgrind2025@gmail.com]
 
-## Nuestros Origenes
+## Origenes
 
 El nombre de nuestro equipo fue decidido por los 3 a partir de un clásico compilador de C++ llamado de la misma forma, el cual es representado por un logotipo desértico y un dragón rojo hecho mediante origami. Al mismo tiempo, tanto el apartado estético como la identidad de nuestro equipo también muestra simbolismos y elementos de la mitología nórdica, razón por la cual también decidimos que nuestro robot se llamara "Heimdall", ya que no solo es un guiño a la mitología nórdica en cuestión sino que también cabe destacar que su personaje es un dios en la mitología nórdica, conocido como el guardián de las puertas de Asgard y el puente Bifröst, que conecta los Nueve Mundos. y asimismo También es responsable de anunciar el inicio del Ragnarök. Al ser un personaje imponente, fue elegido como el nombre que representará a nuestro proyecto dentro de la World Robotic Olympiad 2025 (WRO)
 
