@@ -11,10 +11,10 @@
 
 1. [Nuestro Equipo](#nuestro-equipo)
     - [Integrantes](#integrantes)
-    - [Orígenes](#origenes)
+    - [Orígenes](#orígenes)
 2. [Nuestro Objetivo](#nuestro-objetivo)
 3. [El Robot](#el-robot)
-     - [Apartado Mecánico](#apartado-mecánico)
+    - [Apartado Mecánico](#apartado-mecánico)
         - [Movilidad](#movilidad)
         - [Chasis e Impresión 3D](#chasis-e-impresión-3d)
     - [Apartado Electrónico](#apartado-electrónico)
