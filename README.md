@@ -11,7 +11,7 @@
 
 1. [Nuestro Equipo](#nuestro-equipo)
     - [Integrantes](#integrantes)
-    - [Orígenes](#orígenes)
+    - [Origenes](#origenes)
 2. [Nuestro Objetivo](#nuestro-objetivo)
 3. [El Robot](#el-robot)
     - [Apartado Mecánico](#apartado-mecánico)
@@ -59,7 +59,7 @@ Somos **[Team ValGrind]**, entusiastas de la robótica y la innovación. Represe
 
 ---
 
-### Orígenes
+### Origenes
 
 El nombre de nuestro equipo fue decidido por los tres integrantes a partir de un clásico compilador de C++ llamado de la misma forma, el cual es representado por un logotipo des". Este nombre no solo es un guiño a la mitología mencionada, sino que además corresponde al dios conocido como el guardián de las puertas de Asgard y del puente Bifröst, que conecta los Nueve Mundos. Al ser un personaje imponente, consideramos que es un nombre apropiado para nuestroHeimdall".
 
