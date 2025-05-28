@@ -85,9 +85,9 @@ Diseñar, construir y programar un robot autónomo capaz de superar los desafío
 
 ## El Robot
 
-### Apartado Mecánico
+## Apartado Mecánico
 
-#### Movilidad
+## Movilidad
 
 Nuestro robot emplea un sistema de tracción diferencial, ofreciendo maniobrabilidad precisa para enfrentar los retos del campo de competencia. El sistema de cruces se realiza mediante un servo que ajusta la dirección del robot en intersecciones críticas.
 
