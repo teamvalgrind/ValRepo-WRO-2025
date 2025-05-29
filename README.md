@@ -17,11 +17,13 @@
     - [Apartado Mecánico](#apartado-mecánico)
         - [Diseño e Impresión 3D](#diseño-e-impresión-3d)
         - [Movilidad](#movilidad)
+
     - [Apartado Electrónico](#apartado-electrónico)
         - [Baterías](#baterías)
         - [Sensores Ultrasónicos](#sensores-ultrasónicos)
         - [Conexiones y Circuitos](#conexiones-y-circuitos)
         - [Microcontroladores](#microcontroladores)
+
     - [Apartado Programático](#apartado-programático)
         - [Código por Componente](#código-por-componente)
         - [Diagramas de Flujo](#diagramas-de-flujo)
