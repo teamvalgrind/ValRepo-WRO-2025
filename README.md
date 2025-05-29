@@ -15,22 +15,22 @@
     - [Nuestro Objetivo](#nuestro-objetivo)
 2. [El Robot](#el-robot)
     - [Apartado Mecanico](#apartado-mecanico)
-        - [Diseño 3D](#diseño-3d)
+        - [Diseno 3D](#diseno-3d)
         - [Movilidad](#movilidad)
-    - [Apartado Electrónico](#apartado-electrónico)
-        - [Baterías](#baterías)
-        - [Sensores Ultrasónicos](#sensores-ultrasónicos)
+    - [Apartado Electronico](#apartado-electronico)
+        - [Baterias](#baterias)
+        - [Sensores Ultrasonicos](#sensores-ultrasonicos)
         - [Conexiones y Circuitos](#conexiones-y-circuitos)
         - [Microcontroladores](#microcontroladores)
-    - [Apartado Programático](#apartado-programático)
-        - [Código por Componente](#código-por-componente)
+    - [Apartado Programatico](#apartado-programatico)
+        - [Codigo por Componente](#codigo-por-componente)
         - [Diagramas de Flujo](#diagramas-de-flujo)
-        - [Algoritmos y Teoría](#algoritmos-y-teoría)
-        - [Compiladores y Comunicación](#compiladores-y-comunicación)
+        - [Algoritmos y Teoria](#algoritmos-y-teoria)
+        - [Compiladores y Comunicacion](#compiladores-y-comunicacion)
 4. [Recursos para Hacer el Robot](#recursos-para-hacer-el-robot)
-  - [Mecánica](#mecánica)
-  - [Electrónica](#electrónica)
-  - [Programación](#programación)
+    - [Mecanica](#mecanica)
+    - [Electronica](#electronica)
+    - [Programacion](#programacion)
 5. [Licencia](#licencia)
 
 ---
@@ -84,7 +84,7 @@ La World Robot Olympiad (WRO) es una competencia internacional de robótica educ
 
 ### Apartado Mecanico
 
-## Diseño 3D
+#### Diseño 3D
 
 Fusion 360 es una plataforma de software de modelado 3D, CAD, CAM, CAE y PCB basada en la nube, destinada al diseño y la fabricación de productos. Nos permite diseñar y crear productos de acuerdo a sus especificaciones particulares, garantizando que cada pieza cumpla con los más exigentes criterios de estética, forma, ajuste y funcionalidad. Además, incorpora un conjunto integral de herramientas avanzadas para el diseño de placas de circuito impreso y componentes electrónicos, lo que facilita la conceptualización y materialización de cualquier idea, incluso las más complejas. Al implementar estas funciones, la plataforma optimiza significativamente tanto el tiempo como los costos asociados, asegurando que el proceso de producción se realice de manera eficiente y que las piezas obtenidas sean de la más alta calidad. Nosotros usamos esta herramienta gráfica y de diseño para realizar los diseños del chasis y las piezas personalizadas de nuestro robot.
 
@@ -98,7 +98,7 @@ Nuestro robot emplea un sistema de tracción diferencial, ofreciendo maniobrabil
 
 ### Apartado Electrónico
 
-#### Baterías
+#### Baterias
 
 Para el proyecto, decidimos usar dos baterías:
 
@@ -110,7 +110,7 @@ Para el proyecto, decidimos usar dos baterías:
 
 <fotos>
 
-#### Sensores Ultrasónicos
+#### Sensores Ultrasonicos
 
 El robot cuenta con múltiples sensores ultrasónicos (HC-SR04) ubicados estratégicamente para la detección de obstáculos y el cálculo de distancias, permitiendo navegación autónoma y segura. El sensor HC-SR04 es un sensor de distancia de bajo costo, por lo que su uso es muy frecuente en la robótica. Incorpora un par de transductores de ultrasonido que se utilizan de manera conjunta para determinar la distancia del sensor con un objeto colocado frente a este. Un transductor emite una ráfaga de ultrasonido y el otro capta el rebote de dicha onda.
 
