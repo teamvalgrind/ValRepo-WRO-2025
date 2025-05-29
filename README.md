@@ -96,7 +96,7 @@ Nuestro robot emplea un sistema de tracción diferencial, ofreciendo maniobrabil
 
 ---
 
-### Apartado Electrónico
+### Apartado Electronico
 
 #### Baterias
 
@@ -131,9 +131,9 @@ Utilizamos ESP32.
 
 ---
 
-### Apartado Programático
+### Apartado Programatico
 
-#### Código por Componente
+#### Codigo por Componente
 
 En cuanto al código utilizado para manejar el robot, consiste en una parte en la que se definen los pines del BNO085, del ESC y de los ultrasónicos. Dentro del código se arma el ESC, se inicializan los sensores y se inicializa una función llamada "doceVueltas", la cual se encarga de hacer una lectura constante de los sensores ultrasónicos para decidir en qué momento girar, así como de registrar los giros para que el robot se detenga al completar exitosamente 3 vueltas.
 
@@ -199,7 +199,7 @@ En este diagrama de flujo se halla una representación gráfica del funcionamien
 
 [![IMG-20250523-WA0008.jpg](https://i.postimg.cc/QxYhNwBT/IMG-20250523-WA0008.jpg)](https://postimg.cc/YhFJbXzr)
 
-#### Algoritmos y Teoría
+#### Algoritmos y Teoria
 
 _(Se sugiere añadir aquí una breve explicación de los algoritmos principales y la teoría usada, si aplica)_
 
