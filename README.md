@@ -72,6 +72,12 @@ La World Robot Olympiad (WRO) es una competencia internacional de robótica educ
 
 Aun así, nuestro único objetivo no es solamente ganar. Como equipo unido, también tenemos la convicción de crear un robot no solo funcional, sino que cumpla nuestras expectativas. A pesar de ser intangible, nuestro deseo de culminar nuestro proyecto como un equipo unido y verlo brillar también es una meta importante para nosotros.
 
+## Nuestro Objetivo
+
+Diseñar, construir y programar un robot autónomo capaz de superar los desafíos de la WRO 2025, utilizando innovación y trabajo en equipo para lograr un desempeño sobresaliente en la etapa regional y avanzar a la nacional. Para llegar a esto, hemos pasado los últimos meses diseñando, construyendo, armando y programando nuestro más nuevo proyecto "Heimdall"
+
+La World Robot Olympiad (WRO) es una competencia internacional de robótica educativa que se desarrolla en varias fases, y nuestro equipo lógicamente tiene que comenzar por la fase regional, mediante la cual al ganarla se accede a la Fase Nacional. Cada país organiza su propio torneo clasificatorio, donde equipos de jóvenes compiten en distintas categorías, aplicando conocimientos de robótica y STEAM. Por último, la fase a la cual nuestro equipo quiere llegar es la Final Internacional. Los equipos ganadores de cada país participan en la competencia global, donde enfrentan desafíos más complejos y compiten con representantes de más de 95 países - foto wro - Aún así, nuestro único objetivo no es solamente ganar, como un equipo unido también tenemos la convicción de poder crear un robot no solo funcional, sino que llene nuestras expectativas; A pesar de ser intangible nuestro deseo de poder culminar nuestro proyecto como un equipo unido y verlo brillar, también es una meta importante para nosotros.
+
 ---
 
 ## El Robot
