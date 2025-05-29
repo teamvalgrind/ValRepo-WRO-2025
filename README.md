@@ -14,7 +14,7 @@
     - [Origenes](#origenes)
     - [Nuestro Objetivo](#nuestro-objetivo)
 3. [El Robot](#el-robot)
-    - [Apartado Mecánico](#apartado-mecánico)
+    - [Apartado Mecanico](#apartado-mecanico)
         - [Diseño 3D](#diseño-3d)
         - [Movilidad](#movilidad)
     - [Apartado Electrónico](#apartado-electrónico)
@@ -82,7 +82,7 @@ La World Robot Olympiad (WRO) es una competencia internacional de robótica educ
 
 ## El Robot
 
-### Apartado Mecánico
+### Apartado Mecanico
 
 #### Diseño 3D
 
