@@ -12,7 +12,7 @@
 1. [Nuestro Equipo](#nuestro-equipo)
     - [Integrantes](#integrantes)
     - [Origenes](#origenes)
-2. [Nuestro Objetivo](#nuestro-objetivo)
+    - [Nuestro Objetivo](#nuestro-objetivo)
 3. [El Robot](#el-robot)
     - [Apartado Mecánico](#apartado-mecánico)
         - [Diseño e Impresión 3D](#diseño-e-impresión-3d)
@@ -28,6 +28,9 @@
         - [Algoritmos y Teoría](#algoritmos-y-teoría)
         - [Compiladores y Comunicación](#compiladores-y-comunicación)
 4. [Recursos para Hacer el Robot](#recursos-para-hacer-el-robot)
+  - [Mecánica](#mecánica)
+  - [Electrónica](#electrónica)
+  - [Programación](#programación)
 5. [Licencia](#licencia)
 
 ---
