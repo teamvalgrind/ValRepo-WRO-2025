@@ -15,7 +15,7 @@
     - [Nuestro Objetivo](#nuestro-objetivo)
 2. [El Robot](#el-robot)
     - [Apartado Mecanico](#apartado-mecanico)
-        - [Diseno 3D](#diseno-3d)
+        - [Diseño 3D](#diseno-3d)
         - [Movilidad](#movilidad)
     - [Apartado Electronico](#apartado-electronico)
         - [Baterias](#baterias)
