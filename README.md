@@ -203,7 +203,7 @@ En este diagrama de flujo se halla una representación gráfica del funcionamien
 
 _(Se sugiere añadir aquí una breve explicación de los algoritmos principales y la teoría usada, si aplica)_
 
-#### Compiladores y Comunicación
+#### Compiladores y Comunicacion
 
 - **Lenguaje principal:** C++ (Arduino IDE)
 - **Compilador:** [Arduino IDE](https://www.arduino.cc/en/software)
@@ -212,6 +212,13 @@ _(Se sugiere añadir aquí una breve explicación de los algoritmos principales 
 ---
 
 ## Recursos para Hacer el Robot
+
+### Mecanica 
+
+### Electronica 
+
+### Programacion 
+
 
 - [Lista de materiales detallada](./docs/lista-componentes.md)
 - [Guía de armado paso a paso](./docs/guia-armado.md)
