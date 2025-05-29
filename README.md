@@ -56,7 +56,7 @@ Somos **[Team ValGrind]**, entusiastas de la robótica y la innovación. Represe
 - **Cristobal Mogoll  17 años, 09/01/2008  
   Un resumen corto
 
-- **Institución:** [Colegios Alto Ángel](https://www.instagram.com/colegio-saltoangel)
+- **Institución:** [Colegio Salto Ángel](https://www.instagram.com/colegiosaltoangel)
 - **Instagram Oficial:** [@team_valgrind](https://instagram.com/team_valgrind)
 - **Contáctanos:** [valgrind2025@gmail.com](mailto:valgrind2025@gmail.com)
 
