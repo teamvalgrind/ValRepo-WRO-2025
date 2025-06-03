@@ -53,7 +53,8 @@ Somos **[Team ValGrind]**, entusiastas de la robótica y la innovación. Represe
   17 años, 09/01/2008  
   Un resumen corto
 
-- **Cristobal Mogoll  17 años, 09/01/2008  
+- **Cristobal Mogollón** 
+  14 años, 14/07/2010  
   Un resumen corto
 
 - **Institución:** [Colegio Salto Ángel](https://www.instagram.com/colegiosaltoangel)
