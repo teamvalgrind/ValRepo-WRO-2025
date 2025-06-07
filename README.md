@@ -255,8 +255,7 @@ En este diagrama de flujo se halla una representación gráfica del funcionamien
 
 
 ### Otros Recursos
-- [Lista de materiales detallada](./docs/lista-componentes.md)
-- [Archivos STL para impresión 3D](./3d/)
+- [Archivos STL para impresión 3D](schemes)
 
 ---
 
