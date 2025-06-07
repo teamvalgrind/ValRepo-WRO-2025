@@ -324,8 +324,8 @@ Dentro de `Open-challenge.ino` está el resto de funciones descritas, y la lógi
 - BNO085
 - Ultrasónicos HSR04
 ### Programación 
-- Abierta.ino
-- Cerrada.ino
+- Open-Challenge.ino
+- Closed-Challenge.ino
 
 ---
 
