@@ -166,6 +166,20 @@ Para el proyecto, decidimos usar;
 
  ##### un kit de baterías recargables Urgenex, también de tecnología NiMH, diseñado para ofrecer una salida estable de 12 V y una capacidad de 3000 mAh por unidad en un formato compacto y robusto, que facilita su integración en proyectos de electrónica y robótica gracias a sus cables desnudos para conexiones directas. Garantizando una carga rápida y un suministro energético continuo y fiable, este kit nos resulta ideal para aplicaciones exigentes como las competencias de robótica en nuestra categoría, donde es imperativo optimizar tanto el rendimiento del sistema como los tiempos de montaje y costos operativos.
 
+### **LM2596**  
+El LM2596 es un regulador step down DC-DC diseñado para transformar tensiones elevadas en niveles adecuados para circuitos electrónicos.  Acepta un rango de entrada entre 4V y 35V, Lo cual evidentemente demuestra que es un componente electrónico bastante versátil en lo que al manejo de voltaje respecta, por lo tanto nuestro equipo decidió utilizarlo para poder manejar el voltaje en el circuito del robot de forma idónea.
+
+
+### **ESC INJORA MBC**  
+El ESC INJORA MBC es un controlador de velocidad diseñado para la gestión precisa de motores brushless en vehículos a control remoto.  
+Emplea un firmware avanzado que posibilita ajustes personalizados y optimiza la respuesta del motor.  
+Garantiza una operación ágil y segura, adaptándose a las exigencias dinámicas del uso en RC.  
+El ESC, a pesar de no ser usado convencionalmente para controlar motores más allá de control de velocidad, resulta ser bastante útil debido a su ligereza, facilidad de integración con otros componentes, y buena documentación en cuanto a programación y librerías.
+
+[!NOTE]
+> El ESC tiene que inicializarse gradualmente, es decir, si desea hacer un proyecto utilizándolo de forma análoga a nosotros, recomendamos fuertemente el hacer una graduación en cuanto a armar el ESC para evitar problemas de rendimiento y de start-up
+
+
 #### Sensores 
 
 [![D-NQ-NP-986330-MLV79479843776-102024-O.webp](https://i.postimg.cc/J0w9gkPq/D-NQ-NP-986330-MLV79479843776-102024-O.webp)](https://postimg.cc/N94J25h9)
