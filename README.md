@@ -253,10 +253,6 @@ En este diagrama de flujo se halla una representación gráfica del funcionamien
 - Cerrada.ino
 - Pixytest.ino
 
-
-### Otros Recursos
-- [Archivos STL para impresión 3D](schemes)
-
 ---
 
 > _¿Quieres contribuir o seguir nuestro avance? Síguenos en nuestras redes oficiales y revisa este repositorio para novedades y recursos._
