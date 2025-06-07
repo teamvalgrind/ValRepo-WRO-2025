@@ -189,6 +189,21 @@ Todos los módulos están conectados en un circuito organizado, minimizando inte
 
 [![esp32-wroom-32e.jpg](https://i.postimg.cc/mDT9SXGN/esp32-wroom-32e.jpg)](https://postimg.cc/f3gkzvyJ)
 
+
+	El **ESP32-WROOM** es un módulo todo-en-uno potente y económico basado en el chip ESP32, que integra un **procesador dual-core de hasta 240 MHz**, **Wi-Fi 802.11 b/g/n (2.4 GHz)**, y **Bluetooth (Clásico y BLE)**, junto con **4 MB de memoria flash SPI y 520 KB de RAM** en el mismo encapsulado, además de una antena PCB integrada; ofrece múltiples periféricos (GPIOs, ADC, DAC, UART, SPI, I2C, PWM, etc.), soporta modos de bajo consumo para baterías, y es ideal para proyectos de IoT, domótica, robótica o interfaces, siendo fácil de programar con Arduino IDE, ESP-IDF o MicroPython.
+	 -  Además del microcontrolador, también es necesario tener un buen entorno con las librerías necesarias para compilar y interpretar el código, y eventualmente crear un ecosistema óptimo para nuestro robot. Por esto, hemos decidido utilizar 4 librerías esenciales para lograr nuestro objetivo:
+1.  **`Wire.h` (Comunicación I²C):**  
+    Esencial para conectar sensores, pantallas (OLED) o memorias (EEPROM) que usen el bus I²C. Con `Wire.begin(SDA, SCL)` configuras los pines, luego usas `Wire.beginTransmission()`, `Wire.write()`, `Wire.read()` y `Wire.endTransmission()` para enviar/recibir datos. A partir de esta librería establecemos comunicación con el ESP-32.
+
+2.  **`Ultrasonic.h` (Sensor de Distancia):**  
+    Simplifica el uso de sensores como el HC-SR04. Con `Ultrasonic ultrasonic(TRIG, ECHO)` inicializas, y `ultrasonic.read()` devuelve la distancia en cm. Ideal para evadir los obstáculos de la pista y evitar colisiones con las paredes ya sean internas o externas. Así como sistemas de estacionamiento o cualquier proyecto que requiera detección de proximidad sin contacto, manejando automáticamente los pulsos de medición.
+
+3.  **`ESP32Servo.h` (Control de Servomotores):**  
+    Librería específica para manejar servos en el ESP32, ya que los timers PWM son distintos a Arduino. Con `servo.attach(PIN)` configuras y `servo.write(grados)` posicionas el servo (0°-180°). Crucial para manejar automatismos y conseguir movimiento angular preciso con motores de bajo torque.
+
+4.  **`Pixy2.h` (Cámara Inteligente Pixy2):**  
+    Facilita la comunicación con la cámara Pixy2 (vía I²C) para visión artificial simple. Detecta objetos por color, formas (bloques) o líneas. Usas `pixy.init()` y `pixy.ccc.getBlocks()` para obtener datos. A partir de la pixy, podemos crear código que pueda identificar los bloques verdes, rojos, y el estacionamiento magenta para que actúe acorde y pueda realizar el desafío cerrado.
+
 ---
 
 ### Apartado Programatico
