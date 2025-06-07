@@ -24,7 +24,6 @@
         - [Microcontroladores](#microcontroladores)
     - [Apartado Programatico](#apartado-programatico)
         - [Codigo por Componente](#codigo-por-componente)
-        - [Diagramas de Flujo](#diagramas-de-flujo)
 4. [Recursos para Hacer el Robot](#recdursos-para-hacer-el-robot)
     - [Mecanica](#mecanica)
     - [Electronica](#electronica)
@@ -182,14 +181,22 @@ Para el proyecto, decidimos usar;
 
 Todos los módulos están conectados en un circuito organizado, minimizando interferencias y facilitando el mantenimiento.  
 
+- Diagramas de Flujo
+
+En este diagrama de flujo se halla una representación gráfica del funcionamiento lógico de nuestra programación, así como de lo que se espera sea el desempeño del robot al inicializar el programa.
+
+
+[![IMG-20250523-WA0008.jpg](https://i.postimg.cc/QxYhNwBT/IMG-20250523-WA0008.jpg)](https://postimg.cc/YhFJbXzr)
+
+
 #### Microcontroladores
 
 ##### ESP-32
 
 [![esp32-wroom-32e.jpg](https://i.postimg.cc/mDT9SXGN/esp32-wroom-32e.jpg)](https://postimg.cc/f3gkzvyJ)
 
-```El **ESP32-WROOM** es un módulo todo-en-uno potente y económico basado en el chip ESP32, que integra un **procesador dual-core de hasta 240 MHz**, **Wi-Fi 802.11 b/g/n (2.4 GHz)**, y **Bluetooth (Clásico y BLE)**, junto con **4 MB de memoria flash SPI y 520 KB de RAM** en el mismo encapsulado, además de una antena PCB integrada; ofrece múltiples periféricos (GPIOs, ADC, DAC, UART, SPI, I2C, PWM, etc.), soporta modos de bajo consumo para baterías, y es ideal para proyectos de IoT, domótica, robótica o interfaces, siendo fácil de programar con Arduino IDE, ESP-IDF o MicroPython.
-	 -  Además del microcontrolador, también es necesario tener un buen entorno con las librerías necesarias para compilar y interpretar el código, y eventualmente crear un ecosistema óptimo para nuestro robot. Por esto, hemos decidido utilizar 4 librerías esenciales para lograr nuestro objetivo:```
+• El **ESP32-WROOM** es un módulo todo-en-uno potente y económico basado en el chip ESP32, que integra un **procesador dual-core de hasta 240 MHz**, **Wi-Fi 802.11 b/g/n (2.4 GHz)**, y **Bluetooth (Clásico y BLE)**, junto con **4 MB de memoria flash SPI y 520 KB de RAM** en el mismo encapsulado, además de una antena PCB integrada; ofrece múltiples periféricos (GPIOs, ADC, DAC, UART, SPI, I2C, PWM, etc.), soporta modos de bajo consumo para baterías, y es ideal para proyectos de IoT, domótica, robótica o interfaces, siendo fácil de programar con Arduino IDE, ESP-IDF o MicroPython.
+	 -  Además del microcontrolador, también es necesario tener un buen entorno con las librerías necesarias para compilar y interpretar el código, y eventualmente crear un ecosistema óptimo para nuestro robot. Por esto, hemos decidido utilizar 4 librerías esenciales para lograr nuestro objetivo:
 
 1.  **`Wire.h` (Comunicación I²C):**  
     Esencial para conectar sensores, pantallas (OLED) o memorias (EEPROM) que usen el bus I²C. Con `Wire.begin(SDA, SCL)` configuras los pines, luego usas `Wire.beginTransmission()`, `Wire.write()`, `Wire.read()` y `Wire.endTransmission()` para enviar/recibir datos. A partir de esta librería establecemos comunicación con el ESP-32.
@@ -211,26 +218,84 @@ Todos los módulos están conectados en un circuito organizado, minimizando inte
 
 En cuanto al código utilizado para manejar el robot, consiste en una parte en la que se definen los pines del ESC y de los ultrasónicos. Dentro del código se arma el ESC, se inicializan los sensores y se inicializa una función llamada "doceVueltas", la cual se encarga de hacer una lectura constante de los sensores ultrasónicos para decidir en qué momento girar, así como de registrar los giros para que el robot se detenga al completar exitosamente 3 vueltas.
 
-En este apartado se inicializan los pines:
+En este apartado se inicializa el ESC, y se prepara el robot para ejecutar la función que sigue:
 ```cpp
+  esc.attach(PIN_ESC, 1000, 2000);
+  myservo.attach(PIN_SERVO);
+  Serial.begin(115200);
 
-tt pines
+  pinMode(PIN_BOTON, INPUT_PULLUP);  // Botón con resistencia interna pull-up
+
+  esc.write(90);  // ESC en posición neutra
+  myservo.write(100); // Servo centrado
+  delay(3000);
+
+  Serial.println("Esperando pulsar botón para iniciar...");
+}
 ```
 
-Y en este, se llama a la función 
+Y en este, se llama a la función de DoceGiros, la cual ejecuta los giros y ajustes específicos del robot 
 
 ```cpp
-tt docegiros
+if (contadorGiros >= 12) {
+    // Avanzar 1 segundo más y detenerse definitivamente
+    if (!finalizado) {
+      Serial.println("Se alcanzaron 12 giros, avanzando 1 segundo más y deteniéndose.");
+      Adelante();
+      delay(1000);
+      Parar();
+      motorEnMarcha = false;
+      finalizado = true;
+    }
+    return;
+  }
 
+  if (!girando) {
+    if (frontal != -1 && frontal > DISTANCIA_OBSTACULO_FRONTAL) {
+      if (!motorEnMarcha) {
+        Adelante();
+        motorEnMarcha = true;
+      }
+
+      if (ahora - tiempoUltimoGiro < TIEMPO_ESPERA_GIRO) {
+        Serial.println("Avanzando recto después del giro, sin girar");
+      } else {
+        if (izquierda != -1 && izquierda > DISTANCIA_OBSTACULO_LATERAL) {
+          girando = true;
+          Parar();
+          motorEnMarcha = false;
+          Serial.println("Girando a la izquierda por más de 190 cm libres");
+          Izquierda();
+          contadorGiros++;
+          girando = false;
+          tiempoUltimoGiro = millis();
+          Adelante();
+          motorEnMarcha = true;
+        } else if (derecha != -1 && derecha > DISTANCIA_OBSTACULO_LATERAL) {
+          girando = true;
+          Parar();
+          motorEnMarcha = false;
+          Serial.println("Girando a la derecha por más de 190 cm libres");
+          Derecha();
+          contadorGiros++;
+          girando = false;
+          tiempoUltimoGiro = millis();
+          Adelante();
+          motorEnMarcha = true;
+        }
+      }
+    } else if (frontal != -1 && frontal <= DISTANCIA_OBSTACULO_FRONTAL) {
+      if (motorEnMarcha) {
+        Parar();
+        motorEnMarcha = false;
+      }
+      Serial.println("Obstáculo frontal detectado, detenido");
+    }
+  }
+}
 ```
 
 Dentro de `Open-challenge.ino` está el resto de funciones descritas, y la lógica de programación mediante la cual el robot completa el desafío abierto.
-
-#### Diagramas de Flujo
-
-En este diagrama de flujo se halla una representación gráfica del funcionamiento lógico de nuestra programación, así como de lo que se espera sea el desempeño del robot al inicializar el programa.
-
-[![IMG-20250523-WA0008.jpg](https://i.postimg.cc/QxYhNwBT/IMG-20250523-WA0008.jpg)](https://postimg.cc/YhFJbXzr)
 
 #### Compiladores y Comunicacion
 
@@ -254,13 +319,13 @@ En este diagrama de flujo se halla una representación gráfica del funcionamien
 - Rolineras
 - Urgenex Li-Ion 3000mAh
 ### Electrónico 
+- ESC
 - ESP-32
 - BNO085
 - Ultrasónicos HSR04
 ### Programación 
 - Abierta.ino
 - Cerrada.ino
-- Pixytest.ino
 
 ---
 
