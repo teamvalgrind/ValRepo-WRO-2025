@@ -53,8 +53,8 @@ Somos **[Team ValGrind]**, entusiastas de la robótica y la innovación. Represe
   14 años, 14/07/2010
 
  <a href="https://postimg.cc/zyBtFWGD">
-  <img src="https://i.postimg.cc/525h1Scz/IMG-20250606-195101.jpg" alt="IMG-20250606-195101.jpg" width="320" height="240">
-</a>
+    <img src="https://i.postimg.cc/525h1Scz/IMG-20250606-195101.jpg" alt="IMG-20250606-195101.jpg" width="320">
+  </a>
 
 - **Institución:** [Colegio Salto Ángel](https://www.instagram.com/colegiosaltoangel)
 - **Instagram Oficial:** [@team_valgrind](https://instagram.com/team_valgrind)
