@@ -103,12 +103,11 @@ Antes de hablar de la movilidad o funcionalidad de nuestro robot, primero hay qu
 [![skey-rightclick.jpg](https://i.postimg.cc/g2c9WTDF/skey-rightclick.jpg)](https://postimg.cc/WhyYmSCX)
 #### Movilidad
 
-Ahora bien, ya habiendo dilucidado las piezas que confirmarán nuestro robot, hay que asegurarnos de que este cuente con las herramientas necesarias para moverse y evadir los obstáculos de la pista.
+Ahora bien, ya habiendo dilucidado como podemos elegir, diseñar y imprimir las piezas de nuestro robot, hay que asegurarnos de que este cuente con las herramientas necesarias para moverse y evadir los obstáculos de la pista.
 
 > [!NOTE]
 > Video de Heimdall realizando el Open Challenge
 [Video](https://youtu.be/zEmvAiKoWxc)
-
 
 
 Nuestro robot emplea un sistema de tracción diferencial, ofreciendo maniobrabilidad precisa para enfrentar los retos del campo de competencia. El sistema de cruces se realiza mediante un servo que ajusta la dirección del robot en intersecciones críticas.
@@ -133,8 +132,6 @@ El núcleo de la movilidad de nuestro robot reside en su **subsistema mecánico 
     - Su cuerpo es más corto que un motor estándar (que suele ser ~360°), ahorrando espacio vital en un robot compacto.
     - Un motor de "mayor T" (como 48T) proporciona **más par (fuerza de torsión)** a velocidades más bajas, en comparación con motores de menor T (ej: 20T) que son más rápidos pero con menos fuerza. Este alto par es *esencial* para iniciar derrapes controlados, superar pequeñas irregularidades y proporcionar aceleración contundente, incluso con las ruedas de drift que ofrecen menos tracción.
 
-
-
 3.  **Ruedas de Drift**
 
     - Son el **elemento transformador clave para el derrape**. Están fabricadas típicamente con un compuesto plástico duro y liso (como ABS o PU). A diferencia de las ruedas de goma adherentes, estas **minimizan deliberadamente la fricción** con superficies como linóleo o parquet (comunes en pistas WRO). Esta baja tracción permite que las ruedas motrices (traseras) pierdan agarre de manera controlada cuando se aplica potencia y dirección, iniciando y manteniendo el derrape deseado. Su diámetro y ancho se eligen para complementar la escala 1/18 y el comportamiento dinámico del robot.
@@ -142,7 +139,6 @@ El núcleo de la movilidad de nuestro robot reside en su **subsistema mecánico 
 4.  **Tornillos, Tuercas de Seguridad y Arandelas (M2 y M3)**
 
 [![71jo-Lr4ep-SL-AC-UF894-1000-QL80.jpg](https://i.postimg.cc/Hk0rnwfq/71jo-Lr4ep-SL-AC-UF894-1000-QL80.jpg)](https://postimg.cc/cvHx5n1h)
-
 
   -  Ya sean M2 o M3, son piezas imprescindibles para la mecanica de nuestro robot, debido a la fijacion de piezas pequeñas, estabilización de componentes, y la garantía de seguridad que otorgan con respecto al uso prolongado del robot ya sea en practicas o en la competición.
   - Se decidió tomar la decisión de tener tornillos M2 y M3 de forma simultánea para velar por la eficiencia del espacio, para permitir compatibilidad con los componentes más pequeños, y al mismo tiempo para garantizar que los tornillos resistan y permitan estabilidad en el robot.
