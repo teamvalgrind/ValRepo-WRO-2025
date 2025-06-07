@@ -87,7 +87,7 @@ Aún así, nuestro único objetivo no es solamente ganar, como un equipo unido t
 
 ## El Robot
 
-<foto principal del robot>
+[![IMG-20250607-WA0020.jpg](https://i.postimg.cc/prpdddx8/IMG-20250607-WA0020.jpg)](https://postimg.cc/7Jr4sw5Y)
 
 ### Apartado Mecanico
 
