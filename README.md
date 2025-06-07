@@ -169,6 +169,8 @@ Para el proyecto, decidimos usar;
 ### **LM2596**  
 El LM2596 es un regulador step down DC-DC diseñado para transformar tensiones elevadas en niveles adecuados para circuitos electrónicos.  Acepta un rango de entrada entre 4V y 35V, Lo cual evidentemente demuestra que es un componente electrónico bastante versátil en lo que al manejo de voltaje respecta, por lo tanto nuestro equipo decidió utilizarlo para poder manejar el voltaje en el circuito del robot de forma idónea.
 
+[![images-20.jpg](https://i.postimg.cc/j2fgHz4h/images-20.jpg)](https://postimg.cc/RJML9J83)
+
 
 ### **ESC INJORA MBC**  
 El ESC INJORA MBC es un controlador de velocidad diseñado para la gestión precisa de motores brushless en vehículos a control remoto.  
