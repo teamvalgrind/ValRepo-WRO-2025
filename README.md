@@ -95,13 +95,12 @@ Aún así, nuestro único objetivo no es solamente ganar, como un equipo unido t
 
 Antes de hablar de la movilidad o funcionalidad de nuestro robot, primero hay que explicar nuestros métodos de Diseño e Impresión 3D, los cuales se llevaron a cabo mediante Fusion 360
 
+
+
 > [!NOTE]
 > Fusion 360 es una plataforma de software de modelado 3D, CAD, CAM, CAE y PCB basada en la nube, destinada al diseño y la fabricación de productos. Nos permite diseñar y crear productos de acuerdo a sus especificaciones particulares, garantizando que cada pieza cumpla con los más exigentes criterios de estética, forma, ajuste y funcionalidad. Además, incorpora un conjunto integral de herramientas avanzadas para el diseño de placas de circuito impreso y componentes electrónicos, lo que facilita la conceptualización y materialización de cualquier idea, incluso las más complejas. Al implementar estas funciones, la plataforma optimiza significativamente tanto el tiempo como los costos asociados, asegurando que el proceso de producción se realice de manera eficiente y que las piezas obtenidas sean de la más alta calidad. Nosotros usamos esta herramienta gráfica y de diseño para realizar los diseños del chasis y las piezas personalizadas de nuestro robot.
 
-#### Diseño STL del Chasis de Heimdall
-
-![Chasis 3D](https://github.com/damuec/ValRepo1/assets/chasis-3d.png)
-
+[![skey-rightclick.jpg](https://i.postimg.cc/g2c9WTDF/skey-rightclick.jpg)](https://postimg.cc/WhyYmSCX)
 #### Movilidad
 
 Ahora bien, ya habiendo dilucidado las piezas que confirmarán nuestro robot, hay que asegurarnos de que este cuente con las herramientas necesarias para moverse y evadir los obstáculos de la pista.
