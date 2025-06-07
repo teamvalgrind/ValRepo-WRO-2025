@@ -18,7 +18,6 @@
         - [Impresion 3D](#impresion-3d)
         - [Movilidad](#movilidad)
     - [Apartado Electronico](#apartado-electronico)
-        - [Baterias](#baterias)
         - [Sensores](#sensores)
         - [Conexiones y Circuitos](#conexiones-y-circuitos)
         - [Microcontroladores](#microcontroladores)
@@ -156,22 +155,22 @@ El núcleo de la movilidad de nuestro robot reside en su **subsistema mecánico 
 
 ### Apartado Electronico
 
-#### Baterias
-
 Para el proyecto, decidimos usar;
 
 [![71-Hj-Atre-KHL-AC-UL495-SR435-495.jpg](https://i.postimg.cc/Njq8qLH9/71-Hj-Atre-KHL-AC-UL495-SR435-495.jpg)](https://postimg.cc/dL6ZGsnw)
 
- ##### un kit de baterías recargables Urgenex, también de tecnología NiMH, diseñado para ofrecer una salida estable de 12 V y una capacidad de 3000 mAh por unidad en un formato compacto y robusto, que facilita su integración en proyectos de electrónica y robótica gracias a sus cables desnudos para conexiones directas. Garantizando una carga rápida y un suministro energético continuo y fiable, este kit nos resulta ideal para aplicaciones exigentes como las competencias de robótica en nuestra categoría, donde es imperativo optimizar tanto el rendimiento del sistema como los tiempos de montaje y costos operativos.
+### **Baterías**
+
+ ##### un kit de baterías recargables Urgenex, de tecnología NiMH, diseñado para ofrecer una salida estable de 12 V y una capacidad de 3000 mAh por unidad en un formato compacto y robusto, que facilita su integración en proyectos de electrónica y robótica gracias a sus cables desnudos para conexiones directas. Garantizando una carga rápida y un suministro energético continuo y fiable, este kit nos resulta ideal para aplicaciones exigentes como las competencias de robótica en nuestra categoría, donde es imperativo optimizar tanto el rendimiento del sistema como los tiempos de montaje y costos operativos.
 
 ### **LM2596**  
-El LM2596 es un regulador step down DC-DC diseñado para transformar tensiones elevadas en niveles adecuados para circuitos electrónicos.  Acepta un rango de entrada entre 4V y 35V, Lo cual evidentemente demuestra que es un componente electrónico bastante versátil en lo que al manejo de voltaje respecta, por lo tanto nuestro equipo decidió utilizarlo para poder manejar el voltaje en el circuito del robot de forma idónea.
+##### El LM2596 es un regulador step down DC-DC diseñado para transformar tensiones elevadas en niveles adecuados para circuitos electrónicos.  Acepta un rango de entrada entre 4V y 35V, Lo cual evidentemente demuestra que es un componente electrónico bastante versátil en lo que al manejo de voltaje respecta, por lo tanto nuestro equipo decidió utilizarlo para poder manejar el voltaje en el circuito del robot de forma idónea.
 
 [![images-20.jpg](https://i.postimg.cc/j2fgHz4h/images-20.jpg)](https://postimg.cc/RJML9J83)
 
 
 ### **ESC INJORA MBC**  
-El ESC INJORA MBC es un controlador de velocidad diseñado para la gestión precisa de motores brushless en vehículos a control remoto.  
+##### El ESC INJORA MBC es un controlador de velocidad diseñado para la gestión precisa de motores brushless en vehículos a control remoto.  
 Emplea un firmware avanzado que posibilita ajustes personalizados y optimiza la respuesta del motor.  
 Garantiza una operación ágil y segura, adaptándose a las exigencias dinámicas del uso en RC.  
 El ESC, a pesar de no ser usado convencionalmente para controlar motores más allá de control de velocidad, resulta ser bastante útil debido a su ligereza, facilidad de integración con otros componentes, y buena documentación en cuanto a programación y librerías.
