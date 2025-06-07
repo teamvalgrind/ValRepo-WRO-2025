@@ -176,7 +176,7 @@ Emplea un firmware avanzado que posibilita ajustes personalizados y optimiza la 
 Garantiza una operación ágil y segura, adaptándose a las exigencias dinámicas del uso en RC.  
 El ESC, a pesar de no ser usado convencionalmente para controlar motores más allá de control de velocidad, resulta ser bastante útil debido a su ligereza, facilidad de integración con otros componentes, y buena documentación en cuanto a programación y librerías.
 
-[!NOTE]
+> [!NOTE]
 > El ESC tiene que inicializarse gradualmente, es decir, si desea hacer un proyecto utilizándolo de forma análoga a nosotros, recomendamos fuertemente el hacer una graduación en cuanto a armar el ESC para evitar problemas de rendimiento y de start-up
 
 
