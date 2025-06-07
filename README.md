@@ -164,9 +164,9 @@ El núcleo de la movilidad de nuestro robot reside en su **subsistema mecánico 
 
 Para el proyecto, decidimos usar;
 
+[![71-Hj-Atre-KHL-AC-UL495-SR435-495.jpg](https://i.postimg.cc/Njq8qLH9/71-Hj-Atre-KHL-AC-UL495-SR435-495.jpg)](https://postimg.cc/dL6ZGsnw)
 
-
- ##### un kit de baterías recargables Tenergy, también de tecnología NiMH, diseñado para ofrecer una salida estable de 12 V y una capacidad de 3000 mAh por unidad en un formato compacto y robusto, que facilita su integración en proyectos de electrónica y robótica gracias a sus cables desnudos para conexiones directas. Garantizando una carga rápida y un suministro energético continuo y fiable, este kit nos resulta ideal para aplicaciones exigentes como las competencias de robótica en nuestra categoría, donde es imperativo optimizar tanto el rendimiento del sistema como los tiempos de montaje y costos operativos.
+ ##### un kit de baterías recargables Urgenex, también de tecnología NiMH, diseñado para ofrecer una salida estable de 12 V y una capacidad de 3000 mAh por unidad en un formato compacto y robusto, que facilita su integración en proyectos de electrónica y robótica gracias a sus cables desnudos para conexiones directas. Garantizando una carga rápida y un suministro energético continuo y fiable, este kit nos resulta ideal para aplicaciones exigentes como las competencias de robótica en nuestra categoría, donde es imperativo optimizar tanto el rendimiento del sistema como los tiempos de montaje y costos operativos.
 
 #### Sensores 
 
