@@ -109,6 +109,7 @@ Ahora bien, ya habiendo dilucidado las piezas que confirmarán nuestro robot, ha
 
 > [!NOTE]
 > Video de Heimdall realizando el Open Challenge
+[Video](https://youtu.be/zEmvAiKoWxc)
 
 
 
