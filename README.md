@@ -162,16 +162,11 @@ El núcleo de la movilidad de nuestro robot reside en su **subsistema mecánico 
 
 #### Baterias
 
-Para el proyecto, decidimos usar dos baterías:
-
-[![61ke-U06-D5v-L-AC-UF1000-1000-QL80.jpg](https://i.postimg.cc/3rbSfpbQ/61ke-U06-D5v-L-AC-UF1000-1000-QL80.jpg)](https://postimg.cc/V5nWdS8K)
-
-- La primera es un paquete de 2 baterías recargables de 12 V con una capacidad nominal de 2000 mAh cada una. Utilizan tecnología de níquel-metal hidruro (NiMH), lo que elimina el efecto memoria y garantiza que, a pesar de repetidos ciclos de carga y descarga, la capacidad de energía se conserve de forma óptima. Con dimensiones aproximadas de 50 x 29 x 72 mm y cableado con cables desnudos, la batería permite una integración versátil y directa, lo cual facilita su integración dentro de nuestro proyecto sin afectar el rendimiento de otros componentes o el diseño.
+Para el proyecto, decidimos usar;
 
 
-[![images-19.jpg](https://i.postimg.cc/QMmGFCNN/images-19.jpg)](https://postimg.cc/bGZFMz24)
 
- ##### La segunda es un kit de baterías recargables Tenergy, también de tecnología NiMH, diseñado para ofrecer una salida estable de 12 V y una capacidad de 2000 mAh por unidad en un formato compacto y robusto, que facilita su integración en proyectos de electrónica y robótica gracias a sus cables desnudos para conexiones directas. Garantizando una carga rápida y un suministro energético continuo y fiable, este kit nos resulta ideal para aplicaciones exigentes como las competencias de robótica en nuestra categoría, donde es imperativo optimizar tanto el rendimiento del sistema como los tiempos de montaje y costos operativos.
+ ##### un kit de baterías recargables Tenergy, también de tecnología NiMH, diseñado para ofrecer una salida estable de 12 V y una capacidad de 3000 mAh por unidad en un formato compacto y robusto, que facilita su integración en proyectos de electrónica y robótica gracias a sus cables desnudos para conexiones directas. Garantizando una carga rápida y un suministro energético continuo y fiable, este kit nos resulta ideal para aplicaciones exigentes como las competencias de robótica en nuestra categoría, donde es imperativo optimizar tanto el rendimiento del sistema como los tiempos de montaje y costos operativos.
 
 #### Sensores 
 
