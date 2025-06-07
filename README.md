@@ -51,7 +51,7 @@ Somos **[Team ValGrind]**, entusiastas de la robótica y la innovación. Represe
 
 - **Cristobal Mogollón**
   14 años, 14/07/2010
- <foto>
+ [![IMG-20250606-195101.jpg](https://i.postimg.cc/525h1Scz/IMG-20250606-195101.jpg)](https://postimg.cc/zyBtFWGD)
 
 - **Institución:** [Colegio Salto Ángel](https://www.instagram.com/colegiosaltoangel)
 - **Instagram Oficial:** [@team_valgrind](https://instagram.com/team_valgrind)
