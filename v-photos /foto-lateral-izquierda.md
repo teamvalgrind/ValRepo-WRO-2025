@@ -1,3 +1,1 @@
-#include <QTRSensors.h>
-
-QTRSensors qtr;
+[![IMG-20250605-192216.jpg](https://i.postimg.cc/fW80rctH/IMG-20250605-192216.jpg)](https://postimg.cc/G9s2BsjY)
