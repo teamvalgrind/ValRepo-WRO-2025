@@ -188,8 +188,6 @@ Para el proyecto, decidimos usar dos baterías:
 
 Todos los módulos están conectados en un circuito organizado, minimizando interferencias y facilitando el mantenimiento.  
 
-[Ver diagrama del circuito](./docs/diagrama-electronico.png)
-
 #### Microcontroladores
 
 ##### ESP-32
