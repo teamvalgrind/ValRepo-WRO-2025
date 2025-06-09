@@ -25,6 +25,7 @@ Pixy2 pixy;
 const int DISTANCIA_OBSTACULO_FRONTAL = 20;
 const int DISTANCIA_OBSTACULO_LATERAL = 190;
 const unsigned long DURACION_GIRO_MS = 750;
+const unsigned long DURACION_GIRO_BLOQUE_MS = 350; // Giro leve ~45°
 const unsigned long TIEMPO_ESPERA_GIRO = 2500;
 
 const uint8_t ROJO_SIGNATURE = 1;
@@ -100,26 +101,22 @@ void docegiros_pixy() {
 
   if (bloqueRojo) {
     Parar();
-    delay(150);
-    Serial.println("Evitando BLOQUE ROJO: Girando Derecha.");
-    Derecha();
-    contadorGiros++;
-    tiempoUltimoGiro = millis();
+    delay(120);
+    Serial.println("Evitando BLOQUE ROJO: Giro leve derecha.");
+    Derechabloque();
     Adelante();
     motorEnMarcha = true;
-    delay(400);
+    delay(180);
     return;
   }
   if (bloqueVerde) {
     Parar();
-    delay(150);
-    Serial.println("Evitando BLOQUE VERDE: Girando Izquierda.");
-    Izquierda();
-    contadorGiros++;
-    tiempoUltimoGiro = millis();
+    delay(120);
+    Serial.println("Evitando BLOQUE VERDE: Giro leve izquierda.");
+    Izquierdabloque();
     Adelante();
     motorEnMarcha = true;
-    delay(400);
+    delay(180);
     return;
   }
 
@@ -148,9 +145,8 @@ void docegiros_pixy() {
           girando = true;
           Parar();
           motorEnMarcha = false;
-          Serial.println("Girando a la izquierda por más de 190 cm libres");
+          Serial.println("Giro completo izquierda (esquina)");
           Izquierda();
-          contadorGiros++;
           girando = false;
           tiempoUltimoGiro = millis();
           Adelante();
@@ -159,9 +155,8 @@ void docegiros_pixy() {
           girando = true;
           Parar();
           motorEnMarcha = false;
-          Serial.println("Girando a la derecha por más de 190 cm libres");
+          Serial.println("Giro completo derecha (esquina)");
           Derecha();
-          contadorGiros++;
           girando = false;
           tiempoUltimoGiro = millis();
           Adelante();
@@ -190,18 +185,6 @@ void Parar() {
   Serial.println("Motor detenido");
 }
 
-void Izquierda() {
-  esc.write(130);
-  myservo.write(150);
-  unsigned long inicio = millis();
-  while (millis() - inicio < DURACION_GIRO_MS) {
-    delay(10);
-  }
-  myservo.write(99);
-  esc.write(90);
-  Serial.println("Giro izquierda completado");
-}
-
 void Derecha() {
   esc.write(130);
   myservo.write(30);
@@ -211,5 +194,45 @@ void Derecha() {
   }
   myservo.write(99);
   esc.write(90);
-  Serial.println("Giro derecha completado");
+  Serial.println("Giro derecha completo");
+  contadorGiros++;
+}
+
+void Derechabloque() {
+  esc.write(130);
+  myservo.write(60); // Giro leve derecha (ajusta este valor según tu robot)
+  unsigned long inicio = millis();
+  while (millis() - inicio < DURACION_GIRO_BLOQUE_MS) {
+    delay(10);
+  }
+  myservo.write(99);
+  esc.write(90);
+  Serial.println("Giro leve derecha para esquivar bloque");
+  // NO aumenta contadorGiros
+}
+
+void Izquierda() {
+  esc.write(130);
+  myservo.write(150);
+  unsigned long inicio = millis();
+  while (millis() - inicio < DURACION_GIRO_MS) {
+    delay(10);
+  }
+  myservo.write(99);
+  esc.write(90);
+  Serial.println("Giro izquierda completo");
+  contadorGiros++;
+}
+
+void Izquierdabloque() {
+  esc.write(130);
+  myservo.write(130); // Giro leve izquierda (ajusta este valor según tu robot)
+  unsigned long inicio = millis();
+  while (millis() - inicio < DURACION_GIRO_BLOQUE_MS) {
+    delay(10);
+  }
+  myservo.write(99);
+  esc.write(90);
+  Serial.println("Giro leve izquierda para esquivar bloque");
+  // NO aumenta contadorGiros
 }
