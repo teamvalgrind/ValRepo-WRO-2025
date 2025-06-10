@@ -98,11 +98,11 @@ Aún así, nuestro único objetivo no es solamente ganar, como un equipo unido t
 Antes de hablar de la movilidad o funcionalidad de nuestro robot, primero hay que explicar nuestros métodos de Diseño e Impresión 3D, los cuales se llevaron a cabo mediante Fusion 360
 
 
-
 > [!NOTE]
 > Fusion 360 es una plataforma de software de modelado 3D, CAD, CAM, CAE y PCB basada en la nube, destinada al diseño y la fabricación de productos. Nos permite diseñar y crear productos de acuerdo a sus especificaciones particulares, garantizando que cada pieza cumpla con los más exigentes criterios de estética, forma, ajuste y funcionalidad. Además, incorpora un conjunto integral de herramientas avanzadas para el diseño de placas de circuito impreso y componentes electrónicos, lo que facilita la conceptualización y materialización de cualquier idea, incluso las más complejas. Al implementar estas funciones, la plataforma optimiza significativamente tanto el tiempo como los costos asociados, asegurando que el proceso de producción se realice de manera eficiente y que las piezas obtenidas sean de la más alta calidad. Nosotros usamos esta herramienta gráfica y de diseño para realizar los diseños del chasis y las piezas personalizadas de nuestro robot.
 
 [![skey-rightclick.jpg](https://i.postimg.cc/g2c9WTDF/skey-rightclick.jpg)](https://postimg.cc/WhyYmSCX)
+
 #### Movilidad
 
 Ahora bien, ya habiendo dilucidado como podemos elegir, diseñar y imprimir las piezas de nuestro robot, hay que asegurarnos de que este cuente con las herramientas necesarias para moverse y evadir los obstáculos de la pista.
@@ -112,7 +112,17 @@ Ahora bien, ya habiendo dilucidado como podemos elegir, diseñar y imprimir las 
 [Video](https://youtu.be/zEmvAiKoWxc)
 
 
-Nuestro robot emplea un sistema de tracción diferencial, ofreciendo maniobrabilidad precisa para enfrentar los retos del campo de competencia. El sistema de cruces se realiza mediante un servo que ajusta la dirección del robot en intersecciones críticas.
+Nuestro robot emplea un sistema de tracción diferencial, ofreciendo maniobrabilidad precisa para enfrentar los retos del campo de competencia. El sistema de cruces se realiza mediante un servo que ajusta la dirección del robot en intersecciones de forma eficaz. También cabe destacar el hecho de que utilizamos una técnica llamada Geometría Ackermann pura para emplear el sistema de movilidad de nuestro vehículo.
+
+Foto de los planos del servo
+foto de Ackerman giro
+
+
+> [!NOTE]
+> En la ingeniería automovilística moderna, la geometría Ackermann pura se modifica a menudo para tener en cuenta factores dinámicos como los ángulos de deslizamiento de los neumáticos, que adquieren importancia a velocidades más altas. En la conducción de competición y de alto rendimiento, por ejemplo, los ingenieros ajustan la geometría de la dirección (a menudo con una configuración que se aleja de la geometría Ackermann ideal) para inducir deliberadamente un ligero deslizamiento de los neumáticos y mejorar el agarre lateral. Estos ajustes tienen en cuenta factores como la transferencia de peso, la dinámica de la suspensión y la variación de la carga de los neumáticos, todos los cuales influyen en el comportamiento del vehículo en las curvas a alta velocidad. Aunque se originó en una época en la que primaba la simplicidad mecánica, sus ideas fundamentales siguen influyendo en el diseño moderno de la dirección, aunque a menudo como punto de partida de sistemas más sofisticados que integran programas electrónicos de estabilidad y métodos de control dinámico.
+
+foto de Ackerman 2
+
 
 El núcleo de la movilidad de nuestro robot reside en su **subsistema mecánico de transmisión y tracción**, cuidadosamente seleccionado con componentes específicos de alta calidad. Vamos a desglosar cómo cada pieza encaja en este rompecabezas de ingeniería en miniatura, usando la escala **1/18** como referencia clave para tamaño e integración:
 
