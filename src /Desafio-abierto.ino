@@ -1,6 +1,17 @@
 /*
   Código de Heimdall para la categoría futuros ingenieros de la WRO 2025
   Hecho por Cristobal Mogollon y Samuel Burgos
+
+  El código hace que el robot al prenderse avance y de 3 vueltas a la pista
+  de futuros ingenieros en la etapa abierta y al completar la cantidad de 12
+  giros a la pista avanzará dos segundos más y se detiene automáticamente
+
+  Version del codigo: 5
+  En esta version del codigo se cambia de placa pasamos de usar un arduino 
+  mega a cambiar a esp32 por el tema de la diferencia de tamaño entre ambas 
+  la esp32 al ser mas pequeña reducimos peso y ahorramos mas espacio tambien 
+  cuenta con la ventaja de la memoria que es mas extensa a la de un arduino mega
+
 */
 
 #include <Wire.h>
@@ -26,10 +37,10 @@ Ultrasonic USRight(USTRIGHT, USERIGHT);
 Servo esc;
 Servo myservo;
 
-const int DISTANCIA_OBSTACULO_FRONTAL = 20;
-const int DISTANCIA_OBSTACULO_LATERAL = 190;
-const unsigned long DURACION_GIRO_MS = 750;
-const unsigned long TIEMPO_ESPERA_GIRO = 2500; // 2500 ms
+const int DISTANCIA_OBSTACULO_FRONTAL = 25;
+const int DISTANCIA_OBSTACULO_LATERAL = 175;
+const unsigned long DURACION_GIRO_MS = 600;
+const unsigned long TIEMPO_ESPERA_GIRO = 2650; // 2500 ms
 
 bool motorEnMarcha = false;
 bool girando = false;
@@ -47,7 +58,7 @@ void setup() {
   pinMode(PIN_BOTON, INPUT_PULLUP);  // Botón con resistencia interna pull-up
 
   esc.write(90);  // ESC en posición neutra
-  myservo.write(100); // Servo centrado
+  myservo.write(99); // Servo centrado
   delay(3000);
 
   Serial.println("Esperando pulsar botón para iniciar...");
@@ -89,7 +100,7 @@ void docegiros() {
     if (!finalizado) {
       Serial.println("Se alcanzaron 12 giros, avanzando 1 segundo más y deteniéndose.");
       Adelante();
-      delay(1000);
+      delay(1300);
       Parar();
       motorEnMarcha = false;
       finalizado = true;
@@ -144,7 +155,7 @@ void docegiros() {
 void Adelante() {
   esc.write(90);
   delay(200);
-  esc.write(130);
+  esc.write(135);
   Serial.println("Motor en marcha hacia adelante");
 }
 
@@ -154,7 +165,7 @@ void Parar() {
 }
 
 void Izquierda() {
-  esc.write(130);
+  esc.write(135);
   myservo.write(150); // Ángulo extremo derecha
   unsigned long inicio = millis();
   while (millis() - inicio < DURACION_GIRO_MS) {
@@ -166,13 +177,13 @@ void Izquierda() {
 }
 
 void Derecha() {
-  esc.write(130);
+  esc.write(135);
   myservo.write(30); // Ángulo extremo izquierda
   unsigned long inicio = millis();
   while (millis() - inicio < DURACION_GIRO_MS) {
     delay(10);
   }
-  myservo.write(99); // Centrar servo
+  myservo.write(100); // Centrar servo
   esc.write(90);
   Serial.println("Giro derecha completado");
 }
