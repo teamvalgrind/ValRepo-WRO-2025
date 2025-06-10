@@ -57,11 +57,11 @@ void loop() {
       delay(500);
     }
   } else if (!finalizado) {
-    controlarRobot();
+    doceGiros();
   }
 }
 
-void controlarRobot() {
+void doceGiros() {
   unsigned long ahora = millis();
   int frontal = USFront.read();
   int izquierda = USLeft.read();
