@@ -48,7 +48,7 @@ Somos **[Team ValGrind]**, entusiastas de la robótica y la innovación. Represe
 - **Sebastián Salina**  
   17 años, 22/08/2008 
 
-[![IMG-20250607-043801.jpg](https://i.postimg.cc/Bns7Qb1y/IMG-20250607-043801.jpg)](https://postimg.cc/GH7xXcKJ)
+[![IMG-20250607-043801.jpg](https://i.postimg.cc/Bns7Qb1y/IMG-20250607-043801.jpg)](https://postimg.cc/GH7xXcKJ, width = 400)
 
 - **Cristobal Mogollón**
    14 años, 14/07/2010
