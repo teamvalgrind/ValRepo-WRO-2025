@@ -111,12 +111,16 @@ Ahora bien, ya habiendo dilucidado como podemos elegir, diseñar y imprimir las 
 > Video de Heimdall realizando el Open Challenge
 [Video](https://youtu.be/zEmvAiKoWxc)
 
-
 Nuestro robot emplea un sistema de tracción diferencial, ofreciendo maniobrabilidad precisa para enfrentar los retos del campo de competencia. El sistema de cruces se realiza mediante un servo que ajusta la dirección del robot en intersecciones de forma eficaz. También cabe destacar el hecho de que utilizamos una técnica llamada Geometría Ackermann pura para emplear el sistema de movilidad de nuestro vehículo.
 
-Foto de los planos del servo
-foto de Ackerman giro
+[![IMG-20250611-112322.jpg](https://i.postimg.cc/zX9sd8Bj/IMG-20250611-112322.jpg)](https://postimg.cc/bs9VrX1D)
 
+> El diferencial de los vehículos, como su nombre lo indica, permite que exista una diferencia en la velocidad de giro entre la rueda interna y la rueda externa del vehículo cuando se da una vuelta o se está girando la dirección. No importa si el vehículo es tracción trasera o delantera, la función es la misma.
+
+[![10a4.jpg](https://i.postimg.cc/K89xJC6v/10a4.jpg)](https://postimg.cc/G4sWpg3Z)
+
+
+Steering geometry is one of the many tools at a race car designer’s disposal to ensure the car extracts maximum performance from all four tyres. 
 
 > [!NOTE]
 > En la ingeniería automovilística moderna, la geometría Ackermann pura se modifica a menudo para tener en cuenta factores dinámicos como los ángulos de deslizamiento de los neumáticos, que adquieren importancia a velocidades más altas. En la conducción de competición y de alto rendimiento, por ejemplo, los ingenieros ajustan la geometría de la dirección (a menudo con una configuración que se aleja de la geometría Ackermann ideal) para inducir deliberadamente un ligero deslizamiento de los neumáticos y mejorar el agarre lateral. Estos ajustes tienen en cuenta factores como la transferencia de peso, la dinámica de la suspensión y la variación de la carga de los neumáticos, todos los cuales influyen en el comportamiento del vehículo en las curvas a alta velocidad. Aunque se originó en una época en la que primaba la simplicidad mecánica, sus ideas fundamentales siguen influyendo en el diseño moderno de la dirección, aunque a menudo como punto de partida de sistemas más sofisticados que integran programas electrónicos de estabilidad y métodos de control dinámico.
@@ -187,7 +191,7 @@ El ESC, a pesar de no ser usado convencionalmente para controlar motores más al
 
 [![DSC07074-1200x1200.jpg](https://i.postimg.cc/m25fNw4Q/DSC07074-1200x1200.jpg)](https://postimg.cc/F73Bh07R)
 
-> [!NOTE]
+> ⚠️ **Warning**  
 > El ESC tiene que inicializarse gradualmente, es decir, si desea hacer un proyecto utilizándolo de forma análoga a nosotros, recomendamos fuertemente el hacer una graduación en cuanto a armar el ESC para evitar problemas de rendimiento y de start-up
 
 
