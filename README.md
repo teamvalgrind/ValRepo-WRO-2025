@@ -125,8 +125,7 @@ Steering geometry is one of the many tools at a race car designer’s disposal t
 > [!NOTE]
 > En la ingeniería automovilística moderna, la geometría Ackermann pura se modifica a menudo para tener en cuenta factores dinámicos como los ángulos de deslizamiento de los neumáticos, que adquieren importancia a velocidades más altas. En la conducción de competición y de alto rendimiento, por ejemplo, los ingenieros ajustan la geometría de la dirección (a menudo con una configuración que se aleja de la geometría Ackermann ideal) para inducir deliberadamente un ligero deslizamiento de los neumáticos y mejorar el agarre lateral. Estos ajustes tienen en cuenta factores como la transferencia de peso, la dinámica de la suspensión y la variación de la carga de los neumáticos, todos los cuales influyen en el comportamiento del vehículo en las curvas a alta velocidad. Aunque se originó en una época en la que primaba la simplicidad mecánica, sus ideas fundamentales siguen influyendo en el diseño moderno de la dirección, aunque a menudo como punto de partida de sistemas más sofisticados que integran programas electrónicos de estabilidad y métodos de control dinámico.
 
-foto de Ackerman 2
-
+[![Ackermann-turning-svg.png](https://i.postimg.cc/CL08P93k/Ackermann-turning-svg.png)](https://postimg.cc/8syssXPz)
 
 El núcleo de la movilidad de nuestro robot reside en su **subsistema mecánico de transmisión y tracción**, cuidadosamente seleccionado con componentes específicos de alta calidad. Vamos a desglosar cómo cada pieza encaja en este rompecabezas de ingeniería en miniatura, usando la escala **1/18** como referencia clave para tamaño e integración:
 
