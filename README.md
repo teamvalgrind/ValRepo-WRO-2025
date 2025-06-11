@@ -137,20 +137,20 @@ El núcleo de la movilidad de nuestro robot reside en su **subsistema mecánico 
 [![61-Gzbd9-XBj-L-AC-UF894-1000-QL80.jpg](https://i.postimg.cc/7ZqxBpWR/61-Gzbd9-XBj-L-AC-UF894-1000-QL80.jpg)](https://postimg.cc/Cz6T56YC)
 
 
-   -  Los ubicamos en el eje motriz , permiten que las ruedas izquierda y derecha giren a velocidades diferentes al tomar curvas. Esto es *crucial* para evitar que el robot "patine" o forcejee en giros cerrados, manteniendo la estabilidad incluso durante maniobras agresivas. Su escala 1/18 garantiza que sean compactos, ligeros y proporcionales al resto del chasis y ruedas del robot de competición.
-    - En cuanto a los ejes, estos conectan directamente la salida de los diferenciales (1/18) a las ruedas motrices. Transfieren el par motor generado hacia las ruedas, haciendo girar los neumáticos. Su diseño a escala 1/18 asegura la longitud y resistencia adecuadas para soportar las fuerzas de torsión y tracción sin añadir peso excesivo ni desbalancear el robot.
+   ##### Los ubicamos en el eje motriz , permiten que las ruedas izquierda y derecha giren a velocidades diferentes al tomar curvas. Esto es *crucial* para evitar que el robot "patine" o forcejee en giros cerrados, manteniendo la estabilidad incluso durante maniobras agresivas. Su escala 1/18 garantiza que sean compactos, ligeros y proporcionales al resto del chasis y ruedas del robot de competición.
+  ##### En cuanto a los ejes, estos conectan directamente la salida de los diferenciales (1/18) a las ruedas motrices. Transfieren el par motor generado hacia las ruedas, haciendo girar los neumáticos. Su diseño a escala 1/18 asegura la longitud y resistencia adecuadas para soportar las fuerzas de torsión y tracción sin añadir peso excesivo ni desbalancear el robot.
 
 2. **Motor Brushed Injora 180° 48T**
 
 [![DSC06671-1-1800x1800.webp](https://i.postimg.cc/NFbNQ2Qm/DSC06671-1-1800x1800.webp)](https://postimg.cc/wRy5Vvyj)
 
  ##### Este motor de escobillas (brushed) es ideal para complementar el resto de elementos como los diferenciales y los ejes debido a que:
-    - Su cuerpo es más corto que un motor estándar (que suele ser ~360°), ahorrando espacio vital en un robot compacto.
-    - Un motor de "mayor T" (como 48T) proporciona **más par (fuerza de torsión)** a velocidades más bajas, en comparación con motores de menor T (ej: 20T) que son más rápidos pero con menos fuerza. Este alto par es *esencial* para iniciar derrapes controlados, superar pequeñas irregularidades y proporcionar aceleración contundente, incluso con las ruedas de drift que ofrecen menos tracción.
+    ##### Su cuerpo es más corto que un motor estándar (que suele ser ~360°), ahorrando espacio vital en un robot compacto.
+    ##### Un motor de "mayor T" (como 48T) proporciona **más par (fuerza de torsión)** a velocidades más bajas, en comparación con motores de menor T (ej: 20T) que son más rápidos pero con menos fuerza. Este alto par es *esencial* para iniciar derrapes controlados, superar pequeñas irregularidades y proporcionar aceleración contundente, incluso con las ruedas de drift que ofrecen menos tracción.
 
 3.  **Ruedas de Drift**
 
-    - Son el **elemento transformador clave para el derrape**. Están fabricadas típicamente con un compuesto plástico duro y liso (como ABS o PU). A diferencia de las ruedas de goma adherentes, estas **minimizan deliberadamente la fricción** con superficies como linóleo o parquet (comunes en pistas WRO). Esta baja tracción permite que las ruedas motrices (traseras) pierdan agarre de manera controlada cuando se aplica potencia y dirección, iniciando y manteniendo el derrape deseado. Su diámetro y ancho se eligen para complementar la escala 1/18 y el comportamiento dinámico del robot.
+    ##### Son el **elemento transformador clave para el derrape**. Están fabricadas típicamente con un compuesto plástico duro y liso (como ABS o PU). A diferencia de las ruedas de goma adherentes, estas **minimizan deliberadamente la fricción** con superficies como linóleo o parquet (comunes en pistas WRO). Esta baja tracción permite que las ruedas motrices (traseras) pierdan agarre de manera controlada cuando se aplica potencia y dirección, iniciando y manteniendo el derrape deseado. Su diámetro y ancho se eligen para complementar la escala 1/18 y el comportamiento dinámico del robot.
 
 4.  **Tornillos, Tuercas de Seguridad y Arandelas (M2 y M3)**
 
