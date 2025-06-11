@@ -111,7 +111,6 @@ void controlarRobot() {
   if (bloqueVerde) Serial.print("VERDE ");
   Serial.println();
 
-  // Esquiva de bloques detectados por Pixy2 (no suma giros)
   if (bloqueRojo) {
     Parar();
     delay(100);
@@ -146,7 +145,6 @@ void controlarRobot() {
     return;
   }
 
-  // Lógica de navegación principal con ultrasonidos
   if (!girando) {
     if (frontal > DISTANCIA_OBSTACULO_FRONTAL || frontal == -1) {
       if (!motorEnMarcha) {
