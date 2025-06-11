@@ -1,8 +1,24 @@
+/*
+  Código de Heimdall para la categoría futuros ingenieros de la WRO 2025
+  Hecho por Cristobal Mogollon y Samuel Burgos
+
+  El código hace que el robot al prenderse avance y de 3 vueltas a la pista
+  de futuros ingenieros en la etapa abierta y al completar la cantidad de 12
+  giros a la pista avanzará dos segundos más y se detiene automáticamente
+
+  Version del codigo: 5
+  En esta version del codigo se cambia de placa pasamos de usar un arduino 
+  mega a cambiar a esp32 por el tema de la diferencia de tamaño entre ambas 
+  la esp32 al ser mas pequeña reducimos peso y ahorramos mas espacio tambien 
+  cuenta con la ventaja de la memoria que es mas extensa a la de un arduino mega
+
+*/
+
 #include <Wire.h>
 #include <Ultrasonic.h>
 #include <ESP32Servo.h>
-#include <Pixy2.h>
 
+// Pines ESP32 para sensores ultrasónicos
 #define USTFRONT 13
 #define USEFRONT 12
 #define USTLEFT 14
@@ -12,23 +28,20 @@
 
 #define PIN_ESC 18
 #define PIN_SERVO 19
-#define PIN_BOTON 4
+#define PIN_BOTON 4  // Pin para botón de inicio
 
 Ultrasonic USFront(USTFRONT, USEFRONT);
 Ultrasonic USLeft(USTLEFT, USELEFT);
 Ultrasonic USRight(USTRIGHT, USERIGHT);
+
 Servo esc;
 Servo myservo;
-Pixy2 pixy;
 
 const int DISTANCIA_OBSTACULO_FRONTAL = 20;
-const int DISTANCIA_OBSTACULO_LATERAL = 190;
-const unsigned long DURACION_GIRO_MS = 750;
-const unsigned long DURACION_GIRO_BLOQUE_MS = 350;
-const unsigned long TIEMPO_ESPERA_GIRO = 2500;
-
-const uint8_t ROJO_SIGNATURE = 1;
-const uint8_t VERDE_SIGNATURE = 2;
+const int DISTANCIA_OBSTACULO_LATERAL = 200;
+const unsigned long DURACION_GIRO_MS = 850;
+const unsigned long DURACION_GIRO_I = 680;
+const unsigned long TIEMPO_ESPERA_GIRO = 2650;  // 2500 ms
 
 bool motorEnMarcha = false;
 bool girando = false;
@@ -42,27 +55,32 @@ void setup() {
   esc.attach(PIN_ESC, 1000, 2000);
   myservo.attach(PIN_SERVO);
   Serial.begin(115200);
-  pinMode(PIN_BOTON, INPUT_PULLUP);
-  esc.write(90);
-  myservo.write(100);
+
+  pinMode(PIN_BOTON, INPUT_PULLUP);  // Botón con resistencia interna pull-up
+
+  esc.write(90);      // ESC en posición neutra
+  myservo.write(99);  // Servo centrado
   delay(3000);
-  pixy.init();
-  pixy.setLamp(1, 0);
+
+  Serial.println("Esperando pulsar botón para iniciar...");
 }
 
 void loop() {
   if (!programaIniciado) {
     if (digitalRead(PIN_BOTON) == LOW) {
       programaIniciado = true;
-      delay(500);
+      Serial.println("Botón presionado, iniciando programa...");
+      delay(500);  // debounce
     }
   } else if (!finalizado) {
-    doceGiros();
+    docegiros();
   }
+  // Si finalizado, no hace nada más
 }
 
-void doceGiros() {
+void docegiros() {
   unsigned long ahora = millis();
+
   int frontal = USFront.read();
   int izquierda = USLeft.read();
   int derecha = USRight.read();
@@ -71,40 +89,19 @@ void doceGiros() {
   if (izquierda == 357) izquierda = -1;
   if (derecha == 357) derecha = -1;
 
-  pixy.ccc.getBlocks();
-  bool bloqueRojo = false;
-  bool bloqueVerde = false;
-
-  for (uint16_t i = 0; i < pixy.ccc.numBlocks; i++) {
-    if (pixy.ccc.blocks[i].m_signature == ROJO_SIGNATURE) bloqueRojo = true;
-    if (pixy.ccc.blocks[i].m_signature == VERDE_SIGNATURE) bloqueVerde = true;
-  }
-
-  pixy.setLamp(bloqueRojo || bloqueVerde, bloqueRojo || bloqueVerde);
-
-  if (bloqueRojo) {
-    Parar();
-    delay(100);
-    Derechabloque();
-    Adelante();
-    motorEnMarcha = true;
-    delay(120);
-    return;
-  }
-  if (bloqueVerde) {
-    Parar();
-    delay(100);
-    Izquierdabloque();
-    Adelante();
-    motorEnMarcha = true;
-    delay(120);
-    return;
-  }
+  Serial.print("Distancias (cm) - Frontal: ");
+  Serial.print(frontal);
+  Serial.print(" | Izquierda: ");
+  Serial.print(izquierda);
+  Serial.print(" | Derecha: ");
+  Serial.println(derecha);
 
   if (contadorGiros >= 12) {
+    // Avanzar 1 segundo más y detenerse definitivamente
     if (!finalizado) {
+      Serial.println("Se alcanzaron 12 giros, avanzando 1 segundo más y deteniéndose.");
       Adelante();
-      delay(1000);
+      delay(1300);
       Parar();
       motorEnMarcha = false;
       finalizado = true;
@@ -113,37 +110,43 @@ void doceGiros() {
   }
 
   if (!girando) {
-    if (frontal > DISTANCIA_OBSTACULO_FRONTAL || frontal == -1) {
+    if (frontal != -1 && frontal > DISTANCIA_OBSTACULO_FRONTAL) {
       if (!motorEnMarcha) {
         Adelante();
         motorEnMarcha = true;
       }
-      if (ahora - tiempoUltimoGiro >= TIEMPO_ESPERA_GIRO) {
-        if (izquierda > DISTANCIA_OBSTACULO_LATERAL || izquierda == -1) {
+
+      if (ahora - tiempoUltimoGiro < TIEMPO_ESPERA_GIRO) {
+        Serial.println("Avanzando recto después del giro, sin girar");
+      } else {
+        if (izquierda != -1 && izquierda > DISTANCIA_OBSTACULO_LATERAL) {
           girando = true;
           Parar();
           motorEnMarcha = false;
+          Serial.println("Girando a la izquierda por más de 190 cm libres");
+          delay(200);
           Izquierda();
+          contadorGiros++;
           girando = false;
           tiempoUltimoGiro = millis();
           Adelante();
           motorEnMarcha = true;
-        } else if (derecha > DISTANCIA_OBSTACULO_LATERAL || derecha == -1) {
+        } else if (derecha != -1 && derecha > DISTANCIA_OBSTACULO_LATERAL) {
           girando = true;
           Parar();
           motorEnMarcha = false;
+          Serial.println("Girando a la derecha por más de 190 cm libres");
+          delay(200);
           Derecha();
+          contadorGiros++;
           girando = false;
           tiempoUltimoGiro = millis();
           Adelante();
           motorEnMarcha = true;
         }
       }
-    } else if (frontal != -1 && frontal <= DISTANCIA_OBSTACULO_FRONTAL) {
-      if (motorEnMarcha) {
-        Parar();
-        motorEnMarcha = false;
-      }
+    } else if (frontal != -1 && frontal == DISTANCIA_OBSTACULO_FRONTAL) {
+      Serial.println("Obstáculo frontal detectado, detenido");
     }
   }
 }
@@ -151,47 +154,35 @@ void doceGiros() {
 void Adelante() {
   esc.write(90);
   delay(200);
-  esc.write(130);
+  esc.write(135);
+  Serial.println("Motor en marcha hacia adelante");
 }
 
 void Parar() {
   esc.write(90);
+  Serial.println("Motor detenido");
+}
+
+void Izquierda() {
+  esc.write(130);
+  myservo.write(150);  
+  unsigned long inicio = millis();
+  while (millis() - inicio < DURACION_GIRO_MS) {
+    delay(10);
+  }
+  myservo.write(97);  // Centrar servo
+  esc.write(90);
+  Serial.println("Giro izquierda completado");
 }
 
 void Derecha() {
   esc.write(130);
   myservo.write(30);
   unsigned long inicio = millis();
-  while (millis() - inicio < DURACION_GIRO_MS) delay(10);
-  myservo.write(99);
+  while (millis() - inicio < DURACION_GIRO_I) {
+    delay(10);
+  }
+  myservo.write(100);  // Centrar servo
   esc.write(90);
-  contadorGiros++;
-}
-
-void Derechabloque() {
-  esc.write(130);
-  myservo.write(60);
-  unsigned long inicio = millis();
-  while (millis() - inicio < DURACION_GIRO_BLOQUE_MS) delay(10);
-  myservo.write(99);
-  esc.write(90);
-}
-
-void Izquierda() {
-  esc.write(130);
-  myservo.write(150);
-  unsigned long inicio = millis();
-  while (millis() - inicio < DURACION_GIRO_MS) delay(10);
-  myservo.write(99);
-  esc.write(90);
-  contadorGiros++;
-}
-
-void Izquierdabloque() {
-  esc.write(130);
-  myservo.write(130);
-  unsigned long inicio = millis();
-  while (millis() - inicio < DURACION_GIRO_BLOQUE_MS) delay(10);
-  myservo.write(99);
-  esc.write(90);
+  Serial.println("Giro derecha completado");
 }
