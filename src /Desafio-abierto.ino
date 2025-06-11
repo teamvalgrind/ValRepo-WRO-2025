@@ -37,10 +37,11 @@ Ultrasonic USRight(USTRIGHT, USERIGHT);
 Servo esc;
 Servo myservo;
 
-const int DISTANCIA_OBSTACULO_FRONTAL = 25;
-const int DISTANCIA_OBSTACULO_LATERAL = 175;
-const unsigned long DURACION_GIRO_MS = 600;
-const unsigned long TIEMPO_ESPERA_GIRO = 2650; // 2500 ms
+const int DISTANCIA_OBSTACULO_FRONTAL = 20;
+const int DISTANCIA_OBSTACULO_LATERAL = 200;
+const unsigned long DURACION_GIRO_MS = 850;
+const unsigned long DURACION_GIRO_I = 680;
+const unsigned long TIEMPO_ESPERA_GIRO = 2650;  // 2500 ms
 
 bool motorEnMarcha = false;
 bool girando = false;
@@ -57,8 +58,8 @@ void setup() {
 
   pinMode(PIN_BOTON, INPUT_PULLUP);  // Botón con resistencia interna pull-up
 
-  esc.write(90);  // ESC en posición neutra
-  myservo.write(99); // Servo centrado
+  esc.write(90);      // ESC en posición neutra
+  myservo.write(99);  // Servo centrado
   delay(3000);
 
   Serial.println("Esperando pulsar botón para iniciar...");
@@ -69,7 +70,7 @@ void loop() {
     if (digitalRead(PIN_BOTON) == LOW) {
       programaIniciado = true;
       Serial.println("Botón presionado, iniciando programa...");
-      delay(500); // debounce
+      delay(500);  // debounce
     }
   } else if (!finalizado) {
     docegiros();
@@ -123,6 +124,7 @@ void docegiros() {
           Parar();
           motorEnMarcha = false;
           Serial.println("Girando a la izquierda por más de 190 cm libres");
+          delay(200);
           Izquierda();
           contadorGiros++;
           girando = false;
@@ -134,6 +136,7 @@ void docegiros() {
           Parar();
           motorEnMarcha = false;
           Serial.println("Girando a la derecha por más de 190 cm libres");
+          delay(200);
           Derecha();
           contadorGiros++;
           girando = false;
@@ -142,11 +145,7 @@ void docegiros() {
           motorEnMarcha = true;
         }
       }
-    } else if (frontal != -1 && frontal <= DISTANCIA_OBSTACULO_FRONTAL) {
-      if (motorEnMarcha) {
-        Parar();
-        motorEnMarcha = false;
-      }
+    } else if (frontal != -1 && frontal == DISTANCIA_OBSTACULO_FRONTAL) {
       Serial.println("Obstáculo frontal detectado, detenido");
     }
   }
@@ -165,25 +164,25 @@ void Parar() {
 }
 
 void Izquierda() {
-  esc.write(135);
-  myservo.write(150); // Ángulo extremo derecha
+  esc.write(130);
+  myservo.write(150);  
   unsigned long inicio = millis();
   while (millis() - inicio < DURACION_GIRO_MS) {
     delay(10);
   }
-  myservo.write(99); // Centrar servo
+  myservo.write(97);  // Centrar servo
   esc.write(90);
   Serial.println("Giro izquierda completado");
 }
 
 void Derecha() {
-  esc.write(135);
-  myservo.write(30); // Ángulo extremo izquierda
+  esc.write(130);
+  myservo.write(30);
   unsigned long inicio = millis();
-  while (millis() - inicio < DURACION_GIRO_MS) {
+  while (millis() - inicio < DURACION_GIRO_I) {
     delay(10);
   }
-  myservo.write(100); // Centrar servo
+  myservo.write(100);  // Centrar servo
   esc.write(90);
   Serial.println("Giro derecha completado");
 }
