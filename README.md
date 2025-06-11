@@ -48,7 +48,7 @@ Somos **[Team ValGrind]**, entusiastas de la robótica y la innovación. Represe
 - **Sebastián Salina**  
   17 años, 22/08/2008 
 
-[![IMG-20250607-043801.jpg](https://i.postimg.cc/Bns7Qb1y/IMG-20250607-043801.jpg)](https://postimg.cc/GH7xXcKJ, width = 400)
+[![IMG-20250607-043801.jpg](https://i.postimg.cc/Bns7Qb1y/IMG-20250607-043801.jpg)](https://postimg.cc/GH7xXcKJ)
 
 - **Cristobal Mogollón**
    14 años, 14/07/2010
@@ -208,11 +208,11 @@ El ESC, a pesar de no ser usado convencionalmente para controlar motores más al
 
 #### Conexiones y Circuitos
 
-Todos los módulos están conectados en un circuito organizado, minimizando interferencias y facilitando el mantenimiento.  
+##### Todos los módulos están conectados en un circuito organizado, minimizando interferencias y facilitando el mantenimiento.  
 
 - Diagramas de Flujo
 
-En este diagrama de flujo se halla una representación gráfica del funcionamiento lógico de nuestra programación, así como de lo que se espera sea el desempeño del robot al inicializar el programa.
+##### En este diagrama de flujo se halla una representación gráfica del funcionamiento lógico de nuestra programación, así como de lo que se espera sea el desempeño del robot al inicializar el programa.
 
 
 [![IMG-20250523-WA0008.jpg](https://i.postimg.cc/QxYhNwBT/IMG-20250523-WA0008.jpg)](https://postimg.cc/YhFJbXzr)
@@ -224,7 +224,7 @@ En este diagrama de flujo se halla una representación gráfica del funcionamien
 
 [![esp32-wroom-32e.jpg](https://i.postimg.cc/mDT9SXGN/esp32-wroom-32e.jpg)](https://postimg.cc/f3gkzvyJ)
 
-• El **ESP32-WROOM** es un módulo todo-en-uno potente y económico basado en el chip ESP32, que integra un **procesador dual-core de hasta 240 MHz**, **Wi-Fi 802.11 b/g/n (2.4 GHz)**, y **Bluetooth (Clásico y BLE)**, junto con **4 MB de memoria flash SPI y 520 KB de RAM** en el mismo encapsulado, además de una antena PCB integrada; ofrece múltiples periféricos (GPIOs, ADC, DAC, UART, SPI, I2C, PWM, etc.), soporta modos de bajo consumo para baterías, y es ideal para proyectos de IoT, domótica, robótica o interfaces, siendo fácil de programar con Arduino IDE, ESP-IDF o MicroPython.
+##### El **ESP32-WROOM** es un módulo todo-en-uno potente y económico basado en el chip ESP32, que integra un **procesador dual-core de hasta 240 MHz**, **Wi-Fi 802.11 b/g/n (2.4 GHz)**, y **Bluetooth (Clásico y BLE)**, junto con **4 MB de memoria flash SPI y 520 KB de RAM** en el mismo encapsulado, además de una antena PCB integrada; ofrece múltiples periféricos (GPIOs, ADC, DAC, UART, SPI, I2C, PWM, etc.), soporta modos de bajo consumo para baterías, y es ideal para proyectos de IoT, domótica, robótica o interfaces, siendo fácil de programar con Arduino IDE, ESP-IDF o MicroPython.
 	 -  Además del microcontrolador, también es necesario tener un buen entorno con las librerías necesarias para compilar y interpretar el código, y eventualmente crear un ecosistema óptimo para nuestro robot. Por esto, hemos decidido utilizar 4 librerías esenciales para lograr nuestro objetivo:
 
 1.  **`Wire.h` (Comunicación I²C):**  
@@ -245,7 +245,9 @@ En este diagrama de flujo se halla una representación gráfica del funcionamien
 
 #### Codigo por Componente
 
-En cuanto al código utilizado para manejar el robot, consiste en una parte en la que se definen los pines del ESC y de los ultrasónicos. Dentro del código se arma el ESC, se inicializan los sensores y se inicializa una función llamada "doceVueltas", la cual se encarga de hacer una lectura constante de los sensores ultrasónicos para decidir en qué momento girar, así como de registrar los giros para que el robot se detenga al completar exitosamente 3 vueltas.
+##### Desafío Abierto
+
+- En cuanto al código utilizado para manejar el robot, consiste en una parte en la que se definen los pines del ESC y de los ultrasónicos. Dentro del código se arma el ESC, se inicializan los sensores y se inicializa una función llamada "doceVueltas", la cual se encarga de hacer una lectura constante de los sensores ultrasónicos para decidir en qué momento girar, así como de registrar los giros para que el robot se detenga al completar exitosamente 3 vueltas.
 
 En este apartado se inicializa el ESC, y se prepara el robot para ejecutar la función que sigue:
 ```cpp
@@ -323,14 +325,23 @@ if (contadorGiros >= 12) {
   }
 }
 ```
+##### Desafío Cerrado
 
-Dentro de `Open-challenge.ino` está el resto de funciones descritas, y la lógica de programación mediante la cual el robot completa el desafío abierto.
+- Con respecto al desafío cerrado, nos decantamos por utilizar la pixy en virtud de poder detectar los bloques y posteriormente tener un código con un protocolo para cada uno de ellos, esto se puede evidenciar en el código:
+
+cpp
+```
+
+
+```
+
+
+Dentro de `Desafio-abierto.ino` y `Desafio-cerrado.ino` está el resto de funciones descritas, y la lógica de programación mediante la cual el robot completa el desafío abierto.
 
 #### Compiladores y Comunicacion
 
 - **Lenguaje principal:** C++ (Arduino IDE)
-- **Compilador:** [Arduino IDE](https://www.arduino.cc/en/software)
-- **Comunicación entre módulos:** Bus I2C
+- **Compilador:** [Arduino IDE](https://www.arduino.cc/en/software- **Comunicación entre módulos:** Bus I2C
 
 ---
 
@@ -350,7 +361,7 @@ Dentro de `Open-challenge.ino` está el resto de funciones descritas, y la lógi
 ### Electrónico 
 - ESC
 - ESP-32
-- BNO085
+- MPU6050
 - Ultrasónicos HSR04
 ### Programación 
 - Open-Challenge.ino
