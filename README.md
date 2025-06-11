@@ -324,16 +324,34 @@ if (contadorGiros >= 12) {
   }
 }
 ```
+
 ##### Desafío Cerrado
 
 - Con respecto al desafío cerrado, nos decantamos por utilizar la pixy en virtud de poder detectar los bloques y posteriormente tener un código con un protocolo para cada uno de ellos, esto se puede evidenciar en el código:
 
 cpp
 ```
+  pixy.ccc.getBlocks();
+  bool bloqueRojo = false;
+  bool bloqueVerde = false;
 
+  for (uint16_t i = 0; i < pixy.ccc.numBlocks; i++) {
+    if (pixy.ccc.blocks[i].m_signature == ROJO_SIGNATURE) bloqueRojo = true;
+    if (pixy.ccc.blocks[i].m_signature == VERDE_SIGNATURE) bloqueVerde = true;
+  }
+
+  pixy.setLamp(bloqueRojo || bloqueVerde, bloqueRojo || bloqueVerde);
+
+  if (bloqueRojo) {
+    Parar();
+    delay(100);
+    Derechabloque();
+    Adelante();
+    motorEnMarcha = true;
+    delay(120);
+    return;
 
 ```
-
 
 Dentro de `Desafio-abierto.ino` y `Desafio-cerrado.ino` está el resto de funciones descritas, y la lógica de programación mediante la cual el robot completa el desafío abierto.
 
