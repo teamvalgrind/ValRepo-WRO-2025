@@ -32,7 +32,7 @@
 
 ## Nuestro Equipo
 
-<img src="https://github.com/damuec/ValRepo1/assets/foto-equipo.jpg" alt="Foto del equipo" width="400"/>
+[![IMG-20250611-WA0013.jpg](https://i.postimg.cc/KvM5HgKW/IMG-20250611-WA0013.jpg)](https://postimg.cc/rKqWdsNG)
 
 Somos **[Team ValGrind]**, entusiastas de la robótica y la innovación. Representamos a nuestra institución en la fase regional de la **WRO 2025**.
 
