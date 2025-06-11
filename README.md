@@ -217,7 +217,6 @@ El ESC, a pesar de no ser usado convencionalmente para controlar motores más al
 
 [![IMG-20250523-WA0008.jpg](https://i.postimg.cc/QxYhNwBT/IMG-20250523-WA0008.jpg)](https://postimg.cc/YhFJbXzr)
 
-
 #### Microcontroladores
 
 ##### ESP-32
@@ -225,7 +224,7 @@ El ESC, a pesar de no ser usado convencionalmente para controlar motores más al
 [![esp32-wroom-32e.jpg](https://i.postimg.cc/mDT9SXGN/esp32-wroom-32e.jpg)](https://postimg.cc/f3gkzvyJ)
 
 ##### El **ESP32-WROOM** es un módulo todo-en-uno potente y económico basado en el chip ESP32, que integra un **procesador dual-core de hasta 240 MHz**, **Wi-Fi 802.11 b/g/n (2.4 GHz)**, y **Bluetooth (Clásico y BLE)**, junto con **4 MB de memoria flash SPI y 520 KB de RAM** en el mismo encapsulado, además de una antena PCB integrada; ofrece múltiples periféricos (GPIOs, ADC, DAC, UART, SPI, I2C, PWM, etc.), soporta modos de bajo consumo para baterías, y es ideal para proyectos de IoT, domótica, robótica o interfaces, siendo fácil de programar con Arduino IDE, ESP-IDF o MicroPython.
-	 -  Además del microcontrolador, también es necesario tener un buen entorno con las librerías necesarias para compilar y interpretar el código, y eventualmente crear un ecosistema óptimo para nuestro robot. Por esto, hemos decidido utilizar 4 librerías esenciales para lograr nuestro objetivo:
+	 • Además del microcontrolador, también es necesario tener un buen entorno con las librerías necesarias para compilar y interpretar el código, y eventualmente crear un ecosistema óptimo para nuestro robot. Por esto, hemos decidido utilizar 4 librerías esenciales para lograr nuestro objetivo:
 
 1.  **`Wire.h` (Comunicación I²C):**  
     Esencial para conectar sensores, pantallas (OLED) o memorias (EEPROM) que usen el bus I²C. Con `Wire.begin(SDA, SCL)` configuras los pines, luego usas `Wire.beginTransmission()`, `Wire.write()`, `Wire.read()` y `Wire.endTransmission()` para enviar/recibir datos. A partir de esta librería establecemos comunicación con el ESP-32.
