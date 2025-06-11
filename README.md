@@ -144,7 +144,7 @@ El núcleo de la movilidad de nuestro robot reside en su **subsistema mecánico 
 
 [![DSC06671-1-1800x1800.webp](https://i.postimg.cc/NFbNQ2Qm/DSC06671-1-1800x1800.webp)](https://postimg.cc/wRy5Vvyj)
 
- • Este motor de escobillas (brushed) es ideal para complementar el resto de elementos como los diferenciales y los ejes debido a que:
+ ##### Este motor de escobillas (brushed) es ideal para complementar el resto de elementos como los diferenciales y los ejes debido a que:
     - Su cuerpo es más corto que un motor estándar (que suele ser ~360°), ahorrando espacio vital en un robot compacto.
     - Un motor de "mayor T" (como 48T) proporciona **más par (fuerza de torsión)** a velocidades más bajas, en comparación con motores de menor T (ej: 20T) que son más rápidos pero con menos fuerza. Este alto par es *esencial* para iniciar derrapes controlados, superar pequeñas irregularidades y proporcionar aceleración contundente, incluso con las ruedas de drift que ofrecen menos tracción.
 
@@ -156,8 +156,8 @@ El núcleo de la movilidad de nuestro robot reside en su **subsistema mecánico 
 
 [![71jo-Lr4ep-SL-AC-UF894-1000-QL80.jpg](https://i.postimg.cc/Hk0rnwfq/71jo-Lr4ep-SL-AC-UF894-1000-QL80.jpg)](https://postimg.cc/cvHx5n1h)
 
-  -  Ya sean M2 o M3, son piezas imprescindibles para la mecanica de nuestro robot, debido a la fijacion de piezas pequeñas, estabilización de componentes, y la garantía de seguridad que otorgan con respecto al uso prolongado del robot ya sea en practicas o en la competición.
-  - Se decidió tomar la decisión de tener tornillos M2 y M3 de forma simultánea para velar por la eficiencia del espacio, para permitir compatibilidad con los componentes más pequeños, y al mismo tiempo para garantizar que los tornillos resistan y permitan estabilidad en el robot.
+ ##### Ya sean M2 o M3, son piezas imprescindibles para la mecanica de nuestro robot, debido a la fijacion de piezas pequeñas, estabilización de componentes, y la garantía de seguridad que otorgan con respecto al uso prolongado del robot ya sea en practicas o en la competición.
+ ##### Se decidió tomar la decisión de tener tornillos M2 y M3 de forma simultánea para velar por la eficiencia del espacio, para permitir compatibilidad con los componentes más pequeños, y al mismo tiempo para garantizar que los tornillos resistan y permitan estabilidad en el robot.
      
 #### Foto de las Arandelas y Tuercas de seguridad 
 
@@ -224,7 +224,7 @@ El ESC, a pesar de no ser usado convencionalmente para controlar motores más al
 [![esp32-wroom-32e.jpg](https://i.postimg.cc/mDT9SXGN/esp32-wroom-32e.jpg)](https://postimg.cc/f3gkzvyJ)
 
 ##### El **ESP32-WROOM** es un módulo todo-en-uno potente y económico basado en el chip ESP32, que integra un **procesador dual-core de hasta 240 MHz**, **Wi-Fi 802.11 b/g/n (2.4 GHz)**, y **Bluetooth (Clásico y BLE)**, junto con **4 MB de memoria flash SPI y 520 KB de RAM** en el mismo encapsulado, además de una antena PCB integrada; ofrece múltiples periféricos (GPIOs, ADC, DAC, UART, SPI, I2C, PWM, etc.), soporta modos de bajo consumo para baterías, y es ideal para proyectos de IoT, domótica, robótica o interfaces, siendo fácil de programar con Arduino IDE, ESP-IDF o MicroPython.
-	 • Además del microcontrolador, también es necesario tener un buen entorno con las librerías necesarias para compilar y interpretar el código, y eventualmente crear un ecosistema óptimo para nuestro robot. Por esto, hemos decidido utilizar 4 librerías esenciales para lograr nuestro objetivo:
+##### Además del microcontrolador, también es necesario tener un buen entorno con las librerías necesarias para compilar y interpretar el código, y eventualmente crear un ecosistema óptimo para nuestro robot. Por esto, hemos decidido utilizar 4 librerías esenciales para lograr nuestro objetivo:
 
 1.  **`Wire.h` (Comunicación I²C):**  
     Esencial para conectar sensores, pantallas (OLED) o memorias (EEPROM) que usen el bus I²C. Con `Wire.begin(SDA, SCL)` configuras los pines, luego usas `Wire.beginTransmission()`, `Wire.write()`, `Wire.read()` y `Wire.endTransmission()` para enviar/recibir datos. A partir de esta librería establecemos comunicación con el ESP-32.
@@ -329,8 +329,8 @@ if (contadorGiros >= 12) {
 
 - Con respecto al desafío cerrado, nos decantamos por utilizar la pixy en virtud de poder detectar los bloques y posteriormente tener un código con un protocolo para cada uno de ellos, esto se puede evidenciar en el código:
 
-cpp
-```
+
+```cpp
   pixy.ccc.getBlocks();
   bool bloqueRojo = false;
   bool bloqueVerde = false;
