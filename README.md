@@ -98,7 +98,7 @@ Aún así, nuestro único objetivo no es solamente ganar, como un equipo unido t
 | *Frontal* | *Posterior* |
 |[![IMG-20250605-192216.jpg](https://i.postimg.cc/hjpTBN48/IMG-20250605-192216.jpg)](https://postimg.cc/tZnYdSx7) | [![IMG-20250605-192159.jpg](https://i.postimg.cc/5jdrGfv0/IMG-20250605-192159.jpg)](https://postimg.cc/V0g40QKQ) | 
 | *Izquierda* | *Derecha* |
-| ![Bottom](./robot-photos/bottom.png) | 
+|[![IMG-20250605-192001.jpg](https://i.postimg.cc/x84mTdgf/IMG-20250605-192001.jpg)](https://postimg.cc/tnFJBpLw) | ![Bottom](./robot-photos/bottom.png) | 
 | *Superior* | *Inferior* |
 
 #### Impresion 3D
