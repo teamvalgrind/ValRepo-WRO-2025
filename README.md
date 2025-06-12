@@ -93,7 +93,7 @@ Aún así, nuestro único objetivo no es solamente ganar, como un equipo unido t
 
 ### Apartado Mecanico
 
-| ![Front](./v-photos/foto-frontal.jpeg) | ![Back](./robot-photos/back.png) | 
+| ![Front]([![IMG-20250605-192234.jpg](https://i.postimg.cc/bNvLsHKN/IMG-20250605-192234.jpg)](https://postimg.cc/CdWb2DhW)) | ![Back](./robot-photos/back.png) | 
 | :--: | :--: | 
 | *Front* | *Back* |
 | ![Left](./robot-photos/left.png) | ![Right](./robot-photos/right.png) | 
