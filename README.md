@@ -93,12 +93,12 @@ Aún así, nuestro único objetivo no es solamente ganar, como un equipo unido t
 
 ### Apartado Mecanico
 
-| <img src="./v-photos/foto-frontal.jpeg" width="85%" /> | <img src="./robot-photos/back.png" width="85%" /> | 
+| ![Front](./v-photos/foto-frontal.jpeg) | ![Back](./robot-photos/back.png) | 
 | :--: | :--: | 
 | *Front* | *Back* |
-| <img src="./robot-photos/left.png" width="90%" /> | <img src="./robot-photos/right.png" width="85%" /> | 
+| ![Left](./robot-photos/left.png) | ![Right](./robot-photos/right.png) | 
 | *Left* | *Right* |
-| <img src="./robot-photos/top.png" width="90%" /> | <img src="./robot-photos/bottom.png" width="85%" /> | 
+| ![Top](./robot-photos/top.png) | ![Bottom](./robot-photos/bottom.png) | 
 | *Top* | *Bottom* |
 
 #### Impresion 3D
