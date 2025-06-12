@@ -40,6 +40,11 @@ Somos **[Team ValGrind]**, entusiastas de la robótica y la innovación. Represe
 
 ### Integrantes
 
+<p align="center">
+  <img src="./team-photos/nicola-victor-teodor.jpeg" alt="Nicola Victor Teodor" width="80%">
+</p>
+
+
 - **Samuel Burgos**  
   17 años, 09/01/2008  
 
