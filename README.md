@@ -187,16 +187,7 @@ Para el proyecto, decidimos usar;
 [![images-20.jpg](https://i.postimg.cc/j2fgHz4h/images-20.jpg)](https://postimg.cc/RJML9J83)
 
 
-### **ESC INJORA MBC**  
-##### El ESC INJORA MBC es un controlador de velocidad diseñado para la gestión precisa de motores brushless en vehículos a control remoto.  
-Emplea un firmware avanzado que posibilita ajustes personalizados y optimiza la respuesta del motor.  
-Garantiza una operación ágil y segura, adaptándose a las exigencias dinámicas del uso en RC.  
-El ESC, a pesar de no ser usado convencionalmente para controlar motores más allá de control de velocidad, resulta ser bastante útil debido a su ligereza, facilidad de integración con otros componentes, y buena documentación en cuanto a programación y librerías.
-
-[![DSC07074-1200x1200.jpg](https://i.postimg.cc/m25fNw4Q/DSC07074-1200x1200.jpg)](https://postimg.cc/F73Bh07R)
-
-> ⚠️ **Warning**  
-> El ESC tiene que inicializarse gradualmente, es decir, si desea hacer un proyecto utilizándolo de forma análoga a nosotros, recomendamos fuertemente el hacer una graduación en cuanto a armar el ESC para evitar problemas de rendimiento y de start-up
+### Motor DC 12V
 
 
 #### Sensores 
@@ -254,18 +245,7 @@ El ESC, a pesar de no ser usado convencionalmente para controlar motores más al
 
 En este apartado se inicializa el ESC, y se prepara el robot para ejecutar la función que sigue:
 ```cpp
-  esc.attach(PIN_ESC, 1000, 2000);
-  myservo.attach(PIN_SERVO);
-  Serial.begin(115200);
-
-  pinMode(PIN_BOTON, INPUT_PULLUP);  // Botón con resistencia interna pull-up
-
-  esc.write(90);  // ESC en posición neutra
-  myservo.write(100); // Servo centrado
-  delay(3000);
-
-  Serial.println("Esperando pulsar botón para iniciar...");
-}
+inicio del código 
 ```
 
 Y en este, se llama a la función de DoceGiros, la cual ejecuta los giros y ajustes específicos del robot 
