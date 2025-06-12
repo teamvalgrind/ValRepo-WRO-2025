@@ -95,11 +95,11 @@ Aún así, nuestro único objetivo no es solamente ganar, como un equipo unido t
 
 | [![Vista Frontal](https://i.postimg.cc/bNvLsHKN/IMG-20250605-192234.jpg)](https://postimg.cc/CdWb2DhW) | [![Vista Trasera](https://i.postimg.cc/44WQkHmC/IMG-20250605-192224.jpg)](https://postimg.cc/xqbzLCvg) | 
 | :--: | :--: | 
-| *Front* | *Back* |
+| *Frontal* | *Posterior* |
 |[![IMG-20250605-192216.jpg](https://i.postimg.cc/hjpTBN48/IMG-20250605-192216.jpg)](https://postimg.cc/tZnYdSx7) | ![Right](./robot-photos/right.png) | 
-| *Left* | *Right* |
-| ![Top](./robot-photos/top.png) | ![Bottom](./robot-photos/bottom.png) | 
-| *Top* | *Bottom* |
+| *Izquierda* | *Derecha* |
+|[![IMG-20250605-192159.jpg](https://i.postimg.cc/5jdrGfv0/IMG-20250605-192159.jpg)](https://postimg.cc/V0g40QKQ)| ![Bottom](./robot-photos/bottom.png) | 
+| *Superior* | *Inferior* |
 
 #### Impresion 3D
 
