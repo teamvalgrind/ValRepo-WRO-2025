@@ -93,6 +93,14 @@ Aún así, nuestro único objetivo no es solamente ganar, como un equipo unido t
 
 ### Apartado Mecanico
 
+| <img src="./robot-photos/front.png" width="85%" /> | <img src="./robot-photos/back.png" width="85%" /> | 
+| :--: | :--: | 
+| *Front* | *Back* |
+| <img src="./robot-photos/left.png" width="90%" /> | <img src="./robot-photos/right.png" width="85%" /> | 
+| *Left* | *Right* |
+| <img src="./robot-photos/top.png" width="90%" /> | <img src="./robot-photos/bottom.png" width="85%" /> | 
+| *Top* | *Bottom* |
+
 #### Impresion 3D
 
 Antes de hablar de la movilidad o funcionalidad de nuestro robot, primero hay que explicar nuestros métodos de Diseño e Impresión 3D, los cuales se llevaron a cabo mediante Fusion 360
@@ -143,15 +151,6 @@ El núcleo de la movilidad de nuestro robot reside en su **subsistema mecánico 
 [![DSC06671-1-1800x1800.webp](https://i.postimg.cc/NFbNQ2Qm/DSC06671-1-1800x1800.webp)](https://postimg.cc/wRy5Vvyj)
 
  ##### Este motor de escobillas (brushed) es ideal para complementar el resto de elementos como los diferenciales y los ejes debido a que su cuerpo es más corto que un motor estándar (que suele ser ~360°), ahorrando espacio vital en un robot compacto, cabe destacar que un motor de "mayor T" (como 48T) proporciona **más par (fuerza de torsión)** a velocidades más bajas, en comparación con motores de menor T (ej: 20T) que son más rápidos pero con menos fuerza. Este alto par es *esencial* para iniciar derrapes controlados, superar pequeñas irregularidades y proporcionar aceleración contundente, incluso con las ruedas de drift que ofrecen menos tracción.
-
-
-| <img src="./v-photos/foto-frontal.md" /> | <img src="./robot-photos/back.png" width="85%" /> | 
-| :--: | :--: | 
-| *Front* | *Back* |
-| <img src="./robot-photos/left.png" width="90%" /> | <img src="./robot-photos/right.png" width="85%" /> | 
-| *Left* | *Right* |
-| <img src="./robot-photos/top.png" width="90%" /> | <img src="./robot-photos/bottom.png" width="85%" /> | 
-| *Top* | *Bottom* |
 
 3.  **Ruedas de Drift**
 
