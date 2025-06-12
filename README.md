@@ -145,7 +145,7 @@ El núcleo de la movilidad de nuestro robot reside en su **subsistema mecánico 
  ##### Este motor de escobillas (brushed) es ideal para complementar el resto de elementos como los diferenciales y los ejes debido a que su cuerpo es más corto que un motor estándar (que suele ser ~360°), ahorrando espacio vital en un robot compacto, cabe destacar que un motor de "mayor T" (como 48T) proporciona **más par (fuerza de torsión)** a velocidades más bajas, en comparación con motores de menor T (ej: 20T) que son más rápidos pero con menos fuerza. Este alto par es *esencial* para iniciar derrapes controlados, superar pequeñas irregularidades y proporcionar aceleración contundente, incluso con las ruedas de drift que ofrecen menos tracción.
 
 
-| <img src="./[![IMG-20250605-192234.jpg](https://i.postimg.cc/5tK3Jhjr/IMG-20250605-192234.jpg)](https://postimg.cc/gwRRqBVy)" width="90%" /> | <img src="./robot-photos/back.png" width="85%" /> | 
+| <img src="./v-photos/foto-frontal.md" /> | <img src="./robot-photos/back.png" width="85%" /> | 
 | :--: | :--: | 
 | *Front* | *Back* |
 | <img src="./robot-photos/left.png" width="90%" /> | <img src="./robot-photos/right.png" width="85%" /> | 
