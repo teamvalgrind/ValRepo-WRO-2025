@@ -122,7 +122,7 @@ Ahora bien, ya habiendo dilucidado como podemos elegir, diseñar y imprimir las 
 > Video de Heimdall realizando el Open Challenge
 [Video](https://youtu.be/zEmvAiKoWxc)
 
-Nuestro robot emplea un sistema de tracción diferencial, ofreciendo maniobrabilidad precisa para enfrentar los retos del campo de competencia. El sistema de cruces se realiza mediante un servo que ajusta la dirección del robot en intersecciones de forma eficaz. También cabe destacar el hecho de que utilizamos una técnica llamada Geometría Ackermann pura para emplear el sistema de movilidad de nuestro vehículo.
+Nuestro robot emplea un sistema de tracción diferencial, ofreciendo maniobrabilidad precisa para enfrentar los retos del campo de competencia. El sistema de cruces se realiza mediante un servo que ajusta la dirección del robot en intersecciones de forma eficaz. También cabe destacar el hecho de que utilizamos una técnica llamada  Ackermann Positivo para emplear el sistema de movilidad de nuestro vehículo.
 
 [![IMG-20250611-112322.jpg](https://i.postimg.cc/zX9sd8Bj/IMG-20250611-112322.jpg)](https://postimg.cc/bs9VrX1D)
 
@@ -132,15 +132,13 @@ Nuestro robot emplea un sistema de tracción diferencial, ofreciendo maniobrabil
 
 ####  Sistema de Movimiento y Tracción 
 
- Heimdall utiliza lo que normalmente es denominado sistema ackermann positivo, el cual es un sistema derivado del principio de Ackermann, cuyo objetivo es lograr que en curvas la **rueda interior (θᵢ) gire más que la exterior (θₒ)** para minimizar deslizamiento lateral (*scrub*).  
-- **Ecuación base**:  
+Ahondando en lo mencionado anteriormente, Heimdall utiliza lo que normalmente es denominado sistema ackermann positivo, el cual es un sistema derivado del principio de Ackermann, cuyo objetivo es lograr que en curvas la **rueda interior (θᵢ) gire más que la exterior (θₒ)** para minimizar deslizamiento lateral (*scrub*).  
 
-  ```math
-  \cot(\theta_o) - \cot(\theta_i) = \frac{W}{L}
-  ```
-
-  - `W`: Distancia entre pivotes de dirección (*track width*).  
-  - `L`: Distancia entre ejes (*wheelbase*).  
+- **Ecuación fundamental**:  
+  **cot(θₒ) - cot(θᵢ) = W / L**  
+  - *W*: Distancia entre pivotes de dirección (batalla)  
+  - *L*: Distancia entre ejes  
+  
 
 ### **Implementación Física**
 ```asciidoc
@@ -160,16 +158,10 @@ Nuestro robot emplea un sistema de tracción diferencial, ofreciendo maniobrabil
 
 ---
 
-## **2. Diferencial: Función Crítica**
-### **Mecánica Básica**
-| **Tipo**          | **Comportamiento con Ackermann Positivo**               | **Limitaciones**                          |
-|-------------------|--------------------------------------------------------|------------------------------------------|
-| **Abierto**       | Permite diferencia de velocidades entre ruedas.        | Distribuye par 50/50 → Riesgo de patinaje en rueda interior. |
-| **Autoblocante**  | Limita deslizamientos.                                 | Puede forzar *anti-Ackermann* en curvas. |
+##### **Relación de Velocidades en Curva**
 
-### **Relación de Velocidades en Curva**
-```math
-\frac{\omega_o}{\omega_i} = \frac{R + \frac{W}{2}}{R - \frac{W}{2}}
+```
+ωₒ / ωᵢ = (R + W/2) / (R - W/2)
 ```
 - `ωₒ`: Velocidad angular rueda exterior.  
 - `ωᵢ`: Velocidad angular rueda interior.  
@@ -177,23 +169,8 @@ Nuestro robot emplea un sistema de tracción diferencial, ofreciendo maniobrabil
 
 ---
 
-## **3. Cuadro: Integrador Estructural**
-### **Funciones Clave**
-- **Soporte físico**: Ancla puntos de pivote, suspensión y diferencial.  
-- **Rigidez controlada**: Minimiza deformaciones que alteran la geometría Ackermann.  
-- **Absorción de cargas**: Responde a fuerzas asimétricas (tracción + dirección).  
+##### **Fuerzas en Conflicto**
 
-### **Diseño Óptimo para Ackermann**
-| **Parámetro**       | **Requerimiento**                          | **Efecto en el Sistema**                |
-|---------------------|-------------------------------------------|-----------------------------------------|
-| **Material**        | Acero de alta resistencia/aluminio.       | Reduce flexión bajo par motor.          |
-| **Geometría**       | Puntos de pivote altos y simétricos.      | Mantiene convergencia teórica.          |
-| **Refuerzos**       | Estructura en "X" o celosía.              | Mitiga torsión en aceleración en curva. |
-
----
-
-## **4. Interacción Dinámica: Caso Crítico (Aceleración en Curva Cerrada)**
-### **Fuerzas en Conflicto**
 ```mermaid
 flowchart LR
     A[Motor] --> B[Diferencial]
@@ -207,7 +184,9 @@ flowchart LR
     H -->|No| J[Comportamiento ideal]
 ```
 
-### **Problemas Frecuentes**
+> [!NOTE]
+> De utilizar estos sistemas, recomendamos tener cuidado con los siguientes inconvenientes los cuales aparecieron dentro de nuestras prácticas con la implementación del mencionado sistema:
+
 1. **Paradox Steering**:  
    - *Causa*: La tracción en la rueda interior (baja adherencia) contrarresta el ángulo de giro.  
    - *Solución*: Control electrónico (freno vectorial).  
@@ -218,8 +197,9 @@ flowchart LR
 
 ---
 
-## **5. Soluciones de Ingeniería**
-### **Estrategias Integradas**
+##### Soluciones de Ingeniería**
+-  **Estrategias Integradas**
+
 | **Componente**   | **Innovación**                                    | **Beneficio**                                  |
 |------------------|--------------------------------------------------|-----------------------------------------------|
 | **Cuadro**       | Subchasis desmontable con rigidez variable.      | Permite ajustes finos en competición.         |
