@@ -134,9 +134,11 @@ Nuestro robot emplea un sistema de tracción diferencial, ofreciendo maniobrabil
 
  Heimdall utiliza lo que normalmente es denominado sistema ackermann positivo, el cual es un sistema derivado del principio de Ackermann, cuyo objetivo es lograr que en curvas la **rueda interior (θᵢ) gire más que la exterior (θₒ)** para minimizar deslizamiento lateral (*scrub*).  
 - **Ecuación base**:  
+
   ```math
   \cot(\theta_o) - \cot(\theta_i) = \frac{W}{L}
   ```
+
   - `W`: Distancia entre pivotes de dirección (*track width*).  
   - `L`: Distancia entre ejes (*wheelbase*).  
 
