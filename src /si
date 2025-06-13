@@ -1,166 +1,101 @@
-/*
-  Código de Heimdall para la categoría futuros ingenieros de la WRO 2025
-  Hecho por Cristobal Mogollon y Samuel Burgos
+void goToPosition(int targetX, int targetY, int currentX, int currentY) {
+  int pos = CENTERVALUE;  // Inicialmente recto
+  if (DEBUG) Serial2.println("Target: " + String(targetX) + " , " + String(targetY));
+  if (DEBUG) Serial2.println("Current: " + String(currentX) + " , " + String(currentY));
+  following = true;
+  // readTime = millis();
+  if (currentY < targetY) {
 
-  El código hace que el robot al prenderse avance y de 3 vueltas a la pista
-  de futuros ingenieros en la etapa abierta y al completar la cantidad de 12
-  giros a la pista avanzará dos segundos más y se detiene automáticamente
-
-  Version del codigo: FINAL
-
-  12/06/2025
-  9:04 PM
-*/
-
-#include <Wire.h>
-#include <Ultrasonic.h>
-#include <ESP32Servo.h>
-
-// Pines ESP32 para sensores ultrasónicos
-#define USTFRONT 13
-#define USEFRONT 12
-#define USTLEFT 14
-#define USELEFT 27
-#define USTRIGHT 26
-#define USERIGHT 25
-
-#define IN2 17
-#define IN1 16
-#define PIN_SERVO 19
-#define PIN_BOTON 4  // Pin para botón de inicio
-
-Ultrasonic USFront(USTFRONT, USEFRONT);
-Ultrasonic USLeft(USTLEFT, USELEFT);
-Ultrasonic USRight(USTRIGHT, USERIGHT);
-
-Servo myservo;
-
-const int DISTANCIA_OBSTACULO_FRONTAL = 20;
-const int DISTANCIA_OBSTACULO_LATERAL = 200;
-const unsigned long DURACION_GIRO_I = 1743;
-const unsigned long DURACION_GIRO_D = 1543;
-const unsigned long TIEMPO_ESPERA_GIRO = 3000;  // 2500 ms
-
-bool programaIniciado = false;
-bool finalizado = false;
-
-unsigned long tiempoUltimoGiro = 0;
-int contadorGiros = 0;
-
-void setup() {
-  myservo.attach(PIN_SERVO);
-  Serial.begin(115200);
-
-  pinMode(PIN_BOTON, INPUT_PULLUP);  // Botón con resistencia interna pull-up
-  pinMode(IN1, OUTPUT);
-  pinMode(IN2, OUTPUT);
-
-  digitalWrite(IN1, LOW);     
-  digitalWrite(IN2, LOW); 
-  myservo.write(99);  // Servo centrado
-  delay(3000);
-
-  Serial.println("Esperando pulsar botón para iniciar...");
-}
-
-void loop() {
-  if (!programaIniciado) {
-    if (digitalRead(PIN_BOTON) == LOW) {
-      programaIniciado = true;
-      Serial.println("Botón presionado, iniciando programa...");
-      delay(500);  // debounce
-    }
-  } else if (!finalizado) {
-    docegiros();
-  }
-  // Si finalizado, no hace nada más
-}
-
-void docegiros() {
-  unsigned long ahora = millis();
-
-  int frontal = USFront.read();
-  int izquierda = USLeft.read();
-  int derecha = USRight.read();
-
-  if (frontal == 357) frontal = -1;
-  if (izquierda == 357) izquierda = -1;
-  if (derecha == 357) derecha = -1;
-
-  Serial.print("Distancias (cm) - Frontal: ");
-  Serial.print(frontal);
-  Serial.print(" | Izquierda: ");
-  Serial.print(izquierda);
-  Serial.print(" | Derecha: ");
-  Serial.println(derecha);
-
-  if (contadorGiros >= 12) {
-    // Avanzar 1 segundo más y detenerse definitivamente
-    if (!finalizado) {
-      Serial.println("Se alcanzaron 12 giros, avanzando 1 segundo más y deteniéndose.");
-      Adelante();
-      delay(1500);
-      Parar();
-      finalizado = true;
-    }
-    return;
-  }
-
-    if (frontal != -1 && frontal > DISTANCIA_OBSTACULO_FRONTAL) {
-      Adelante();
-      }
-
-      if (ahora - tiempoUltimoGiro < TIEMPO_ESPERA_GIRO) {
-        Serial.println("Avanzando recto después del giro, sin girar");
+    if (targetX == XVALUEGREEN) {  // Para el color verde
+      if (DEBUG) Serial2.println("Para el color verde");
+      if (currentX < targetX) {
+        pos = map(currentX, 0, targetX, MAXLEFT, CENTERVALUE);  // Calculamos los grados a cruzar
+        if (DEBUG) Serial2.println("Para el color verde corrige");
       } else {
-        if (izquierda != -1 && izquierda > DISTANCIA_OBSTACULO_LATERAL) {
-          Serial.println("Girando a la izquierda por más de 190 cm libres");
-          delay(500);
-          Izquierda();
-          contadorGiros++;
-          tiempoUltimoGiro = millis();
-          Adelante();
-        } else if (derecha != -1 && derecha > DISTANCIA_OBSTACULO_LATERAL) {
-          Serial.println("Girando a la derecha por más de 190 cm libres");
-          delay(500);
-          Derecha();
-          contadorGiros++;
-          tiempoUltimoGiro = millis();
-          Adelante();
-        }
+        pos = CENTERVALUE - 6;  // Mantener recto si ya está en posición
+        if (DEBUG) Serial2.println("Para el color verde sigue recto");
       }
-    } 
+    } else if (targetX == XVALUERED) {  // Para el color rojo
+      if (DEBUG) Serial2.println("Para el color rojo");
 
-void Adelante() {
-  digitalWrite(IN1, HIGH);
-  Serial.println("Motor en marcha hacia adelante");
-}
+      if (currentX > targetX) {
+        pos = map(currentX, targetX, 320, CENTERVALUE, MAXRIGHT);  // Calculamos los grados a cruzar
+        if (DEBUG) Serial2.println("Para el color rojo corrige");
+      } else {
+        pos = CENTERVALUE + 10;  // Mantener recto si ya está en posición
+        if (DEBUG) Serial2.println("Para el color verde sigue recto");
+      }
+    }
+    //--------------------------------------------------------------------------
 
-void Parar() {
-  digitalWrite(IN1, LOW);
-  Serial.println("Motor detenido");
-}
+    else if (targetX == XVALUEMAG1) {
 
-void Izquierda() {
-  digitalWrite(IN1, HIGH);
-  myservo.write(150);  
-  unsigned long inicio = millis();
-  while (millis() - inicio < DURACION_GIRO_I) {
-    delay(10);
+      if (currentX > targetX) {
+        pos = map(currentX, 0, targetX, MAXLEFT, CENTERVALUE);  // Calculamos los grados a cruzar
+        if (DEBUG) Serial2.println("Para mangenta 1 corrige");
+      } else {
+        pos = CENTERVALUE + 6;  // Mantener recto si ya está en posición
+        if (DEBUG) Serial2.println("Para mangenta 1 recto");
+      }
+
+    } else if (targetX == XVALUEMAG2) {
+      if (currentX > targetX) {
+        pos = map(currentX, targetX, 320, CENTERVALUE, MAXRIGHT);  // Calculamos los grados a cruzar
+        if (DEBUG) Serial2.println("Para mangenta 2 corrige");
+      } else {
+        pos = CENTERVALUE + 6;  // Mantener recto si ya está en posición
+        if (DEBUG) Serial2.println("Para mangenta 2 sigue recto");
+      }
+    }
+    //--------------------------------------------------------
+    currentGrade = pos;
+    direccion.write(pos);  // Ajustar el servo
+    if (DEBUG) Serial2.println("Posicion Servo: " + String(pos));
+    setMove(2, 1, SPEED2);  // Avanzar
   }
-  myservo.write(97);  // Centrar servo
-  digitalWrite(IN1, LOW);
-  Serial.println("Giro izquierda completado");
 }
 
-void Derecha() {
-  digitalWrite(IN1, HIGH);
-  myservo.write(30);
-  unsigned long inicio = millis();
-  while (millis() - inicio < DURACION_GIRO_D) {
-    delay(10);
+
+void printValues(byte mIndex) {
+  switch (pixy.ccc.blocks[mIndex].m_signature) {
+    case 0:
+      if (DEBUG) Serial2.print(F("Ninguno. Malo "));
+      if (DEBUG) Serial2.print(mIndex);
+      break;
+    case 1:
+      if (DEBUG) Serial2.print(F("Azul "));
+      break;
+    case 2:
+      if (DEBUG) Serial2.print(F("Naranja "));
+      break;
+    case 3:
+      if (DEBUG) Serial2.print(F("Rojo "));
+      break;
+    case 4:
+      if (DEBUG) Serial2.print(F("Verde "));
+      break;
+    case 5:
+      if (DEBUG) Serial2.print(F("Magenta "));
+      break;
+    default:
+      if (DEBUG) Serial2.print(F("Ninguno. Signature "));
+      if (DEBUG) Serial2.print(mIndex);
   }
-  myservo.write(100);  // Centrar servo
-  digitalWrite(IN1, LOW);
-  Serial.println("Giro derecha completado");
+  if (DEBUG) Serial2.print("  X: " + String(pixy.ccc.blocks[mIndex].m_x));
+  if (DEBUG) Serial2.println("  Y: " + String(pixy.ccc.blocks[mIndex].m_y));
+}
+
+void printAllValues() {
+  if (DEBUG) Serial2.println();
+  for (byte b = 0; b < 40; b++)
+    if (DEBUG) Serial2.print("-");
+  if (DEBUG) Serial2.println();
+
+  readColor();
+  for (byte i = 0; i < pixy.ccc.numBlocks; i++)
+    printValues(i);
+
+  for (byte b = 0; b < 40; b++)
+    if (DEBUG) Serial2.print("-");
+  if (DEBUG) Serial2.println();
 }
