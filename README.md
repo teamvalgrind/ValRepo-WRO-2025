@@ -130,10 +130,120 @@ Nuestro robot emplea un sistema de tracción diferencial, ofreciendo maniobrabil
 
 [![10a4.jpg](https://i.postimg.cc/K89xJC6v/10a4.jpg)](https://postimg.cc/G4sWpg3Z)
 
-La geometría de la dirección es una de las muchas herramientas a disposición de un diseñador de autos de carrera para garantizar que el auto extraiga el máximo rendimiento de los cuatro neumáticos.
+####  Sistema de Movimiento y Tracción 
 
+ Heimdall utiliza lo que normalmente es denominado sistema ackermann positivo, el cual es un sistema derivado del principio de Ackermann, cuyo objetivo es lograr que en curvas la **rueda interior (θᵢ) gire más que la exterior (θₒ)** para minimizar deslizamiento lateral (*scrub*).  
+- **Ecuación base**:  
+  ```math
+  \cot(\theta_o) - \cot(\theta_i) = \frac{W}{L}
+  ```
+  - `W`: Distancia entre pivotes de dirección (*track width*).  
+  - `L`: Distancia entre ejes (*wheelbase*).  
+
+### **Implementación Física**
+```asciidoc
+[Rueda exterior (θₒ)]
+  │
+  ├─── Brazo de dirección  
+  │        \  
+[Cuadro]──┤         \  
+  │        │          \  
+  │        │           ●── Centro teórico (eje trasero)  
+  │        │          /  
+  │        │         /  
+  ├─── Brazo de dirección  
+  │  
+[Rueda interior (θᵢ > θₒ)]
+```
+
+---
+
+## **2. Diferencial: Función Crítica**
+### **Mecánica Básica**
+| **Tipo**          | **Comportamiento con Ackermann Positivo**               | **Limitaciones**                          |
+|-------------------|--------------------------------------------------------|------------------------------------------|
+| **Abierto**       | Permite diferencia de velocidades entre ruedas.        | Distribuye par 50/50 → Riesgo de patinaje en rueda interior. |
+| **Autoblocante**  | Limita deslizamientos.                                 | Puede forzar *anti-Ackermann* en curvas. |
+
+### **Relación de Velocidades en Curva**
+```math
+\frac{\omega_o}{\omega_i} = \frac{R + \frac{W}{2}}{R - \frac{W}{2}}
+```
+- `ωₒ`: Velocidad angular rueda exterior.  
+- `ωᵢ`: Velocidad angular rueda interior.  
+- `R`: Radio de giro del centro del eje.  
+
+---
+
+## **3. Cuadro: Integrador Estructural**
+### **Funciones Clave**
+- **Soporte físico**: Ancla puntos de pivote, suspensión y diferencial.  
+- **Rigidez controlada**: Minimiza deformaciones que alteran la geometría Ackermann.  
+- **Absorción de cargas**: Responde a fuerzas asimétricas (tracción + dirección).  
+
+### **Diseño Óptimo para Ackermann**
+| **Parámetro**       | **Requerimiento**                          | **Efecto en el Sistema**                |
+|---------------------|-------------------------------------------|-----------------------------------------|
+| **Material**        | Acero de alta resistencia/aluminio.       | Reduce flexión bajo par motor.          |
+| **Geometría**       | Puntos de pivote altos y simétricos.      | Mantiene convergencia teórica.          |
+| **Refuerzos**       | Estructura en "X" o celosía.              | Mitiga torsión en aceleración en curva. |
+
+---
+
+## **4. Interacción Dinámica: Caso Crítico (Aceleración en Curva Cerrada)**
+### **Fuerzas en Conflicto**
+```mermaid
+flowchart LR
+    A[Motor] --> B[Diferencial]
+    B --> C[Semieje der.\nRueda ext. ωₒ]
+    B --> D[Semieje izq.\nRueda int. ωᵢ]
+    C --> E[Fuerza de tracción ↑]
+    D --> F[Ángulo de giro θᵢ > θₒ]
+    E & F --> G[Cuadro]
+    G --> H{Deflexión estructural?}
+    H -->|Sí| I[Pérdida de Ackermann]
+    H -->|No| J[Comportamiento ideal]
+```
+
+### **Problemas Frecuentes**
+1. **Paradox Steering**:  
+   - *Causa*: La tracción en la rueda interior (baja adherencia) contrarresta el ángulo de giro.  
+   - *Solución*: Control electrónico (freno vectorial).  
+
+2. **Fatiga en semiejes**:  
+   - *Causa*: Torsión excesiva en juntas homocinéticas debido a θᵢ máximo + par motor.  
+   - *Solución*: Semiejes asimétricos con ángulos de trabajo optimizados.  
+
+---
+
+## **5. Soluciones de Ingeniería**
+### **Estrategias Integradas**
+| **Componente**   | **Innovación**                                    | **Beneficio**                                  |
+|------------------|--------------------------------------------------|-----------------------------------------------|
+| **Cuadro**       | Subchasis desmontable con rigidez variable.      | Permite ajustes finos en competición.         |
+| **Diferencial**  | Electrónico con mapas por ángulo de giro.        | Regula par según θᵢ/θₒ (ej: Honda SH-AWD).   |
+| **Dirección**    | Brazo de Ackermann ajustable (rótulas roscadas). | Compensa desgaste o cambios de neumáticos.    |
+
+### **Ejemplo Práctico (Vehículo de Calle)**
+```markdown
+**Modelo**: Peugeot 308 (Tracción delantera)  
+- **Cuadro**: Estampado de acero con refuerzos laser-welded.  
+- **Diferencial**: Abierto + control ESP que frena rueda interior.  
+- **Ackermann**: 85% puro a 20° de giro → Balance entre ciudad/autopista.
+```
+
+---
+
+## **6. Conclusión**
+La tríada **Ackermann positivo + diferencial + cuadro** requiere:  
+1. **Rigidez estructural** para mantener geometría bajo carga.  
+2. **Diferencial inteligente** que adapte par a condiciones dinámicas.  
+3. **Compromisos calculados** entre maniobrabilidad (baja velocidad) y estabilidad (alta velocidad).  
+
+*¿Profundizamos en aplicaciones en competición o simulación por elementos finitos (FEA) del cuadro?*
+```
 > [!NOTE]
-> En la ingeniería automovilística moderna, la geometría Ackermann pura se modifica a menudo para tener en cuenta factores dinámicos como los ángulos de deslizamiento de los neumáticos, que adquieren importancia a velocidades más altas. En la conducción de competición y de alto rendimiento, por ejemplo, los ingenieros ajustan la geometría de la dirección (a menudo con una configuración que se aleja de la geometría Ackermann ideal) para inducir deliberadamente un ligero deslizamiento de los neumáticos y mejorar el agarre lateral. Estos ajustes tienen en cuenta factores como la transferencia de peso, la dinámica de la suspensión y la variación de la carga de los neumáticos, todos los cuales influyen en el comportamiento del vehículo en las curvas a alta velocidad. Aunque se originó en una época en la que primaba la simplicidad mecánica, sus ideas fundamentales siguen influyendo en el diseño moderno de la dirección, aunque a menudo como punto de partida de sistemas más sofisticados que integran programas electrónicos de estabilidad y métodos de control dinámico.
+> En la ingeniería automovilística moderna, la geometríaAckermann pura se modifica a menudo para tener en cuenta factores dinámicos como los ángulos de deslizamiento de los neumáticos, que adquieren importancia a velocidades más altas. En la conducción de competición y de alto rendimiento, por ejemplo, los ingenieros ajustan la geometría de la dirección (a menudo con una configuración que se aleja de la geometría Ackermann ideal) para inducir deliberadamente un ligero deslizamiento de los neumáticos y mejorar el agarre lateral. Estos ajustes tienen en cuenta factores como la transferencia de peso, la dinámica de la suspensión y la variación de la carga de los neumáticos, todos los cuales influyen en el comportamiento del vehículo en las curvas a alta velocidad. Aunque se originó en una época en la que primaba la simplicidad mecánica, sus ideas fundamentales siguen influyendo en el diseño moderno de la dirección, aunque a menudo como punto de partida de sistemas más sofisticados que integran programas electrónicos de estabilidad y métodos de control dinámico.
 
 [![Ackermann-turning-svg.png](https://i.postimg.cc/CL08P93k/Ackermann-turning-svg.png)](https://postimg.cc/8syssXPz)
 
