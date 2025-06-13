@@ -126,7 +126,7 @@ Nuestro robot emplea un sistema de tracción diferencial, ofreciendo maniobrabil
 
 [![IMG-20250611-112322.jpg](https://i.postimg.cc/zX9sd8Bj/IMG-20250611-112322.jpg)](https://postimg.cc/bs9VrX1D)
 
-> El diferencial de los vehículos, como su nombre lo indica, permite que exista una diferencia en la velocidad de giro entre la rueda interna y la rueda externa del vehículo cuando se da una vuelta o se está girando la dirección. No importa si el vehículo es tracción trasera o delantera, la función es la misma.
+##### El diferencial de los vehículos, como su nombre lo indica, permite que exista una diferencia en la velocidad de giro entre la rueda interna y la rueda externa del vehículo cuando se da una vuelta o se está girando la dirección. No importa si el vehículo es tracción trasera o delantera, la función es la misma.
 
 [![10a4.jpg](https://i.postimg.cc/K89xJC6v/10a4.jpg)](https://postimg.cc/G4sWpg3Z)
 
@@ -208,8 +208,6 @@ flowchart LR
 
 --- 
 
-> [!NOTE]
-> En la ingeniería automovilística moderna, la geometríaAckermann pura se modifica a menudo para tener en cuenta factores dinámicos como los ángulos de deslizamiento de los neumáticos, que adquieren importancia a velocidades más altas. En la conducción de competición y de alto rendimiento, por ejemplo, los ingenieros ajustan la geometría de la dirección (a menudo con una configuración que se aleja de la geometría Ackermann ideal) para inducir deliberadamente un ligero deslizamiento de los neumáticos y mejorar el agarre lateral. Estos ajustes tienen en cuenta factores como la transferencia de peso, la dinámica de la suspensión y la variación de la carga de los neumáticos, todos los cuales influyen en el comportamiento del vehículo en las curvas a alta velocidad. Aunque se originó en una época en la que primaba la simplicidad mecánica, sus ideas fundamentales siguen influyendo en el diseño moderno de la dirección, aunque a menudo como punto de partida de sistemas más sofisticados que integran programas electrónicos de estabilidad y métodos de control dinámico.
 
 [![Ackermann-turning-svg.png](https://i.postimg.cc/CL08P93k/Ackermann-turning-svg.png)](https://postimg.cc/8syssXPz)
 
@@ -225,11 +223,15 @@ El núcleo de la movilidad de nuestro robot reside en su **subsistema mecánico 
    ##### Los ubicamos en el eje motriz , permiten que las ruedas izquierda y derecha giren a velocidades diferentes al tomar curvas. Esto es *crucial* para evitar que el robot "patine" o forcejee en giros cerrados, manteniendo la estabilidad incluso durante maniobras agresivas. Su escala 1/18 garantiza que sean compactos, ligeros y proporcionales al resto del chasis y ruedas del robot de competición.
   ##### En cuanto a los ejes, estos conectan directamente la salida de los diferenciales (1/18) a las ruedas motrices. Transfieren el par motor generado hacia las ruedas, haciendo girar los neumáticos. Su diseño a escala 1/18 asegura la longitud y resistencia adecuadas para soportar las fuerzas de torsión y tracción sin añadir peso excesivo ni desbalancear el robot.
 
+_foto stl eje_
+
 2. **Motor Brushed Injora 180° 48T**
 
 [![DSC06671-1-1800x1800.webp](https://i.postimg.cc/NFbNQ2Qm/DSC06671-1-1800x1800.webp)](https://postimg.cc/wRy5Vvyj)
 
  ##### Este motor de escobillas (brushed) es ideal para complementar el resto de elementos como los diferenciales y los ejes debido a que su cuerpo es más corto que un motor estándar (que suele ser ~360°), ahorrando espacio vital en un robot compacto, cabe destacar que un motor de "mayor T" (como 48T) proporciona **más par (fuerza de torsión)** a velocidades más bajas, en comparación con motores de menor T (ej: 20T) que son más rápidos pero con menos fuerza. Este alto par es *esencial* para iniciar derrapes controlados, superar pequeñas irregularidades y proporcionar aceleración contundente, incluso con las ruedas de drift que ofrecen menos tracción.
+
+_cuadro información general_
 
 3.  **Ruedas de Drift**
 
@@ -256,7 +258,7 @@ Para el proyecto, decidimos usar;
 
 [![71-Hj-Atre-KHL-AC-UL495-SR435-495.jpg](https://i.postimg.cc/Njq8qLH9/71-Hj-Atre-KHL-AC-UL495-SR435-495.jpg)](https://postimg.cc/dL6ZGsnw)
 
-### **Baterías**
+#### **Baterías**
 
  ##### un kit de baterías recargables Urgenex, de tecnología NiMH, diseñado para ofrecer una salida estable de 12 V y una capacidad de 3000 mAh por unidad en un formato compacto y robusto, que facilita su integración en proyectos de electrónica y robótica gracias a sus cables desnudos para conexiones directas. Garantizando una carga rápida y un suministro energético continuo y fiable, este kit nos resulta ideal para aplicaciones exigentes como las competencias de robótica en nuestra categoría, donde es imperativo optimizar tanto el rendimiento del sistema como los tiempos de montaje y costos operativos.
 
@@ -266,10 +268,11 @@ Para el proyecto, decidimos usar;
 [![images-20.jpg](https://i.postimg.cc/j2fgHz4h/images-20.jpg)](https://postimg.cc/RJML9J83)
 
 
-### Motor DC 12V
+#### Motor DC 12V
 
+#### Driver L298N
 
-#### Sensores 
+#### Sensores Ultrasónicos 
 
 [![D-NQ-NP-986330-MLV79479843776-102024-O.webp](https://i.postimg.cc/J0w9gkPq/D-NQ-NP-986330-MLV79479843776-102024-O.webp)](https://postimg.cc/N94J25h9)
 
@@ -278,18 +281,26 @@ Para el proyecto, decidimos usar;
 > [!NOTE]
 > El tiempo que tarda la onda sonora en ir y regresar a un objeto puede utilizarse para conocer la distancia entre el origen del sonido y el objeto. La interfaz del sensor HC-SR04 y Arduino se logra mediante 2 pines digitales: el pin de disparo (trigger) y el pin de eco (echo). La función de cada uno de estos pines es la siguiente:
 - El pin trigger recibe un pulso de habilitación del microcontrolador, mediante el cual se le indica al módulo que comience a realizar la medición de distancia.
-- En el pin echo el sensor devuelve al microcontrolador un pulso cuyo ancho es proporcional al tiempo que tarda el sonido en viajar del transductor al obstáculo y luego de vuelta al módulo.
+- En el pin echo el sensor devuelve al microcontrolador un pulso cuyo ancho es proporcional al tiempo que tarda el sonido en viajar del transductor al obstáculo y luego de vuelta al módulo
 
-#### Conexiones y Circuitos
+#### Pixy2
+
+<fotos del entrenamiento de signatures, librerías, mucha paja
+
+### Conexiones y Circuitos
 
 ##### Todos los módulos están conectados en un circuito organizado, minimizando interferencias y facilitando el mantenimiento.  
 
-- Diagramas de Flujo
+#### Diagramas de Flujo
 
 ##### En este diagrama de flujo se halla una representación gráfica del funcionamiento lógico de nuestra programación, así como de lo que se espera sea el desempeño del robot al inicializar el programa.
 
-
+##### Desafío Abierto
 [![IMG-20250523-WA0008.jpg](https://i.postimg.cc/QxYhNwBT/IMG-20250523-WA0008.jpg)](https://postimg.cc/YhFJbXzr)
+
+##### Desafío Cerrado
+
+#### Diagrama de Conexiones 
 
 #### Microcontroladores
 
