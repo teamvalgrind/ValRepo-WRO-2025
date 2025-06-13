@@ -198,7 +198,7 @@ flowchart LR
 ---
 
 ##### Soluciones de Ingeniería
--  **Estrategias Integradas**
+-  **Estrategias Recomendadas**
 
 | **Componente**   | **Innovación**                                    | **Beneficio**                                  |
 |------------------|--------------------------------------------------|-----------------------------------------------|
@@ -269,8 +269,61 @@ Para el proyecto, decidimos usar;
 
 
 #### Motor DC 12V
+Es un dispositivo electromecánico que convierte **energía eléctrica de corriente continua (12V)** en **movimiento rotatorio**.  
+
+**Razones por las cuales decidimos utilizar este motor:**
+
+- **Voltaje nominal:** Opera con 12V (puede tolerar ligeras variaciones, ej. 9-15V).  
+- **Tipo común:** Motor de *escobillas (brushed)*, con imanes permanentes y un rotor bobinado.  
+- **Salida:** Genera par de giro (*torque*) y velocidad (RPM) proporcionales al voltaje aplicado.  
+- **Uso universal:** Barato, fácil de controlar y ampliamente disponible.  
 
 #### Driver L298N
+
+Es un **controlador de motores de doble puente H (dual H-bridge)** encapsulado en un circuito integrado. Su función principal es actuar como un "intermediario de potencia" entre dispositivos de control de baja potencia (como Arduino) y motores de alta potencia (como tu motor DC 12V).
+
+**Es extremadamente útil para nuestro proyecto debido a su:**
+
+1. **Amplificación de corriente:**  
+   - Los microcontroladores solo pueden entregar ~20-40mA por pin.  
+   - El L298N soporta hasta **2A por canal** (suficiente para motores medianos).  
+2. **Control direccional:**  
+   - Permite invertir la polaridad del voltaje aplicado al motor para cambiar su giro (adelante/atrás).  
+3. **Protección eléctrica:**  
+   - Aísla el circuito de control de los picos de voltaje generados por el motor.  
+4. **Manejo de alta tensión:**  
+   - Soporta motores de 5V a 35V (ideal para tu motor 12V).  
+
+---
+
+#### **Partes clave del módulo L298N:**  
+| **Componente**      | **Función**                                                                 |
+|---------------------|-----------------------------------------------------------------------------|
+| **Puertos de salida** (OUT1, OUT2, OUT3, OUT4) | Conectan los motores (2 motores DC o 1 motor paso a paso).                  |
+| **Entradas lógicas** (IN1, IN2, IN3, IN4) | Reciben señales de control desde Arduino (determinan dirección).          |
+| **Pines de habilitación** (ENA, ENB) | Activan/desactivan los canales (con/sin PWM).                             |
+| **Regulador de 5V** | Provee energía a la lógica (puede alimentar al Arduino si se usa el jumper).|
+| **Disipador de calor** | Metálico, previene sobrecalentamiento durante uso prolongado.             |
+| **Jumpers**         | Configuran el modo de operación (ej: habilitación permanente de canales). |
+
+---
+
+#### **¿Cómo controla un motor DC?**  
+Usa un circuito **puente H (H-bridge)** interno:  
+``` 
+   [IN1] --[SW1]---- Motor ----[SW3]-- [IN2]  
+               |                   |  
+              [SW2]               [SW4]  
+```  
+- **Giro adelante:**  
+  `IN1 = HIGH` (SW1 cerrado) + `IN2 = LOW` (SW4 cerrado) → Corriente fluye: SW1 → Motor → SW4  
+- **Giro atrás:**  
+  `IN1 = LOW` (SW2 cerrado) + `IN2 = HIGH` (SW3 cerrado) → Corriente fluye: SW3 → Motor → SW2  
+- **Frenado:**  
+  `IN1 = HIGH` + `IN2 = HIGH` → Cortocircuito en bornes del motor (frena rápidamente).  
+
+---
+
 
 #### Sensores Ultrasónicos 
 
