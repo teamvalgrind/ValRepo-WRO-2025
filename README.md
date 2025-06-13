@@ -197,7 +197,7 @@ flowchart LR
 
 ---
 
-##### Soluciones de Ingeniería**
+##### Soluciones de Ingeniería
 -  **Estrategias Integradas**
 
 | **Componente**   | **Innovación**                                    | **Beneficio**                                  |
@@ -206,24 +206,8 @@ flowchart LR
 | **Diferencial**  | Electrónico con mapas por ángulo de giro.        | Regula par según θᵢ/θₒ (ej: Honda SH-AWD).   |
 | **Dirección**    | Brazo de Ackermann ajustable (rótulas roscadas). | Compensa desgaste o cambios de neumáticos.    |
 
-### **Ejemplo Práctico (Vehículo de Calle)**
-```markdown
-**Modelo**: Peugeot 308 (Tracción delantera)  
-- **Cuadro**: Estampado de acero con refuerzos laser-welded.  
-- **Diferencial**: Abierto + control ESP que frena rueda interior.  
-- **Ackermann**: 85% puro a 20° de giro → Balance entre ciudad/autopista.
-```
+--- 
 
----
-
-## **6. Conclusión**
-La tríada **Ackermann positivo + diferencial + cuadro** requiere:  
-1. **Rigidez estructural** para mantener geometría bajo carga.  
-2. **Diferencial inteligente** que adapte par a condiciones dinámicas.  
-3. **Compromisos calculados** entre maniobrabilidad (baja velocidad) y estabilidad (alta velocidad).  
-
-*¿Profundizamos en aplicaciones en competición o simulación por elementos finitos (FEA) del cuadro?*
-```
 > [!NOTE]
 > En la ingeniería automovilística moderna, la geometríaAckermann pura se modifica a menudo para tener en cuenta factores dinámicos como los ángulos de deslizamiento de los neumáticos, que adquieren importancia a velocidades más altas. En la conducción de competición y de alto rendimiento, por ejemplo, los ingenieros ajustan la geometría de la dirección (a menudo con una configuración que se aleja de la geometría Ackermann ideal) para inducir deliberadamente un ligero deslizamiento de los neumáticos y mejorar el agarre lateral. Estos ajustes tienen en cuenta factores como la transferencia de peso, la dinámica de la suspensión y la variación de la carga de los neumáticos, todos los cuales influyen en el comportamiento del vehículo en las curvas a alta velocidad. Aunque se originó en una época en la que primaba la simplicidad mecánica, sus ideas fundamentales siguen influyendo en el diseño moderno de la dirección, aunque a menudo como punto de partida de sistemas más sofisticados que integran programas electrónicos de estabilidad y métodos de control dinámico.
 
