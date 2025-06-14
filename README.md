@@ -268,9 +268,21 @@ El servo INJS2065 es un Servomotor compacto y de alto rendimiento, ideal para ap
 | 1 × Destornillador hexagonal 1.5 mm             |                                                            |
 | 1 × Destornillador hexagonal 2.0 mm             |                                                            |
 
-3.  **Ruedas del Robot**
+3. #### Motor DC 12V greartisan
 
-info general 
+foto
+info general
+especificaciones
+
+**Razones por las cuales decidimos utilizar este motor:**
+
+- **Voltaje nominal:** Opera con 12V (puede tolerar ligeras variaciones, ej. 9-15V).  
+- **Tipo común:** Motor de *escobillas (brushed)*, con imanes permanentes y un rotor bobinado.  
+- **Salida:** Genera par de giro (*torque*) y velocidad (RPM) proporcionales al voltaje aplicado.  
+- **Uso universal:** Barato, fácil de controlar y ampliamente disponible.
+
+diferencias entre voltaje nominal y voltaje real del robot y reduccion 
+
 
 4.  **Tornillos, Tuercas de Seguridad y Arandelas (M2 y M3)**
 
@@ -299,21 +311,6 @@ cuadro del datasheet, funcion e importancia dentro del robot
 
 [![images-20.jpg](https://i.postimg.cc/j2fgHz4h/images-20.jpg)](https://postimg.cc/RJML9J83)
 
-
-#### Motor DC 12V greartisan
-
-foto
-info general
-especificaciones
-
-**Razones por las cuales decidimos utilizar este motor:**
-
-- **Voltaje nominal:** Opera con 12V (puede tolerar ligeras variaciones, ej. 9-15V).  
-- **Tipo común:** Motor de *escobillas (brushed)*, con imanes permanentes y un rotor bobinado.  
-- **Salida:** Genera par de giro (*torque*) y velocidad (RPM) proporcionales al voltaje aplicado.  
-- **Uso universal:** Barato, fácil de controlar y ampliamente disponible.
-
-diferencias entre voltaje nominal y voltaje real del robot y reduccion 
 
 #### Driver L298N
 
