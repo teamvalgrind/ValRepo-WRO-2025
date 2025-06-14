@@ -181,7 +181,7 @@ flowchart LR
     H -->|No| J[Comportamiento ideal]
 ```
 
-> [!NOTE]
+> [!WARNING]
 > De utilizar estos sistemas, recomendamos tener cuidado con los siguientes inconvenientes los cuales aparecieron dentro de nuestras prácticas con la implementación del mencionado sistema:
 
 1. **Paradox Steering**:  
@@ -219,8 +219,6 @@ El núcleo de la movilidad de nuestro robot reside en su **subsistema mecánico 
 
    ##### Los ubicamos en el eje motriz , permiten que las ruedas izquierda y derecha giren a velocidades diferentes al tomar curvas. Esto es *crucial* para evitar que el robot "patine" o forcejee en giros cerrados, manteniendo la estabilidad incluso durante maniobras agresivas. Su escala 1/18 garantiza que sean compactos, ligeros y proporcionales al resto del chasis y ruedas del robot de competición.
   ##### En cuanto a los ejes, estos conectan directamente la salida de los diferenciales (1/18) a las ruedas motrices. Transfieren el par motor generado hacia las ruedas, haciendo girar los neumáticos. Su diseño a escala 1/18 asegura la longitud y resistencia adecuadas para soportar las fuerzas de torsión y tracción sin añadir peso excesivo ni desbalancear el robot.
-
-_foto stl eje_
 
 2. **Motor Brushed INJ 2065**
 
