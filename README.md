@@ -400,9 +400,42 @@ Para el proyecto, decidimos usar;
  cuadro de info
 
 ### **LM2596**  
-##### El LM2596 es un regulador step down DC-DC diseñado para transformar tensiones elevadas en niveles adecuados para circuitos electrónicos.  Acepta un rango de entrada entre 4V y 35V, Lo cual evidentemente demuestra que es un componente electrónico bastante versátil en lo que al manejo de voltaje respecta, por lo tanto nuestro equipo decidió utilizarlo para poder manejar el voltaje en el circuito del robot de forma idónea.
+##### El LM2596 es un regulador step down DC-DC diseñado para transformar tensiones elevadas en niveles adecuados para circuitos electrónicos.  Acepta un rango de entrada entre 3.2 y 40V, Lo cual evidentemente demuestra que es un componente electrónico bastante versátil en lo que al manejo de voltaje respecta, por lo tanto nuestro equipo decidió utilizarlo para poder manejar el voltaje en el circuito del robot de forma idónea.
 
-cuadro del datasheet, funcion e importancia dentro del robot
+---
+
+### **📊 Cuadro Resumen del Datasheet**  
+| **Parámetro**             | **Valor/Descripción**                  | **Puntos Relevantes**                                                          |     |
+| ------------------------- | -------------------------------------- | ------------------------------------------------------------------------------ | --- |
+| **Rango de entrada**      | 3.2–40 V DC                            | Compatible con baterías LiPo (7.4V), Pb-ácido (12V), o paneles solares.        |     |
+| **Rango de salida**       | 1.25–37 V DC ajustable                 | Ideal para microcontroladores (5V), sensores (3.3V) o motores (6–12V).         |     |
+| **Corriente máxima**      | 3 A (pico), 2 A continuo sin disipador | Suficiente para servomotores, drivers de motores, o sistemas de control.       |     |
+| **Eficiencia**            | Hasta 92% , ≈73% @3A                   | Reduce pérdidas térmicas vs. reguladores lineales, crucial en sesiones largas. |     |
+| **Frecuencia**            | 150 kHz                                | Permite usar componentes magnéticos pequeños (compacto).                       |     |
+| **Temperatura operativa** | -40°C a +85°C                          | Funciona en entornos extremos (competiciones exteriores).                      |     |
+| **Dimensiones**           | 45×20×14 mm (estándar)                 | Fácil integración en espacios reducidos de robots.                             |     |
+| **Protecciones**          | Limitación de corriente                | Previene daños por cortocircuitos en cables o motores.                         |     |
+|                           |                                        |                                                                                |     |
+
+---
+
+### ** Funcionamiento Técnico**  
+El LM2596 sigue una topología **buck clásica** con cuatro componentes clave:  
+1. **Interruptor (MOSFET)**: Regula el flujo de energía mediante PWM a 150 kHz .  
+2. **Bobina (inductor)**: Almacena energía magnética durante el ciclo "ON" y la libera en el "OFF", estabilizando el voltaje .  
+3. **Diodo**: Cierra el circuito durante la fase de descarga de la bobina .  
+4. **Capacitor**: Filtra rizados (<50 mV ), crucial para microcontroladores sensibles al ruido.  
+
+> [!TIP]
+>     - Usar disipador si la corriente supera 1.5A .  
+>  - Monitorear temperatura con termómetro IR (>45°C indica riesgo) .  
+  - Mantener diferencia mínima de **1.5V entre entrada/salida** (ej: 7.4V entrada → 5V salida) .  
+  - Para motores, agregar un **fusible de 2–3A** en serie .    
+  - Usar cables AWG 18+ para corrientes >2A .  
+  - Evitar loops largos en entrada/salida para reducir rizado.  
+
+---
+
 
 [![images-20.jpg](https://i.postimg.cc/j2fgHz4h/images-20.jpg)](https://postimg.cc/RJML9J83)
 
