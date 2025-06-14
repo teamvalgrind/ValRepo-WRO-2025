@@ -304,7 +304,7 @@ Un Motor de Engranajes DC Greartisan es un tipo de motor eléctrico de corriente
  El **eje de salida céntrico de 1.45 pulgadas de diámetro** proporciona una conexión robusta y directa a los sistemas mecánicos del robot, como ruedas, brazos articulados o mecanismos de elevación, asegurando que el par generado se transmita de manera eficiente.
 
 > [!TIP]
->     Al operar a velocidades más bajas, es mucho más fácil controlar el movimiento del robot. Esto se traduce en una **mayor precisión** para tareas como la navegación autónoma, la manipulación de objetos delicados o la ejecución de movimientos específicos en un brazo robótico. Evita los movimientos bruscos y difíciles de controlar de los motores de alta velocidad sin reducción.
+>  Evita los movimientos bruscos y difíciles de controlar de los motores de alta velocidad sin reducción.
 >     Aunque parezca contradictorio, al operar con una relación de engranajes adecuada, el motor puede trabajar más cerca de su punto de eficiencia óptima para la carga que está manejando, lo que puede resultar en un **menor consumo de energía** en comparación con un motor sin engranajes que lucha por alcanzar el par requerido.
 
 ### Especificaciones del Motor
@@ -335,9 +335,13 @@ La reducción total del sistema es:
 Reducción total = Reducción interna del motor × (dientes engranaje grande / dientes piñón)
 ```
 
-Por ejemplo, usando un engranaje de 28 dientes y un piñón de 10 dientes:
+ Usando engranajes de 17 y 28 dientes y un piñón (Calculo de nuestro robot)
 ```cpp
-Reducción total = 314 × (28 / 10) = 314 × 2.8 = 879.2
+Reducción total = 2.23 x 2.55 = 5.6865 
+```
+
+```cpp
+Revoluciones totales = 550 / 5.6865 = 96.7rpm
 ```
 
 ### ¿Por qué es importante la reducción?
