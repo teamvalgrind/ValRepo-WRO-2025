@@ -225,17 +225,15 @@ El núcleo de la movilidad de nuestro robot reside en su **subsistema mecánico 
 
 _foto stl eje_
 
-2. **Motor Brushed Injora 180° 48T**
+2. **Motor Brushed INJ 2065**
 
-[![DSC06671-1-1800x1800.webp](https://i.postimg.cc/NFbNQ2Qm/DSC06671-1-1800x1800.webp)](https://postimg.cc/wRy5Vvyj)
-
- ##### Este motor de escobillas (brushed) es ideal para complementar el resto de elementos como los diferenciales y los ejes debido a que su cuerpo es más corto que un motor estándar (que suele ser ~360°), ahorrando espacio vital en un robot compacto, cabe destacar que un motor de "mayor T" (como 48T) proporciona **más par (fuerza de torsión)** a velocidades más bajas, en comparación con motores de menor T (ej: 20T) que son más rápidos pero con menos fuerza. Este alto par es *esencial* para iniciar derrapes controlados, superar pequeñas irregularidades y proporcionar aceleración contundente, incluso con las ruedas de drift que ofrecen menos tracción.
+info detallada
 
 _cuadro información general_
 
-3.  **Ruedas de Drift**
+3.  **Ruedas del Robot**
 
-##### Son el **elemento transformador clave para el derrape**. Están fabricadas típicamente con un compuesto plástico duro y liso (como ABS o PU). A diferencia de las ruedas de goma adherentes, estas **minimizan deliberadamente la fricción** con superficies como linóleo o parquet (comunes en pistas WRO). Esta baja tracción permite que las ruedas motrices (traseras) pierdan agarre de manera controlada cuando se aplica potencia y dirección, iniciando y manteniendo el derrape deseado. Su diámetro y ancho se eligen para complementar la escala 1/18 y el comportamiento dinámico del robot.
+info general 
 
 4.  **Tornillos, Tuercas de Seguridad y Arandelas (M2 y M3)**
 
@@ -244,11 +242,9 @@ _cuadro información general_
  ##### Ya sean M2 o M3, son piezas imprescindibles para la mecanica de nuestro robot, debido a la fijacion de piezas pequeñas, estabilización de componentes, y la garantía de seguridad que otorgan con respecto al uso prolongado del robot ya sea en practicas o en la competición.
  ##### Se decidió tomar la decisión de tener tornillos M2 y M3 de forma simultánea para velar por la eficiencia del espacio, para permitir compatibilidad con los componentes más pequeños, y al mismo tiempo para garantizar que los tornillos resistan y permitan estabilidad en el robot.
      
-#### Foto de las Arandelas y Tuercas de seguridad 
+#### Foto de una Tuerca de seguridad 
 
 [![TUERCA-DE-SEGURIDAD-e1557268621577.jpg](https://i.postimg.cc/ZRNnk6Fs/TUERCA-DE-SEGURIDAD-e1557268621577.jpg)](https://postimg.cc/9RWCZRky)
-
-[![71xhx-XHAMKL-AC-UF894-1000-QL80.jpg](https://i.postimg.cc/nrZH6gLM/71xhx-XHAMKL-AC-UF894-1000-QL80.jpg)](https://postimg.cc/hzyWmCTq)
 
 ---
 
@@ -256,29 +252,39 @@ _cuadro información general_
 
 Para el proyecto, decidimos usar;
 
-[![71-Hj-Atre-KHL-AC-UL495-SR435-495.jpg](https://i.postimg.cc/Njq8qLH9/71-Hj-Atre-KHL-AC-UL495-SR435-495.jpg)](https://postimg.cc/dL6ZGsnw)
-
 #### **Baterías**
+foto tenergy 12v 
 
- ##### un kit de baterías recargables Urgenex, de tecnología NiMH, diseñado para ofrecer una salida estable de 12 V y una capacidad de 3000 mAh por unidad en un formato compacto y robusto, que facilita su integración en proyectos de electrónica y robótica gracias a sus cables desnudos para conexiones directas. Garantizando una carga rápida y un suministro energético continuo y fiable, este kit nos resulta ideal para aplicaciones exigentes como las competencias de robótica en nuestra categoría, donde es imperativo optimizar tanto el rendimiento del sistema como los tiempos de montaje y costos operativos.
+ ##### info general
+ cuadro de info
+ recomendaciones
 
 ### **LM2596**  
 ##### El LM2596 es un regulador step down DC-DC diseñado para transformar tensiones elevadas en niveles adecuados para circuitos electrónicos.  Acepta un rango de entrada entre 4V y 35V, Lo cual evidentemente demuestra que es un componente electrónico bastante versátil en lo que al manejo de voltaje respecta, por lo tanto nuestro equipo decidió utilizarlo para poder manejar el voltaje en el circuito del robot de forma idónea.
 
+cuadro del datasheet, funcion e importancia dentro del robot
+
 [![images-20.jpg](https://i.postimg.cc/j2fgHz4h/images-20.jpg)](https://postimg.cc/RJML9J83)
 
 
-#### Motor DC 12V
-Es un dispositivo electromecánico que convierte **energía eléctrica de corriente continua (12V)** en **movimiento rotatorio**.  
+#### Motor DC 12V greartisan
+
+foto
+info general
+especificaciones
 
 **Razones por las cuales decidimos utilizar este motor:**
 
 - **Voltaje nominal:** Opera con 12V (puede tolerar ligeras variaciones, ej. 9-15V).  
 - **Tipo común:** Motor de *escobillas (brushed)*, con imanes permanentes y un rotor bobinado.  
 - **Salida:** Genera par de giro (*torque*) y velocidad (RPM) proporcionales al voltaje aplicado.  
-- **Uso universal:** Barato, fácil de controlar y ampliamente disponible.  
+- **Uso universal:** Barato, fácil de controlar y ampliamente disponible.
+
+diferencias entre voltaje nominal y voltaje real del robot y reduccion 
 
 #### Driver L298N
+
+foto toto
 
 Es un **controlador de motores de doble puente H (dual H-bridge)** encapsulado en un circuito integrado. Su función principal es actuar como un "intermediario de potencia" entre dispositivos de control de baja potencia (como Arduino) y motores de alta potencia (como tu motor DC 12V).
 
@@ -335,6 +341,8 @@ Usa un circuito **puente H (H-bridge)** interno:
 > El tiempo que tarda la onda sonora en ir y regresar a un objeto puede utilizarse para conocer la distancia entre el origen del sonido y el objeto. La interfaz del sensor HC-SR04 y Arduino se logra mediante 2 pines digitales: el pin de disparo (trigger) y el pin de eco (echo). La función de cada uno de estos pines es la siguiente:
 - El pin trigger recibe un pulso de habilitación del microcontrolador, mediante el cual se le indica al módulo que comience a realizar la medición de distancia.
 - En el pin echo el sensor devuelve al microcontrolador un pulso cuyo ancho es proporcional al tiempo que tarda el sonido en viajar del transductor al obstáculo y luego de vuelta al módulo
+
+- mas info
 
 #### Pixy2
 
