@@ -398,7 +398,7 @@ Para el proyecto, decidimos usar;
  cuadro de info
 
 > [!TIP]
-> 
+> c
 
  recomendaciones
 
