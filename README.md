@@ -383,7 +383,7 @@ flowchart LR
     D --> E([void loop])
     E --> F{¿finalizado?}
     F -- Sí --> G([Termina])
-    F -- No --> H([controlarRobot])
+    F -- No --> H([doceGiros])
     H --> I[Lectura sensores]
     I --> J{¿Pixy2 detecta bloques?}
     J -- Sí --> K([goToPosition])
@@ -435,65 +435,63 @@ En este apartado se inicializa el ESC, y se prepara el robot para ejecutar la fu
 inicio del código 
 ```
 
-Y en este, se llama a la función de DoceGiros, la cual ejecuta los giros y ajustes específicos del robot 
+Y en este, se llama a la función de doceGiros, la cual ejecuta los giros y ajustes específicos del robot 
 
 ```cpp
-if (contadorGiros >= 12) {
+void docegiros() {
+  unsigned long ahora = millis();
+
+  int frontal = USFront.read();
+  int izquierda = USLeft.read();
+  int derecha = USRight.read();
+
+  if (frontal == 357) frontal = -1;
+  if (izquierda == 357) izquierda = -1;
+  if (derecha == 357) derecha = -1;
+
+  Serial.print("Distancias (cm) - Frontal: ");
+  Serial.print(frontal);
+  Serial.print(" | Izquierda: ");
+  Serial.print(izquierda);
+  Serial.print(" | Derecha: ");
+  Serial.println(derecha);
+
+  if (contadorGiros >= 12) {
     // Avanzar 1 segundo más y detenerse definitivamente
     if (!finalizado) {
       Serial.println("Se alcanzaron 12 giros, avanzando 1 segundo más y deteniéndose.");
       Adelante();
-      delay(1000);
+      delay(1500);
       Parar();
-      motorEnMarcha = false;
       finalizado = true;
     }
     return;
   }
 
-  if (!girando) {
     if (frontal != -1 && frontal > DISTANCIA_OBSTACULO_FRONTAL) {
-      if (!motorEnMarcha) {
-        Adelante();
-        motorEnMarcha = true;
+      Adelante();
       }
 
       if (ahora - tiempoUltimoGiro < TIEMPO_ESPERA_GIRO) {
         Serial.println("Avanzando recto después del giro, sin girar");
       } else {
         if (izquierda != -1 && izquierda > DISTANCIA_OBSTACULO_LATERAL) {
-          girando = true;
-          Parar();
-          motorEnMarcha = false;
           Serial.println("Girando a la izquierda por más de 190 cm libres");
+          delay(500);
           Izquierda();
           contadorGiros++;
-          girando = false;
           tiempoUltimoGiro = millis();
           Adelante();
-          motorEnMarcha = true;
         } else if (derecha != -1 && derecha > DISTANCIA_OBSTACULO_LATERAL) {
-          girando = true;
-          Parar();
-          motorEnMarcha = false;
           Serial.println("Girando a la derecha por más de 190 cm libres");
+          delay(500);
           Derecha();
           contadorGiros++;
-          girando = false;
           tiempoUltimoGiro = millis();
           Adelante();
-          motorEnMarcha = true;
         }
       }
-    } else if (frontal != -1 && frontal <= DISTANCIA_OBSTACULO_FRONTAL) {
-      if (motorEnMarcha) {
-        Parar();
-        motorEnMarcha = false;
-      }
-      Serial.println("Obstáculo frontal detectado, detenido");
-    }
-  }
-}
+    } 
 ```
 
 ##### Desafío Cerrado
