@@ -355,11 +355,11 @@ Usa un circuito **puente H (H-bridge)** interno:
 
 ```mermaid
 flowchart LR
-    A([Inicio]) --> B([setup])
+    A([Inicio]) --> B([void setup])
     B --> C{¿Botón presionado?}
     C -- No --> C
     C -- Sí --> D([programaIniciado = true])
-    D --> E([loop])
+    D --> E([void loop])
     E --> F{¿finalizado?}
     F -- Sí --> G([Termina])
     F -- No --> H([controlarRobot])
