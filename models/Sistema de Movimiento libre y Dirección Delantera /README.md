@@ -1,1 +1,0 @@
-Este cuenta con libertad total de las ruedas delanteras moverse libremente sin ejes de transmisión conectados lo cual aporta fluidez total al movimiento y libertad al afrontar los ángulos más cruzados,en conjunto con los palieres de dirección acoplados a los Nudillos de los pivotes delanteros
