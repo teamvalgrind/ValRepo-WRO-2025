@@ -295,7 +295,6 @@ info general
 - **Salida:** Genera par de giro (*torque*) y velocidad (RPM) proporcionales al voltaje aplicado.  
 - **Uso universal:** Barato, fácil de controlar y ampliamente disponible.
 
-Claro, aquí tienes el texto adaptado para el README, explicando que realizaron un cálculo de la reducción del motor usando un piñón estándar y engranajes de 17 y 28 dientes. Además, se integra la tabla y se explica la influencia de la reducción extra en la velocidad y el torque:
 
 ---
 
