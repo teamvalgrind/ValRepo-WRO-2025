@@ -539,33 +539,92 @@ void docegiros() {
 
 ##### Desafío Cerrado
 
-- Con respecto al desafío cerrado, nos decantamos por utilizar la pixy en virtud de poder detectar los bloques y posteriormente tener un código con un protocolo para cada uno de ellos, esto se puede evidenciar en el código:
-
+- En cuanto a la lógica de programación del Desafío Cerrado, tenemos que tomar en cuenta la detección de colores de la Pixy, la interpretación de datos y por último la reacción de los motores ante la información brindada por la Pixy. Primero que nada, hay que hacer un bucle en dónde la Pixy lea señales de bloques y dependiendo de la señal les asignamos un color:
 
 ```cpp
-  pixy.ccc.getBlocks();
-  bool bloqueRojo = false;
-  bool bloqueVerde = false;
 
-  for (uint16_t i = 0; i < pixy.ccc.numBlocks; i++) {
-    if (pixy.ccc.blocks[i].m_signature == ROJO_SIGNATURE) bloqueRojo = true;
-    if (pixy.ccc.blocks[i].m_signature == VERDE_SIGNATURE) bloqueVerde = true;
+pixy.ccc.getBlocks();
+
+if (pixy.ccc.numBlocks) {
+  int y = pixy.ccc.blocks[0].m_y;
+  int x = pixy.ccc.blocks[0].m_x;
+  uint8_t sig = pixy.ccc.blocks[0].m_signature;
+
+  Serial.print("Firma detectada: ");
+  Serial.println(sig);
+  Serial.print("Posición X: ");
+  Serial.print(x);
+  Serial.print(" Y: ");
+  Serial.println(y);
+
+  if (sig == 1 && y > UMBRAL_Y) {
+    if (!girando) {
+      girando = true;
+      tiempoInicioGiro = millis();
+
+      if (x > UMBRAL_IZQUIERDA) {
+        Serial.println("Bloque verde a la derecha: Avanzar recto");
+        Adelante();
+        giroIzqActivo = false;
+      } else {
+        Serial.println("Bloque verde a la izquierda: Giro suave izquierda");
+        giroIzquierdaSuave();
+        giroIzqActivo = true;
+      }
+    } else {
+      Adelante();
+    }
+  } else {
+    if (girando && millis() - tiempoInicioGiro >= TIEMPO_GIRO_SUAVE) {
+      if (giroIzqActivo) {
+        Serial.println("Corrección giro derecha para enderezar");
+        correccionDerecha();
+      }
+      girando = false;
+    } else {
+      Adelante();
+    }
   }
-
-  pixy.setLamp(bloqueRojo || bloqueVerde, bloqueRojo || bloqueVerde);
-
-  if (bloqueRojo) {
-    Parar();
-    delay(100);
-    Derechabloque();
+} else {
+  if (girando && millis() - tiempoInicioGiro >= TIEMPO_GIRO_SUAVE) {
+    if (giroIzqActivo) {
+      Serial.println("Corrección giro derecha para enderezar");
+      correccionDerecha();
+    }
+    girando = false;
+  } else {
     Adelante();
-    motorEnMarcha = true;
-    delay(120);
-    return;
-
+  }
+}
 ```
 
-Dentro de `Desafio-abierto.ino` y `Desafio-cerrado.ino` está el resto de funciones descritas, y la lógica de programación mediante la cual el robot completa el desafío abierto.
+Para luego accionar las funciones de movimiento:
+
+```cpp
+void Adelante() {
+  digitalWrite(IN1, HIGH);
+  digitalWrite(IN2, LOW);
+  myservo.write(97);
+  Serial.println("Avanzando recto");
+}
+
+void giroIzquierdaSuave() {
+  digitalWrite(IN1, HIGH);
+  digitalWrite(IN2, LOW);
+  myservo.write(140);
+  Serial.println("Girando suavemente a la izquierda");
+}
+
+void correccionDerecha() {
+  digitalWrite(IN1, HIGH);
+  digitalWrite(IN2, LOW);
+  myservo.write(30);
+  delay(TIEMPO_CORRECCION);
+  myservo.write(97);
+  Serial.println("Corrección giro derecha completada");
+}
+```
+Dentro de `Desafio-abierto.ino` y `Desafio-cerrado.ino` está el resto de funciones descritas, y la lógica de programación mediante la cual el robot completa el desafío abierto y cerrado.
 
 #### Compiladores y Comunicacion
 
