@@ -353,7 +353,7 @@ Usa un circuito **puente H (H-bridge)** interno:
 
 ##### Desafío Cerrado
 ```mermaid
-flowchart TD
+graph TD
     A[Inicio] --> B[setup()]
     B --> C{¿Botón presionado?}
     C -- No --> C
