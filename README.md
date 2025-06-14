@@ -121,7 +121,7 @@ Ahora bien, ya habiendo dilucidado como podemos elegir, diseñar y imprimir las 
 
 Nuestro robot emplea un sistema de tracción diferencial, ofreciendo maniobrabilidad precisa para enfrentar los retos del campo de competencia. El sistema de cruces se realiza mediante un servo que ajusta la dirección del robot en intersecciones de forma eficaz. También cabe destacar el hecho de que utilizamos una técnica llamada  Ackermann Positivo para emplear el sistema de movilidad de nuestro vehículo.
 
-[![IMG-20250611-112322.jpg](https://i.postimg.cc/zX9sd8Bj/IMG-20250611-112322.jpg)](https://postimg.cc/bs9VrX1D)
+[![IMG-20250614-WA0001.jpg](https://i.postimg.cc/tJFzTvy2/IMG-20250614-WA0001.jpg)](https://postimg.cc/30JGfBkv)
 
 ##### El diferencial de los vehículos, como su nombre lo indica, permite que exista una diferencia en la velocidad de giro entre la rueda interna y la rueda externa del vehículo cuando se da una vuelta o se está girando la dirección. No importa si el vehículo es tracción trasera o delantera, la función es la misma.
 
