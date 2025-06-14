@@ -373,12 +373,16 @@ Para el proyecto, decidimos usar;
 | Fabricante                              | Tenergy                                   |
  cuadro de info
 
-### **LM2596**  
+### **LM2596**
+
+[![images-20.jpg](https://i.postimg.cc/j2fgHz4h/images-20.jpg)](https://postimg.cc/RJML9J83)
+
+
 ##### El LM2596 es un regulador step down DC-DC diseñado para transformar tensiones elevadas en niveles adecuados para circuitos electrónicos.  Acepta un rango de entrada entre 3.2 y 40V, Lo cual evidentemente demuestra que es un componente electrónico bastante versátil en lo que al manejo de voltaje respecta, por lo tanto nuestro equipo decidió utilizarlo para poder manejar el voltaje en el circuito del robot de forma idónea.
 
 ---
 
-### **📊 Cuadro Resumen del Datasheet**  
+### ** Cuadro Resumen del Datasheet**  
 | **Parámetro**             | **Valor/Descripción**                  | **Puntos Relevantes**                                                          |     |
 | ------------------------- | -------------------------------------- | ------------------------------------------------------------------------------ | --- |
 | **Rango de entrada**      | 3.2–40 V DC                            | Compatible con baterías LiPo (7.4V), Pb-ácido (12V), o paneles solares.        |     |
@@ -393,7 +397,7 @@ Para el proyecto, decidimos usar;
 
 ---
 
-### ** Funcionamiento Técnico**  
+### Funcionamiento Técnico 
 El LM2596 sigue una topología **buck clásica** con cuatro componentes clave:  
 1. **Interruptor (MOSFET)**: Regula el flujo de energía mediante PWM a 150 kHz .  
 2. **Bobina (inductor)**: Almacena energía magnética durante el ciclo "ON" y la libera en el "OFF", estabilizando el voltaje .  
@@ -409,10 +413,6 @@ El LM2596 sigue una topología **buck clásica** con cuatro componentes clave:
   - Evitar loops largos en entrada/salida para reducir rizado.  
 
 ---
-
-
-[![images-20.jpg](https://i.postimg.cc/j2fgHz4h/images-20.jpg)](https://postimg.cc/RJML9J83)
-
 
 #### Driver L298N
 
