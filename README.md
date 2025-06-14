@@ -373,7 +373,17 @@ Para el proyecto, decidimos usar;
 
 [![61ke-U06-D5v-L-UF1000-1000-QL80-FMwebp.webp](https://i.postimg.cc/G902qrBx/61ke-U06-D5v-L-UF1000-1000-QL80-FMwebp.webp)](https://postimg.cc/K3Nx86D1)
 
- ##### info general
+##### qqDiseñadas para potenciar el rendimiento en competiciones de robótica como la WRO, las baterías Tenergy NiMH de 12 V y 2000 mAh ofrecen dos ventajas críticas: su ausencia de efecto memoria garantiza máxima capacidad en cada uso tras recargas frecuentes (ideal para sesiones de prueba extensas), y su formato compacto (1.969x1.142x2.835 pulgadas) con cables desnudos facilita la integración en espacios reducidos de robots. Con carga rápida ≤1A y larga vida útil, son una solución fiable para  cuando necesitemos usarlas por un tiempo prolongado, ya sea en la propia competición o en pruebas.
+
+### Elementos destacados:
+1. **Enfoque práctico:**  
+   - ✔️ Sin efecto memoria → *Máximo rendimiento tras ciclos repetidos (pruebas/torneos)*.  
+   - ✔️ Compactas + cables desnudos → *Adaptabilidad en diseños de robots*.  
+2. **Contexto específico:**  
+   - Mención directa a **WRO** y proyectos educativos.  
+   - Énfasis en resistencia para **sesiones extensas de pruebas/competición**.  
+3. **Recomendación técnica integrada:**  
+   - Carga rápida ≤1A como parámetro de uso óptimo.  
 
 
 | Característica                         | Detalle                                   |
