@@ -374,7 +374,32 @@ Para el proyecto, decidimos usar;
 [![61ke-U06-D5v-L-UF1000-1000-QL80-FMwebp.webp](https://i.postimg.cc/G902qrBx/61ke-U06-D5v-L-UF1000-1000-QL80-FMwebp.webp)](https://postimg.cc/K3Nx86D1)
 
  ##### info general
+
+
+| Característica                         | Detalle                                   |
+|-----------------------------------------|-------------------------------------------|
+| Dimensiones del producto                | 2,13 x 2,91 x 1,22 pulgadas               |
+| ASIN                                    | B077Y9HNTF                                |
+| Número de modelo del producto           | 19676                                     |
+| Pilas                                   | 10 12V (Tipo de pila necesaria)           |
+| Opinión media de los clientes           | 4.5 de 5 estrellas (748 opiniones)        |
+| Clasificación en los más vendidos       | nº108,878 en Salud y Hogar                |
+|                                         | nº250 en Pilas 12 V                       |
+| Descatalogado por el fabricante         | No                                        |
+| Producto en amazon.com desde            | marzo 10, 2018                            |
+| Voltaje                                 | 12 Voltios                                |
+| Reutilización                           | Recargable                                |
+| Peso de la batería                      | 225 Gramos                                |
+| Dimensiones del artículo LxWxH          | 2,13 x 2,91 x 1,22 pulgadas               |
+| Peso del artículo                       | 255 Gramos                                |
+| Amperaje                                | 1 Amperios                                |
+| UPC                                     | 844949030014                              |
+| Fabricante                              | Tenergy                                   |
  cuadro de info
+
+> [!TIP]
+> 
+
  recomendaciones
 
 ### **LM2596**  
