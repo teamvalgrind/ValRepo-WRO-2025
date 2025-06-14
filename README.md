@@ -493,7 +493,7 @@ Usa un circuito **puente H (H-bridge)** interno:
 
 #### Pixy2
 
-<fotos del entrenamiento de signatures>
+[![D-NQ-NP-783616-MLV52840552796-122022-O.webp](https://i.postimg.cc/cHHvF0mV/D-NQ-NP-783616-MLV52840552796-122022-O.webp)](https://postimg.cc/p9wVTN3Z)
 
 La **Pixy2** es una cámara de visión artificial diseñada para robots que requieren detección rápida y fiable de objetos, colores y códigos de barras. Junto con su software **PixyMon**, forma un ecosistema accesible para principiantes y avanzados, ideal para la detección de los bloques del desafío cerrado. A diferencia de soluciones basadas en cámaras genéricas, Pixy2 procesa imágenes *onboard* con algoritmos optimizados, liberando al microcontrolador principal (Arduino, Raspberry Pi) de tareas intensivas. Su enfoque en **"aprender por demostración"** simplifica el entrenamiento sin necesidad de programación compleja.
 
@@ -832,19 +832,19 @@ Dentro de `Desafio-abierto.ino` y `Desafio-cerrado.ino` está el resto de funcio
 ### Mecánico
 - Diferenciales 1/28
 - Ejes de Transmisión 1/18
-- Motor Brushed Injora 180° 48T
-- Ruedas de Drift 1/18
+- Motor INJS2065
+- Motor Greartisan zga37
 - Tuercas de Seguridad M2
 - Tornillos M3
 - Incertos Roscados M2
 - Nudillos de Cruce
-- Rolineras
-- Urgenex Li-Ion 3000mAh
+- Tenergy 3000mAh 12V
 ### Electrónico 
-- ESC
 - ESP-32
-- MPU6050
+- Regulador Step-Down LM2596
+- Drivers L298N
 - Ultrasónicos HSR04
+- PixyCam
 ### Programación 
 - Open-Challenge.ino
 - Closed-Challenge.ino
