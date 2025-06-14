@@ -474,7 +474,22 @@ Usa un circuito **puente H (H-bridge)** interno:
 - El pin trigger recibe un pulso de habilitación del microcontrolador, mediante el cual se le indica al módulo que comience a realizar la medición de distancia.
 - En el pin echo el sensor devuelve al microcontrolador un pulso cuyo ancho es proporcional al tiempo que tarda el sonido en viajar del transductor al obstáculo y luego de vuelta al módulo
 
-- mas info
+- ### **📊 Cuadro Técnico: Sensores Ultrasónicos para Robótica**  
+
+| **Parámetro**               | **HC-SR04** (Estándar)       | **US-100** (Avanzado)        | **Importancia en Robótica**                          |
+|-----------------------------|------------------------------|------------------------------|------------------------------------------------------|
+| **Voltaje operación**       | 5 V DC                       | 2.4–5.5 V DC                 | Compatibilidad con microcontroladores (3.3V/5V).    |
+| **Consumo (standby)**       | 2 mA                         | 2 mA                         | Eficiencia energética en robots autónomos.          |
+| **Rango de detección**      | 2 cm – 400 cm                | 2 cm – 450 cm                | Evitar colisiones (obstáculos cercanos/lejanos).     |
+| **Resolución**              | 0.3 cm                       | 0.1 cm                       | Precisión en navegación de precisión (ej: laberintos). |
+| **Ángulo del haz**          | 15°                          | 15° (ajustable a 5° con tubo)| Enfoque en objetivos específicos, reduce falsos positivos. |
+| **Frecuencia operativa**    | 40 kHz                       | 42 kHz                       | Minimiza interferencias con otros sensores acústicos. |
+| **Tiempo respuesta**        | ≤ 50 ms                      | ≤ 30 ms                      | Reacción rápida en robots de alta velocidad (ej: FRC). |
+| **Interfaz de salida**      | Digital (pulso)              | UART/TTL o Digital           | Flexibilidad para Arduino, Raspberry Pi, o SBCs.    |
+| **Precisión**               | ±3 mm (2–100 cm), ±5% (>100 cm) | ±2 mm (2–300 cm)           | Crítico para mapeo de entornos (SLAM).              |
+| **Temperatura operativa**   | -15°C a +70°C                | -25°C a +85°C                | Funcionamiento en entornos extremos (exteriores/industriales). |
+| **Compensación térmica**    | No                           | Sí (sensor interno)          | Mediciones estables con cambios de temperatura.     |
+| **Dimensiones**             | 45×20×15 mm                  | 41×21×16 mm                  | Integración en espacios reducidos (mini-robots, drones). |
 
 #### Pixy2
 
