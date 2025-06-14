@@ -416,7 +416,7 @@ El LM2596 sigue una topología **buck clásica** con cuatro componentes clave:
 
 #### Driver L298N
 
-foto toto
+[![AR0203-L298n-v3.jpg](https://i.postimg.cc/KzGxcjTW/AR0203-L298n-v3.jpg)](https://postimg.cc/Jy29P1P3)
 
 Es un **controlador de motores de doble puente H (dual H-bridge)** encapsulado en un circuito integrado. Su función principal es actuar como un "intermediario de potencia" entre dispositivos de control de baja potencia (como Arduino) y motores de alta potencia (como tu motor DC 12V).
 
