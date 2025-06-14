@@ -1,4 +1,26 @@
 
+
+
+```mermaid
+flowchart TD
+    A[Inicio] --> B[Definir objetivo del robot]
+    B --> C{¿Listos los diseños mecánicos?}
+    C -- Sí --> D[Imprimir piezas 3D]
+    C -- No --> B
+    D --> E[Montar estructura mecánica]
+    E --> F{¿Componentes electrónicos disponibles?}
+    F -- Sí --> G[Instalar electrónica: sensores, motores, controladores]
+    F -- No --> E
+    G --> H[Realizar conexiones y cableado]
+    H --> I[Subir código de control al microcontrolador]
+    I --> J[Pruebas de funcionamiento]
+    J --> K{¿Funciona correctamente?}
+    K -- Sí --> L[Optimizar y documentar]
+    K -- No --> M[Diagnóstico y corrección de errores]
+    M --> I
+    L --> N[Robot listo para competencia]
+```
+
 ---
 
 # Equipo [Team ValGrind]: WRO 2025
