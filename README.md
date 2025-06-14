@@ -474,7 +474,7 @@ Usa un circuito **puente H (H-bridge)** interno:
 - El pin trigger recibe un pulso de habilitación del microcontrolador, mediante el cual se le indica al módulo que comience a realizar la medición de distancia.
 - En el pin echo el sensor devuelve al microcontrolador un pulso cuyo ancho es proporcional al tiempo que tarda el sonido en viajar del transductor al obstáculo y luego de vuelta al módulo
 
-- ### **📊 Cuadro Técnico: Sensores Ultrasónicos para Robótica**  
+- ### ** Cuadro Técnico**  
 
 | **Parámetro**               | **HC-SR04** (Estándar)       | **US-100** (Avanzado)        | **Importancia en Robótica**                          |
 |-----------------------------|------------------------------|------------------------------|------------------------------------------------------|
