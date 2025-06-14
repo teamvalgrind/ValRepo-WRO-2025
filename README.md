@@ -355,7 +355,7 @@ Usa un circuito **puente H (H-bridge)** interno:
 
 ```mermaid
 flowchart LR
-    A([Inicio]) --> B[setup()]
+    A([Inicio]) --> B([setup])
     B --> C{¿Botón presionado?}
     C -- No --> C
     C -- Sí --> D[programaIniciado = true]
