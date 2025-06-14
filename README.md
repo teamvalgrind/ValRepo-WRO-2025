@@ -355,15 +355,32 @@ Usa un circuito **puente H (H-bridge)** interno:
 
 ```mermaid
 flowchart LR
-    A[Motor] --> B[Diferencial]
-    B --> C[Semieje der.\nRueda ext. ωₒ]
-    B --> D[Semieje izq.\nRueda int. ωᵢ]
-    C --> E[Fuerza de tracción ↑]
-    D --> F[Ángulo de giro θᵢ > θₒ]
-    E & F --> G[Cuadro]
-    G --> H{Deflexión estructural?}
-    H -->|Sí| I[Pérdida de Ackermann]
-    H -->|No| J[Comportamiento ideal]
+    A([Inicio]) --> B[setup()]
+    B --> C{¿Botón presionado?}
+    C -- No --> C
+    C -- Sí --> D[programaIniciado = true]
+    D --> E[loop()]
+    E --> F{¿finalizado?}
+    F -- Sí --> G([Termina])
+    F -- No --> H[controlarRobot()]
+    H --> I[Lectura de sensores ultrasónicos]
+    I --> J[Lectura de Pixy2]
+    J --> K{¿Pixy2 detecta bloques?}
+    K -- Sí --> L[goToPosition()]
+    K -- No --> M{¿contadorGiros >= 12?}
+    M -- Sí --> N[Adelante y Parar\nfinalizado=true]
+    M -- No --> O{¿Obstáculo al frente?}
+    O -- No --> P{¿Espacio a la izquierda?}
+    P -- Sí --> Q[Gira a la izquierda\nactualiza contadorGiros]
+    P -- No --> R{¿Espacio a la derecha?}
+    R -- Sí --> S[Gira a la derecha\nactualiza contadorGiros]
+    R -- No --> T[Continúa Adelante]
+    O -- Sí --> U[Parar]
+    N --> G
+    Q --> G
+    S --> G
+    T --> G
+    U --> G
 ```
 
 #### Diagrama de Conexiones 
