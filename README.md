@@ -55,6 +55,8 @@ Somos **[Team ValGrind]**, entusiastas de la robótica y la innovación. Represe
 - **Institución:** [Colegio Salto Ángel](https://www.instagram.com/colegiosaltoangel)
 - **Instagram Oficial:** [@team_valgrind](https://instagram.com/team_valgrind)
 - **Contáctanos:** [valgrind2025@gmail.com](mailto:valgrind2025@gmail.com)
+- **Youtube:**
+[Team ValGrind](https://youtube.com/@teamvalgrind?si=ZJbz7CX9eOX75H2U)
 
 ---
 
