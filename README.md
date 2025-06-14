@@ -268,37 +268,11 @@ El servo INJS2065 es un Servomotor compacto y de alto rendimiento, ideal para ap
 | 1 × Destornillador hexagonal 1.5 mm             |                                                            |
 | 1 × Destornillador hexagonal 2.0 mm             |                                                            |
 
-3. #### Motor DC 12V greartisan
+
+3. ### Motor DC 12V Greartisan zga37irg9i
 
 [![61pi-8-J6q-L.jpg](https://i.postimg.cc/C5wWw8pB/61pi-8-J6q-L.jpg)](https://postimg.cc/LY0yTnX2)
 
-info general
-
-
-## Especificaciones del Motor
-
-| **Característica**                          | **Valor**                                         |
-|---------------------------------------------|---------------------------------------------------|
-| **Voltaje nominal**                         | 12V                                               |
-| **Velocidad**                               | 10 RPM                                            |
-| **Material**                                | Metal                                             |
-| **Par nominal**                             | 33.1 lbs·cm                                       |
-| **Relación de reducción**                   | 1:314                                             |
-| **Corriente nominal**                       | 0.05A                                             |
-| **Tamaño del eje de salida (forma D)**      | 6 × 14 mm (0.24" × 0.55") (D × L)                 |
-| **Tamaño de la caja de cambios**            | 37 × 31 mm (1.46" × 1.22") (D × L)                |
-| **Tamaño del motor**                        | 36.2 × 33.3 mm (1.43" × 1.31") (D × L)            |
-
-**Razones por las cuales decidimos utilizar este motor:**
-- **Voltaje nominal:** Opera con 12V (puede tolerar ligeras variaciones, ej. 9-15V).  
-- **Tipo común:** Motor de *escobillas (brushed)*, con imanes permanentes y un rotor bobinado.  
-- **Salida:** Genera par de giro (*torque*) y velocidad (RPM) proporcionales al voltaje aplicado.  
-- **Uso universal:** Barato, fácil de controlar y ampliamente disponible.
-
-
----
-
-## Motor DC 12V Greartisan zga37irg9i
 
 Un Motor de Engranajes DC Greartisan es un tipo de motor eléctrico de corriente continua (DC) que tiene una caja de engranajes (también llamada reductora o caja reductora) integrada directamente en su construcción. La principal funcionalidad de este motor en un sistema robótico radica en su capacidad para ofrecer **alto par a velocidades reducidas**. A diferencia de un motor DC estándar que gira a muy altas RPM con poco par, el motor Greartisan integra una **caja de engranajes** (reductora) directamente en su diseño. Esta caja de engranajes transforma la velocidad de rotación del motor en una fuerza mucho mayor.
  El **eje de salida céntrico de 1.45 pulgadas de diámetro** proporciona una conexión robusta y directa a los sistemas mecánicos del robot, como ruedas, brazos articulados o mecanismos de elevación, asegurando que el par generado se transmita de manera eficiente.
