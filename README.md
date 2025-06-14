@@ -240,7 +240,7 @@ En el caso particular del robot Heimdall, originalmente se consideró una transm
 
 El servo INJS2065 es un Servomotor compacto y de alto rendimiento, ideal para aplicaciones de robótica y modelismo a escala. A la hora de tener en cuenta tanto eficiencia como el manejo del espacio en un sistema embebido como el de un robot, el INJS2065 se destaca por sobre otros modelos. así como también destaca por su rápida velocidad de respuesta, alta precisión en el control de ángulo y considerable torque de retención. lo mencionado ut supra le permite operar eficientemente bajo diversas condiciones de carga. Su amplio rango de voltaje de operación, junto con un motor de núcleo y rodamientos de bolas, asegura durabilidad, flexibilidad y un funcionamiento suave, mientras que su tamaño reducido facilita su integración en diseños que requieren soluciones ligeras y confiables.
 
-pl
+[![IMG-1126-1200x1200.jpg](https://i.postimg.cc/52JgQgQr/IMG-1126-1200x1200.jpg)](https://postimg.cc/bs6kKQT0)
 
 | :wrench: **Especificaciones del Servo INJS2065** |                                                            |
 |:------------------------------------------------|:----------------------------------------------------------:|
