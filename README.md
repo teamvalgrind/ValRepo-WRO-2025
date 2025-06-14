@@ -121,6 +121,10 @@ Ahora bien, ya habiendo dilucidado como podemos elegir, diseñar y imprimir las 
 > Video de Heimdall realizando el Open Challenge
 [Video](https://youtu.be/av_kJ_hcNXI?si=83bRdQo1FuN1ajur)
 
+> [!NOTE]
+> Video de Heimdall esquivando bloques del Closed Challenge 
+[Video](https://youtu.be/y2dTKZ1CmCM?si=7QRf_ff8Sa_BZ0Na)
+
 Nuestro robot emplea un sistema de tracción diferencial, ofreciendo maniobrabilidad precisa para enfrentar los retos del campo de competencia. El sistema de cruces se realiza mediante un servo que ajusta la dirección del robot en intersecciones de forma eficaz. También cabe destacar el hecho de que utilizamos una técnica llamada  Ackermann Positivo para emplear el sistema de movilidad de nuestro vehículo.
 
 [![IMG-20250614-WA0001.jpg](https://i.postimg.cc/tJFzTvy2/IMG-20250614-WA0001.jpg)](https://postimg.cc/30JGfBkv)
