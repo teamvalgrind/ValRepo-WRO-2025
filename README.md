@@ -358,29 +358,22 @@ flowchart LR
     A([Inicio]) --> B([setup])
     B --> C{¿Botón presionado?}
     C -- No --> C
-    C -- Sí --> D[programaIniciado = true]
+    C -- Sí --> D([programaIniciado = true])
     D --> E([loop])
     E --> F{¿finalizado?}
     F -- Sí --> G([Termina])
     F -- No --> H([controlarRobot])
-    H --> I[Lectura de sensores ultrasónicos]
-    I --> J[Lectura de Pixy2]
-    J --> K{¿Pixy2 detecta bloques?}
-    K -- Sí --> L([goToPosition])
-    K -- No --> M{¿contadorGiros >= 12?}
-    M -- Sí --> N[Adelante y Parar<br>finalizado=true]
-    M -- No --> O{¿Obstáculo al frente?}
-    O -- No --> P{¿Espacio a la izquierda?}
-    P -- Sí --> Q[Gira a la izquierda<br>actualiza contadorGiros]
-    P -- No --> R{¿Espacio a la derecha?}
-    R -- Sí --> S[Gira a la derecha<br>actualiza contadorGiros]
-    R -- No --> T[Continúa Adelante]
-    O -- Sí --> U[Parar]
+    H --> I[Lectura sensores]
+    I --> J{¿Pixy2 detecta bloques?}
+    J -- Sí --> K([goToPosition])
+    J -- No --> L{¿Obstáculo al frente?}
+    L -- No --> M{¿Espacio libre?}
+    M -- Sí --> N[Girar o avanzar]
+    M -- No --> O[Parar]
+    L -- Sí --> O
+    K --> G
     N --> G
-    Q --> G
-    S --> G
-    T --> G
-    U --> G
+    O --> G
 ```
 
 #### Diagrama de Conexiones 
