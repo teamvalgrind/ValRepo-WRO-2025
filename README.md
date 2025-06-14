@@ -442,20 +442,16 @@ y datos apenas la pixy los procese
 
 ---
 
-Otras razones por las cuales el protocolo SPI nos resultó favorable en testeo y ejecución de la PixyCam en pista:
+#### Otras razones por las cuales el protocolo SPI nos resultó favorable en testeo y ejecución de la PixyCam en pista:
 
-- **SPI**:  
+##### **SPI**:  
   - **Menos susceptible a ruido** gracias a señales de reloj dedicadas y conexiones punto a punto.  
   - Ideal para entornos con motores o fuentes de interferencia (ej: competiciones **FIRST Robotics**).  
 
-- **I2C**:  
+##### **I2C**:  
   - Más sensible al ruido debido a su diseño multi-dispositivo en 2 cables.  
   - Puede requerir pull-up resistors adicionales para evitar fallos.  
 
-
----
-
-.
 ---
 
 ### Apartado Programatico
