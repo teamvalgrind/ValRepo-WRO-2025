@@ -239,10 +239,6 @@ info general
  ##### Ya sean M2 o M3, son piezas imprescindibles para la mecanica de nuestro robot, debido a la fijacion de piezas pequeñas, estabilización de componentes, y la garantía de seguridad que otorgan con respecto al uso prolongado del robot ya sea en practicas o en la competición.
  ##### Se decidió tomar la decisión de tener tornillos M2 y M3 de forma simultánea para velar por la eficiencia del espacio, para permitir compatibilidad con los componentes más pequeños, y al mismo tiempo para garantizar que los tornillos resistan y permitan estabilidad en el robot.
      
-#### Foto de una Tuerca de seguridad 
-
-[![TUERCA-DE-SEGURIDAD-e1557268621577.jpg](https://i.postimg.cc/ZRNnk6Fs/TUERCA-DE-SEGURIDAD-e1557268621577.jpg)](https://postimg.cc/9RWCZRky)
-
 ---
 
 ### Apartado Electronico
