@@ -236,11 +236,37 @@ En el caso particular del robot Heimdall, originalmente se consideró una transm
 | **Consumo energético**          | Más elevado por la transmisión a cuatro ruedas. | Menor, lo que puede aumentar la autonomía.                                |
 | **Aplicación recomendada**      | Terrenos difíciles, obstáculos, máxima tracción. | Pistas controladas, mayor maniobrabilidad y agilidad.                     |
 
-2. **Motor Brushed INJ 2065**
+2. **INJORA 7KG 2065 Digital Micro Servo**
 
-info detallada
+El servo INJS2065 es un Servomotor compacto y de alto rendimiento, ideal para aplicaciones de robótica y modelismo a escala. A la hora de tener en cuenta tanto eficiencia como el manejo del espacio en un sistema embebido como el de un robot, el INJS2065 se destaca por sobre otros modelos. así como también destaca por su rápida velocidad de respuesta, alta precisión en el control de ángulo y considerable torque de retención. lo mencionado ut supra le permite operar eficientemente bajo diversas condiciones de carga. Su amplio rango de voltaje de operación, junto con un motor de núcleo y rodamientos de bolas, asegura durabilidad, flexibilidad y un funcionamiento suave, mientras que su tamaño reducido facilita su integración en diseños que requieren soluciones ligeras y confiables.
 
-_cuadro información general_
+pl
+
+| :wrench: **Especificaciones del Servo INJS2065** |                                                            |
+|:------------------------------------------------|:----------------------------------------------------------:|
+| **Banda muerta**                                | 2 μs                                                       |
+| **Posición neutral**                            | 1500 μs / 330 Hz                                           |
+| **Tipo de motor**                               | Motor de núcleo                                            |
+| **Ángulo control remoto**                       | 90-120° ±2°                                                |
+| **Ángulo (500-2500 μs)**                        | 180° ±2°                                                   |
+| **Rango de voltaje**                            | 4.8V - 8.4V                                                |
+| **Velocidad de operación (6.0V)**               | 0.09 s/60°                                                 |
+| **Velocidad de operación (8.4V)**               | 0.06 s/60°                                                 |
+| **Torque de retención (6.0V)**                  | 6.0 kg·cm / 83.3 oz·in                                     |
+| **Torque de retención (8.4V)**                  | 7.0 kg·cm / 97.2 oz·in                                     |
+| **Dimensiones**                                 | 23 × 13 × 25.8 mm                                          |
+| **Peso**                                        | 20 g                                                       |
+| **Longitud del cable conector**                 | JR 300 mm                                                  |
+| **Rodamientos**                                 | 1BB                                                        |
+| **Peso con empaque**                            | 28 g                                                       |
+| **Tamaño del paquete**                          | 36 × 23 × 38 mm                                            |
+
+---
+
+| :wrench: **Herramientas requeridas**            |                                                            |
+|:------------------------------------------------|:----------------------------------------------------------:|
+| 1 × Destornillador hexagonal 1.5 mm             |                                                            |
+| 1 × Destornillador hexagonal 2.0 mm             |                                                            |
 
 3.  **Ruedas del Robot**
 
