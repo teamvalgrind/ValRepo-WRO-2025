@@ -96,7 +96,7 @@ Aún así, nuestro único objetivo no es solamente ganar, como un equipo unido t
 | [![IMG-20250614-045700-342.jpg](https://i.postimg.cc/50K0ZLrg/IMG-20250614-045700-342.jpg)](https://postimg.cc/62RtZ2t4) | [![Vista Trasera](https://i.postimg.cc/44WQkHmC/IMG-20250605-192224.jpg)](https://postimg.cc/xqbzLCvg) | 
 | :--: | :--: | 
 | *Frontal* | *Posterior* |
-|[![IMG-20250614-045741-494.jpg](https://i.postimg.cc/MGPf8CM1/IMG-20250614-045741-494.jpg)](https://postimg.cc/B8FnTwCv) | [![IMG-20250605-192159.jpg](https://i.postimg.cc/5jdrGfv0/IMG-20250605-192159.jpg)](https://postimg.cc/V0g40QKQ) | 
+|[![IMG-20250614-045741-494.jpg](https://i.postimg.cc/MGPf8CM1/IMG-20250614-045741-494.jpg)](https://postimg.cc/B8FnTwCv) | [![IMG-20250614-045718-999.jpg](https://i.postimg.cc/wTmvGtQ5/IMG-20250614-045718-999.jpg)](https://postimg.cc/YhtM4CVj)| 
 | *Izquierda* | *Derecha* |
 |[![IMG-20250614-045724-391.jpg](https://i.postimg.cc/MHtDkPS4/IMG-20250614-045724-391.jpg)](https://postimg.cc/YLGgYxjf)
  | [![IMG-20250614-045706-621.jpg](https://i.postimg.cc/ZqZC3T38/IMG-20250614-045706-621.jpg)](https://postimg.cc/w1fqYYwM) | 
