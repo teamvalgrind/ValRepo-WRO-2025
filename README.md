@@ -272,10 +272,23 @@ El servo INJS2065 es un Servomotor compacto y de alto rendimiento, ideal para ap
 
 foto
 info general
+
 especificaciones
+## Especificaciones del Motor
+
+| **Característica**                          | **Valor**                                         |
+|---------------------------------------------|---------------------------------------------------|
+| **Voltaje nominal**                         | 12V                                               |
+| **Velocidad**                               | 10 RPM                                            |
+| **Material**                                | Metal                                             |
+| **Par nominal**                             | 33.1 lbs·cm                                       |
+| **Relación de reducción**                   | 1:314                                             |
+| **Corriente nominal**                       | 0.05A                                             |
+| **Tamaño del eje de salida (forma D)**      | 6 × 14 mm (0.24" × 0.55") (D × L)                 |
+| **Tamaño de la caja de cambios**            | 37 × 31 mm (1.46" × 1.22") (D × L)                |
+| **Tamaño del motor**                        | 36.2 × 33.3 mm (1.43" × 1.31") (D × L)            |
 
 **Razones por las cuales decidimos utilizar este motor:**
-
 - **Voltaje nominal:** Opera con 12V (puede tolerar ligeras variaciones, ej. 9-15V).  
 - **Tipo común:** Motor de *escobillas (brushed)*, con imanes permanentes y un rotor bobinado.  
 - **Salida:** Genera par de giro (*torque*) y velocidad (RPM) proporcionales al voltaje aplicado.  
