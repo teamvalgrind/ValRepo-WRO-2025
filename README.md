@@ -478,7 +478,45 @@ Usa un circuito **puente H (H-bridge)** interno:
 
 #### Pixy2
 
-<fotos del entrenamiento de signatures, librerías, mucha paja
+<fotos del entrenamiento de signatures>
+
+La **Pixy2** es una cámara de visión artificial diseñada para robots que requieren detección rápida y fiable de objetos, colores y códigos de barras. Junto con su software **PixyMon**, forma un ecosistema accesible para principiantes y avanzados, ideal para la detección de los bloques del desafío cerrado. A diferencia de soluciones basadas en cámaras genéricas, Pixy2 procesa imágenes *onboard* con algoritmos optimizados, liberando al microcontrolador principal (Arduino, Raspberry Pi) de tareas intensivas. Su enfoque en **"aprender por demostración"** simplifica el entrenamiento sin necesidad de programación compleja.
+
+---
+
+### ** Cuadro de Datos Técnicos Clave**  
+| **Parámetro**             | **Pixy2 CMUcam5**                               | **Puntos Relevantes**                                                |     |
+| ------------------------- | ----------------------------------------------- | -------------------------------------------------------------------- | --- |
+| **Sensor**                | Sony IMX322 (1/4")                              | Captura 60 FPS en baja luz (torneos indoor/outdoor).                 |     |
+| **Resolución**            | 1296×976 (RAW), 400×296 (procesada)             | Balance óptimo entre detección y velocidad.                          |     |
+| **Detección**             | Colores (7 firmas), Líneas, Códigos QR, Objetos | Ideal para seguimiento de trayectorias, identificación de objetivos. |     |
+| **Interfaces**            | UART, SPI, I²C, USB, GPIO                       | Conexión directa a Arduino, Raspberry Pi, PLCs.                      |     |
+| **Latencia**              | <3 ms (por objeto)                              | Respuesta en tiempo real para robots ágiles.                         |     |
+| **Consumo**               | 140 mA @ 5V (máx.)                              | Alimentable desde puerto USB o fuente de robot.                      |     |
+| **Algoritmos integrados** | RANSAC, Vectorización                           | Detección precisa de líneas incluso con curvas o rupturas.           |     |
+| **Dimensiones/Weight**    | 40×40×13 mm / 26 g                              | Montaje en drones o mini-robots sin afectar movilidad.               |     |
+
+---
+
+###  Configuración para Entrenamiento de Detección de Colores
+
+
+1. **Preparación del entorno**:  
+   - Iluminar el objeto uniformemente (evite sombras/reflejos).  
+   - Usar fondos contrastados (ej: objeto rojo sobre fondo blanco).  
+
+2. **Captura de firmas (signatures)**:  
+   - Conecte Pixy2 vía USB y abrir PixyMon → Menú `Action` → `Set signature...`.  
+   - Presione el botón físico en Pixy2 o haga clic en `Detect objects` para capturar el color.  
+   - Ajuste la sensibilidad con el deslizador `Saturation` (alto para colores vivos, bajo para pasteles).  
+
+3. **Afinación avanzada**:  
+   - En `Expert mode`, defina rangos HSV (`Hue`, `Saturation`, `Value`) para reducir falsos positivos.  
+   - Use `Color codes` para crear códigos de barras con 2-3 colores (ej: logotipo de competencia WRO).  
+
+4. **Pruebas en tiempo real**:  
+   - Active `Frame view` en PixyMon para ver detecciones superpuestas (objetos = rectángulos, líneas = vectores).  
+   - Ajuste `Min/max area` para filtrar objetos por tamaño (evitar ruido).  
 
 ### Conexiones y Circuitos
 
