@@ -368,12 +368,12 @@ flowchart LR
     J --> K{¿Pixy2 detecta bloques?}
     K -- Sí --> L[goToPosition()]
     K -- No --> M{¿contadorGiros >= 12?}
-    M -- Sí --> N[Adelante y Parar\nfinalizado=true]
+    M -- Sí --> N[Adelante y Parar<br>finalizado=true]
     M -- No --> O{¿Obstáculo al frente?}
     O -- No --> P{¿Espacio a la izquierda?}
-    P -- Sí --> Q[Gira a la izquierda\nactualiza contadorGiros]
+    P -- Sí --> Q[Gira a la izquierda<br>actualiza contadorGiros]
     P -- No --> R{¿Espacio a la derecha?}
-    R -- Sí --> S[Gira a la derecha\nactualiza contadorGiros]
+    R -- Sí --> S[Gira a la derecha<br>actualiza contadorGiros]
     R -- No --> T[Continúa Adelante]
     O -- Sí --> U[Parar]
     N --> G
