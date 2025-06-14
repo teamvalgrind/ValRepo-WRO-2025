@@ -294,8 +294,56 @@ especificaciones
 - **Salida:** Genera par de giro (*torque*) y velocidad (RPM) proporcionales al voltaje aplicado.  
 - **Uso universal:** Barato, fácil de controlar y ampliamente disponible.
 
-diferencias entre voltaje nominal y voltaje real del robot y reduccion 
+Claro, aquí tienes el texto adaptado para el README, explicando que realizaron un cálculo de la reducción del motor usando un piñón estándar y engranajes de 17 y 28 dientes. Además, se integra la tabla y se explica la influencia de la reducción extra en la velocidad y el torque:
 
+---
+
+## Motor DC 12V greartisan
+
+### Especificaciones del Motor
+
+| **Característica**                          | **Valor**                                         |
+|---------------------------------------------|---------------------------------------------------|
+| **Voltaje nominal**                         | 12V                                               |
+| **Velocidad**                               | 10 RPM                                            |
+| **Material**                                | Metal                                             |
+| **Par nominal**                             | 33.1 lbs·cm                                       |
+| **Relación de reducción interna**           | 1:314                                             |
+| **Corriente nominal**                       | 0.05A                                             |
+| **Tamaño del eje de salida (forma D)**      | 6 × 14 mm (0.24" × 0.55") (D × L)                 |
+| **Tamaño de la caja de cambios**            | 37 × 31 mm (1.46" × 1.22") (D × L)                |
+| **Tamaño del motor**                        | 36.2 × 33.3 mm (1.43" × 1.31") (D × L)            |
+
+### Cálculo de la reducción total
+
+Para adaptar la salida del motor a las necesidades del robot, realizamos un cálculo de la reducción total combinando la reducción interna del motor con la de un sistema de engranajes externo. Utilizamos un piñón de ataque estándar (acoplado al eje del motor) y engranajes de 17 y 28 dientes.
+
+La relación de reducción adicional por engranajes se calcula así:
+- Si el piñón tiene, por ejemplo, 10 dientes, y el engranaje acoplado tiene 28 dientes, la reducción es 28/10 = 2.8.
+- Si se agregan más etapas de engranajes (por ejemplo, usando un engranaje intermedio de 17 dientes), la reducción se multiplica por cada etapa.
+
+La reducción total del sistema es:
+
+```
+Reducción total = Reducción interna del motor × (dientes engranaje grande / dientes piñón)
+```
+
+Por ejemplo, usando un engranaje de 28 dientes y un piñón de 10 dientes:
+```cpp
+Reducción total = 314 × (28 / 10) = 314 × 2.8 = 879.2
+```
+
+### ¿Por qué es importante la reducción?
+
+Dos palabras clave: `Velocidad` y `Torque`. Al aumentar la reducción, la velocidad de salida disminuye, permitiendo un control más preciso del robot, y paralelamente  La reducción aumenta el torque disponible en las ruedas, lo que mejora la capacidad de mover el robot o superar obstáculos.
+
+### Razones para elegir este motor y sistema de reducción
+
+- **Versatilidad y control:** El motor de 12V es estándar y confiable. La reducción interna más la reducción por engranajes externos se adapta perfectamente a las necesidades del robot.
+- **Adaptabilidad:** Cambiando los engranajes externos se puede ajustar fácilmente la velocidad y el torque final.
+- **Eficiencia y disponibilidad:** Los componentes son fáciles de conseguir y económicos.
+
+---
 
 4.  **Tornillos, Tuercas de Seguridad y Arandelas (M2 y M3)**
 
