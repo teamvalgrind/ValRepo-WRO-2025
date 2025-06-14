@@ -370,7 +370,8 @@ Dos palabras clave: `Velocidad` y `Torque`. Al aumentar la reducción, la veloci
 Para el proyecto, decidimos usar;
 
 #### **Baterías**
-foto tenergy 12v 
+
+[![61ke-U06-D5v-L-UF1000-1000-QL80-FMwebp.webp](https://i.postimg.cc/G902qrBx/61ke-U06-D5v-L-UF1000-1000-QL80-FMwebp.webp)](https://postimg.cc/K3Nx86D1)
 
  ##### info general
  cuadro de info
