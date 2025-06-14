@@ -298,7 +298,14 @@ info general
 
 ---
 
-## Motor DC 12V greartisan
+## Motor DC 12V Greartisan zga37irg9i
+
+Un Motor de Engranajes DC Greartisan es un tipo de motor eléctrico de corriente continua (DC) que tiene una caja de engranajes (también llamada reductora o caja reductora) integrada directamente en su construcción. La principal funcionalidad de este motor en un sistema robótico radica en su capacidad para ofrecer **alto par a velocidades reducidas**. A diferencia de un motor DC estándar que gira a muy altas RPM con poco par, el motor Greartisan integra una **caja de engranajes** (reductora) directamente en su diseño. Esta caja de engranajes transforma la velocidad de rotación del motor en una fuerza mucho mayor.
+ El **eje de salida céntrico de 1.45 pulgadas de diámetro** proporciona una conexión robusta y directa a los sistemas mecánicos del robot, como ruedas, brazos articulados o mecanismos de elevación, asegurando que el par generado se transmita de manera eficiente.
+
+> [!TIP]
+>     Al operar a velocidades más bajas, es mucho más fácil controlar el movimiento del robot. Esto se traduce en una **mayor precisión** para tareas como la navegación autónoma, la manipulación de objetos delicados o la ejecución de movimientos específicos en un brazo robótico. Evita los movimientos bruscos y difíciles de controlar de los motores de alta velocidad sin reducción.
+>     Aunque parezca contradictorio, al operar con una relación de engranajes adecuada, el motor puede trabajar más cerca de su punto de eficiencia óptima para la carga que está manejando, lo que puede resultar en un **menor consumo de energía** en comparación con un motor sin engranajes que lucha por alcanzar el par requerido.
 
 ### Especificaciones del Motor
 
