@@ -352,34 +352,31 @@ Usa un circuito **puente H (H-bridge)** interno:
 ##### Desafío Abierto
 
 ##### Desafío Cerrado
-```mermaid
-flowchart LR
-    A[Inicio] --> B[setup()]
+```
+flowchart TD
+    A([Inicio]) --> B[setup()]
     B --> C{¿Botón presionado?}
     C -- No --> C
     C -- Sí --> D[programaIniciado = true]
     D --> E[loop()]
     E --> F{¿finalizado?}
-    F -- Sí --> G[Termina]
+    F -- Sí --> G([Termina])
     F -- No --> H[controlarRobot()]
     H --> I[Lectura de sensores ultrasónicos]
     I --> J[Lectura de Pixy2]
     J --> K{¿Pixy2 detecta bloques?}
     K -- Sí --> L[goToPosition()]
     K -- No --> M{¿contadorGiros >= 12?}
-    M -- Sí --> N[Adelante y Parar - finalizado=true]
+    M -- Sí --> N[Adelante y Parar\nfinalizado=true]
     M -- No --> O{¿Obstáculo al frente?}
     O -- No --> P{¿Espacio a la izquierda?}
-    P -- Sí --> Q[Gira a la izquierda, actualiza contadorGiros]
+    P -- Sí --> Q[Gira a la izquierda\nactualiza contadorGiros]
     P -- No --> R{¿Espacio a la derecha?}
-    R -- Sí --> S[Gira a la derecha, actualiza contadorGiros]
+    R -- Sí --> S[Gira a la derecha\nactualiza contadorGiros]
     R -- No --> T[Continúa Adelante]
     O -- Sí --> U[Parar]
-    N --> G
-    Q --> G
-    S --> G
-    T --> G
-    U --> G
+    N
+
 ```
 
 #### Diagrama de Conexiones 
