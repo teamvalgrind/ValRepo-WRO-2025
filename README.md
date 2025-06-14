@@ -359,14 +359,14 @@ flowchart LR
     B --> C{¿Botón presionado?}
     C -- No --> C
     C -- Sí --> D[programaIniciado = true]
-    D --> E[loop()]
+    D --> E([loop])
     E --> F{¿finalizado?}
     F -- Sí --> G([Termina])
-    F -- No --> H[controlarRobot()]
+    F -- No --> H([controlarRobot])
     H --> I[Lectura de sensores ultrasónicos]
     I --> J[Lectura de Pixy2]
     J --> K{¿Pixy2 detecta bloques?}
-    K -- Sí --> L[goToPosition()]
+    K -- Sí --> L([goToPosition])
     K -- No --> M{¿contadorGiros >= 12?}
     M -- Sí --> N[Adelante y Parar<br>finalizado=true]
     M -- No --> O{¿Obstáculo al frente?}
