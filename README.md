@@ -270,10 +270,11 @@ El servo INJS2065 es un Servomotor compacto y de alto rendimiento, ideal para ap
 
 3. #### Motor DC 12V greartisan
 
-foto
+[![61pi-8-J6q-L.jpg](https://i.postimg.cc/C5wWw8pB/61pi-8-J6q-L.jpg)](https://postimg.cc/LY0yTnX2)
+
 info general
 
-especificaciones
+
 ## Especificaciones del Motor
 
 | **Característica**                          | **Valor**                                         |
