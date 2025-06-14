@@ -350,9 +350,11 @@ Usa un circuito **puente H (H-bridge)** interno:
 ##### En este diagrama de flujo se halla una representación gráfica del funcionamiento lógico de nuestra programación, así como de lo que se espera sea el desempeño del robot al inicializar el programa.
 
 ##### Desafío Abierto
-[![IMG-20250523-WA0008.jpg](https://i.postimg.cc/QxYhNwBT/IMG-20250523-WA0008.jpg)](https://postimg.cc/YhFJbXzr)
 
 ##### Desafío Cerrado
+```mermaid
+
+```
 
 #### Diagrama de Conexiones 
 
