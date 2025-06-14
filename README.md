@@ -420,6 +420,42 @@ flowchart LR
 4.  **`PixySPI2.h` (Cámara Inteligente Pixy2):**  
     Facilita la comunicación con la cámara Pixy2 (vía SPI) para visión artificial simple. Detecta objetos por color, formas (bloques) o líneas. Usas `pixy.init()` y `pixy.ccc.getBlocks()` para obtener datos. A partir de la pixy, podemos crear código que pueda identificar los bloques verdes, rojos, y el estacionamiento magenta para que actúe acorde y pueda realizar el desafío cerrado.
 
+### ¿Por qué Pixy2SPI.h?
+
+ La decisión entre usar **`Pixy2SPI.h`** (comunicación SPI) o **`Pixy2.h`** (comunicación I2C) fue un problema con el que nos encontramos apenas comenzamos a utilizar la PixyCam™. En nuestra experiencia, podemos declarar que el protocolo de comunicación SPI transmite datos de forma más rápida que mediante I²C, y por tanto creemos que vale la pena el elegir Pixy2SPI para poder recibir `signatures`
+y datos apenas la pixy los procese
+
+### **1. Rendimiento y Velocidad**  
+- **`Pixy2SPI.h` (SPI)**:  
+  - **Velocidad máxima**: Hasta **10 Mbps** (dependiendo del microcontrolador).  
+  - **Ventaja**: Ideal para aplicaciones que requieren **alta velocidad** (ej: robots en competiciones, procesamiento en tiempo real).  
+  - SPI es **full-duplex**, permitiendo transmisión y recepción simultáneas.  
+
+- **`Pixy2.h` (I2C)**:  
+  - **Velocidad máxima**: Típicamente **400 kHz** (modo estándar) o **1 MHz** (modo rápido).  
+  - **Limitación**: Puede causar cuellos de botella si se transfieren muchos bloques/objetos por fotograma.  
+
+> [!WARNING] 
+> ☑️ **Elige SPI si:** Necesitas máxima velocidad (ej: seguimiento de objetos rápidos, FPS alto).
+> 
+> ☑️**Elige SPI si:** Trabajas en entornos eléctricamente ruidosos (un robot de la WRO)
+
+---
+
+Otras razones por las cuales el protocolo SPI nos resultó favorable en testeo y ejecución de la PixyCam en pista:
+
+- **SPI**:  
+  - **Menos susceptible a ruido** gracias a señales de reloj dedicadas y conexiones punto a punto.  
+  - Ideal para entornos con motores o fuentes de interferencia (ej: competiciones **FIRST Robotics**).  
+
+- **I2C**:  
+  - Más sensible al ruido debido a su diseño multi-dispositivo en 2 cables.  
+  - Puede requerir pull-up resistors adicionales para evitar fallos.  
+
+
+---
+
+.
 ---
 
 ### Apartado Programatico
