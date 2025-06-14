@@ -352,7 +352,8 @@ Usa un circuito **puente H (H-bridge)** interno:
 ##### Desafío Abierto
 
 ##### Desafío Cerrado
-```
+
+```mermaid
 flowchart TD
     A([Inicio]) --> B[setup()]
     B --> C{¿Botón presionado?}
