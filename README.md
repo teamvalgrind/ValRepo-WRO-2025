@@ -430,9 +430,22 @@ flowchart LR
 
 - En cuanto al código utilizado para manejar el robot, consiste en una parte en la que se definen los pines del ESC y de los ultrasónicos. Dentro del código se arma el ESC, se inicializan los sensores y se inicializa una función llamada "doceVueltas", la cual se encarga de hacer una lectura constante de los sensores ultrasónicos para decidir en qué momento girar, así como de registrar los giros para que el robot se detenga al completar exitosamente 3 vueltas.
 
-En este apartado se inicializa el ESC, y se prepara el robot para ejecutar la función que sigue:
+En este apartado se inicializa el motor, y se prepara el robot para ejecutar la función que sigue:
 ```cpp
-inicio del código 
+void setup() {
+  myservo.attach(PIN_SERVO);
+  Serial.begin(115200);
+
+  pinMode(PIN_BOTON, INPUT_PULLUP);  // Botón con resistencia interna pull-up
+  pinMode(IN1, OUTPUT);
+  pinMode(IN2, OUTPUT);
+
+  digitalWrite(IN1, LOW);     
+  digitalWrite(IN2, LOW); 
+  myservo.write(99);  // Servo centrado
+  delay(3000);
+
+  Serial.println("Esperando pulsar botón para iniciar...");
 ```
 
 Y en este, se llama a la función de doceGiros, la cual ejecuta los giros y ajustes específicos del robot 
