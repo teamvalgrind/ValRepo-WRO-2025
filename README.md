@@ -315,7 +315,7 @@ Reducción total = 2.23 x 2.55 = 5.6865
 ```
 
 ```cpp
-Revoluciones totales = 550 / 5.6865 = 96.7rpm
+Revoluciones totales = 550 / 5.6865 = 96.7 (rpm)
 ```
 
 ### ¿Por qué es importante la reducción?
