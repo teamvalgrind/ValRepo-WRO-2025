@@ -7,24 +7,33 @@
 
 ## Índice
 
-1. [Nuestro Equipo](#nuestro-equipo)
-    - [Integrantes](#integrantes)
-    - [Origenes](#origenes)
-    - [Nuestro Objetivo](#nuestro-objetivo)
-2. [El Robot](#el-robot)
-    - [Apartado Mecanico](#apartado-mecanico)
-        - [Impresion 3D](#impresion-3d)
-        - [Movilidad](#movilidad)
-    - [Apartado Electronico](#apartado-electronico)
-        - [Sensores](#sensores)
-        - [Conexiones y Circuitos](#conexiones-y-circuitos)
-        - [Microcontroladores](#microcontroladores)
-    - [Apartado Programatico](#apartado-programatico)
-        - [Codigo por Componente](#codigo-por-componente)
-4. [Recursos para Hacer el Robot](#recdursos-para-hacer-el-robot)
-    - [Mecanica](#mecanica)
-    - [Electronica](#electronica)
-    - [Programacion](#programacion)
+1. [Nuestro Equipo](#nuestro-equipo)  
+   - [Integrantes](#integrantes)  
+   - [Orígenes](#orígenes)  
+   - [Nuestro Objetivo](#nuestro-objetivo)
+  
+3. [El Robot](#el-robot)  
+   - [Diseño Mecánico](#diseño-mecánico)  
+   - [Impresión 3D y Prototipado](#impresión-3d-y-prototipado)  
+     - [Sistemas de Movilidad](#sistemas-de-movilidad)  
+     - [Otros Mecanismos](#otros-mecanismos)
+   - [Diseño Electrónico](#diseño-electronico)  
+     - [Sensores Utilizados](#sensores-utilizados)  
+     - [Conexiones y Circuitos](#conexiones-y-circuitos)  
+     - [Microcontroladores y Placas](#microcontroladores-y-placas)
+   - [Desarrollo de Software](#desarrollo-de-software)  
+     - [Arquitectura del Código](#arquitectura-del-código)  
+     - [Algoritmos Principales](#algoritmos-principales)  
+     - [Código por Componente](#código-por-componente)
+
+4. [Resultados y Logros](#resultados-y-logros)  
+   - [Pruebas y Validaciones](#pruebas-y-validaciones)  
+   - [Competencias y Reconocimientos](#competencias-y-reconocimientos)
+
+5. [Recursos y Referencias](#recursos-y-referencias)  
+   - [Materiales y Herramientas Utilizadas](#materiales-y-herramientas-utilizadas)  
+   - [Bibliografía y Tutoriales](#bibliografía-y-tutoriales)  
+   - [Agradecimientos](#agradecimientos)
 
 ---
 
@@ -93,7 +102,7 @@ Aún así, nuestro único objetivo no es solamente ganar, como un equipo unido t
 
 [![IMG-20250614-051714-898.jpg](https://i.postimg.cc/q7fZxFMX/IMG-20250614-051714-898.jpg)](https://postimg.cc/Yv33pbFh)
 
-### Apartado Mecanico
+### Diseño Mecánico
 
 | [![IMG-20250614-045700-342.jpg](https://i.postimg.cc/50K0ZLrg/IMG-20250614-045700-342.jpg)](https://postimg.cc/62RtZ2t4) | [![IMG-20250614-045703-999.jpg](https://i.postimg.cc/fWFyC7mT/IMG-20250614-045703-999.jpg)](https://postimg.cc/NL6QfHdW)| 
 | :--: | :--: | 
@@ -103,7 +112,7 @@ Aún así, nuestro único objetivo no es solamente ganar, como un equipo unido t
 |[![IMG-20250614-045724-391.jpg](https://i.postimg.cc/MHtDkPS4/IMG-20250614-045724-391.jpg)](https://postimg.cc/YLGgYxjf) |[![IMG-20250614-045706-621.jpg](https://i.postimg.cc/ZqZC3T38/IMG-20250614-045706-621.jpg)](https://postimg.cc/w1fqYYwM) |
 | *Superior* | *Inferior* |
 
-#### Impresion 3D
+#### Impresión 3D y Prototipado
 
 Antes de hablar de la movilidad o funcionalidad de nuestro robot, primero hay que explicar nuestros métodos de Diseño e Impresión 3D, los cuales se llevaron a cabo mediante Fusion 360
 
