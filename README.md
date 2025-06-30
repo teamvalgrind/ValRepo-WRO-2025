@@ -10,10 +10,9 @@
 1. [Nuestro Equipo](#nuestro-equipo)  
    - [Integrantes](#integrantes)  
    - [Orígenes](#orígenes)  
-   - [Nuestro Objetivo](#nuestro-objetivo)
-  
-3. [El Robot](#el-robot)  
-   - [Diseño Mecánico](#diseño-mecánico)  
+   - [Nuestro Objetivo](#nuestro-objetivo)  
+2. [El Robot](#el-robot)  
+   - [Diseño Mecanico](#diseño-mecánico)  
    - [Impresión 3D y Prototipado](#impresión-3d-y-prototipado)  
      - [Sistemas de Movilidad](#sistemas-de-movilidad)  
      - [Otros Mecanismos](#otros-mecanismos)
@@ -102,7 +101,7 @@ Aún así, nuestro único objetivo no es solamente ganar, como un equipo unido t
 
 [![IMG-20250614-051714-898.jpg](https://i.postimg.cc/q7fZxFMX/IMG-20250614-051714-898.jpg)](https://postimg.cc/Yv33pbFh)
 
-### Diseño Mecánico
+### Diseño Mecanico
 
 | [![IMG-20250614-045700-342.jpg](https://i.postimg.cc/50K0ZLrg/IMG-20250614-045700-342.jpg)](https://postimg.cc/62RtZ2t4) | [![IMG-20250614-045703-999.jpg](https://i.postimg.cc/fWFyC7mT/IMG-20250614-045703-999.jpg)](https://postimg.cc/NL6QfHdW)| 
 | :--: | :--: | 
