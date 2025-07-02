@@ -317,7 +317,8 @@ La reducción total del sistema es:
 Reducción total = Reducción interna del motor × (dientes engranaje grande / dientes piñón)
 ```
 
- h
+Con el Piñón de lego de 36 dientes acomplado a nuestro motor, transmitiendo su fuerza de rotación al Piñon de 16 dientes obtenemos un aumento de 2.11 veces la velocidad original del motor (550 rpm) obteniendo así 1164.7 rpm, siendo reducidos por el Piñón de ataque a una reducción de 1:2.24 
+Dando un total de 521 rpm las cuales se transmiten directamente a los ejes de transmisión conectados a las ruedas
 
 ### ¿Por qué es importante la reducción?
 
