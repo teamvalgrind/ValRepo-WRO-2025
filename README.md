@@ -849,7 +849,7 @@ Dentro de `Desafio-abierto.ino` y `Desafio-cerrado.ino` está el resto de funcio
 | Puente H L298N | 1 | 8$ | Electrónico | [Enlace](https://robu.in/product/l298-based-motor-driver-module-2a/)|
 | PixyCam 2 | 1 | 69.99$ | Electrónico | [Enlace](https://a.co/d/i1WNaRs) |
 | Motor Greartisan ZGA37IRG9I | 1 | 30$ | Mecánico |  |
-| Giroscopio acelerometro Mpu6050 (3pcs) | 1 | 11$ | Electrónico | [Enlace](https://a.co/d/4NUOxoY) |
+| Giroscopio acelerometro Mpu6050 | 1 | 11$ | Electrónico | [Enlace](https://a.co/d/4NUOxoY) |
 | Piñones de 5mm 1/8 13T y 14T | 1 | 12$ | Mecánico | [Enlace](https://a.co/d/0mrfcDG) |
 | Piñones de 5mm 1/8 11T y 12T | 1 | 12$ | Mecánico | [Enlace](https://a.co/d/7t5SzPr) |
 | Kit de conectores JST y DUPONT | 1 | 36$ | Electrónico | [Enlace](https://a.co/d/52pePQ9) |
