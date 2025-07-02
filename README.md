@@ -21,10 +21,7 @@
         - [Microcontroladores](#microcontroladores)
     - [Apartado Programatico](#apartado-programatico)
         - [Codigo por Componente](#codigo-por-componente)
-4. [Recursos para Hacer el Robot](#recdursos-para-hacer-el-robot)
-    - [Mecanica](#mecanica)
-    - [Electronica](#electronica)
-    - [Programacion](#programacion)
+4. [Recursos para Hacer el Robot](#recursos-para-hacer-el-robot)
 
 ---
 
