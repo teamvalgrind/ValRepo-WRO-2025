@@ -1,3 +1,4 @@
+```mermaid
 flowchart LR
     A([Inicio]) --> B([void setup])
     B --> C{¿Botón presionado?}
@@ -18,3 +19,4 @@ flowchart LR
     K --> G
     N --> G
     O --> G
+```
