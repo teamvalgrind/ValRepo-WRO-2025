@@ -95,7 +95,7 @@ Aún así, nuestro único objetivo no es solamente ganar, como un equipo unido t
 
 [![IMG-20250614-051714-898.jpg](https://i.postimg.cc/q7fZxFMX/IMG-20250614-051714-898.jpg)](https://postimg.cc/Yv33pbFh)
 
-### Diseño Mecanico
+### Apartado Mecanico
 
 | [![IMG-20250614-045700-342.jpg](https://i.postimg.cc/50K0ZLrg/IMG-20250614-045700-342.jpg)](https://postimg.cc/62RtZ2t4) | [![IMG-20250614-045703-999.jpg](https://i.postimg.cc/fWFyC7mT/IMG-20250614-045703-999.jpg)](https://postimg.cc/NL6QfHdW)| 
 | :--: | :--: | 
@@ -105,7 +105,7 @@ Aún así, nuestro único objetivo no es solamente ganar, como un equipo unido t
 |[![IMG-20250614-045724-391.jpg](https://i.postimg.cc/MHtDkPS4/IMG-20250614-045724-391.jpg)](https://postimg.cc/YLGgYxjf) |[![IMG-20250614-045706-621.jpg](https://i.postimg.cc/ZqZC3T38/IMG-20250614-045706-621.jpg)](https://postimg.cc/w1fqYYwM) |
 | *Superior* | *Inferior* |
 
-#### Impresión 3D y Prototipado
+#### Impresion 3D 
 
 Antes de hablar de la movilidad o funcionalidad de nuestro robot, primero hay que explicar nuestros métodos de Diseño e Impresión 3D, los cuales se llevaron a cabo mediante Fusion 360
 
