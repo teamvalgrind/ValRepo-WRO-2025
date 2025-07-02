@@ -1,4 +1,4 @@
- 
+[![Screenshot-2025-07-02-00-58-39-425-com-google-android-youtube-edit.jpg](https://i.postimg.cc/T3WFcqt9/Screenshot-2025-07-02-00-58-39-425-com-google-android-youtube-edit.jpg)](https://postimg.cc/mPBmLMfz) 
 # Equipo [Team ValGrind]: WRO 2025
 
 [![SAVE-20250527-193558.jpg](https://i.postimg.cc/VvXNFbns/SAVE-20250527-193558.jpg)](https://postimg.cc/fSTZzy81)
