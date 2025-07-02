@@ -13,7 +13,7 @@
 */
 
 #include <Wire.h>
-#include <Ultrasonic.h>
+#include <NewPing.h>
 #include <ESP32Servo.h>
 
 // Pines ESP32 para sensores ultrasónicos
@@ -24,22 +24,24 @@
 #define USTRIGHT 26
 #define USERIGHT 25
 
+#define MAX_DISTANCE 357
+
 #define IN2 17
 #define IN1 16
-#define PIN_SERVO 19
+#define PIN_SERVO 2
 #define PIN_BOTON 4  // Pin para botón de inicio
 
-Ultrasonic USFront(USTFRONT, USEFRONT);
-Ultrasonic USLeft(USTLEFT, USELEFT);
-Ultrasonic USRight(USTRIGHT, USERIGHT);
+NewPing USFRONT(USTFRONT, USEFRONT, MAX_DISTANCE);
+NewPing USLEFT(USTLEFT, USELEFT, MAX_DISTANCE);
+NewPing USRIGHT(USTRIGHT, USERIGHT, MAX_DISTANCE);
 
 Servo myservo;
 
 const int DISTANCIA_OBSTACULO_FRONTAL = 20;
 const int DISTANCIA_OBSTACULO_LATERAL = 200;
-const unsigned long DURACION_GIRO_I = 1743;
-const unsigned long DURACION_GIRO_D = 1543;
-const unsigned long TIEMPO_ESPERA_GIRO = 3000;  // 2500 ms
+const unsigned long DURACION_GIRO_I = 460;
+const unsigned long DURACION_GIRO_D = 390;
+const unsigned long TIEMPO_ESPERA_GIRO = 1000;  // 2500 ms-
 
 bool programaIniciado = false;
 bool finalizado = false;
@@ -79,9 +81,9 @@ void loop() {
 void docegiros() {
   unsigned long ahora = millis();
 
-  int frontal = USFront.read();
-  int izquierda = USLeft.read();
-  int derecha = USRight.read();
+  int frontal = USFRONT.ping_cm();
+  int izquierda = USLEFT.ping_cm();
+  int derecha = USRIGHT.ping_cm();
 
   if (frontal == 357) frontal = -1;
   if (izquierda == 357) izquierda = -1;
@@ -99,7 +101,7 @@ void docegiros() {
     if (!finalizado) {
       Serial.println("Se alcanzaron 12 giros, avanzando 1 segundo más y deteniéndose.");
       Adelante();
-      delay(1500);
+      delay(700);
       Parar();
       finalizado = true;
     }
@@ -115,14 +117,12 @@ void docegiros() {
       } else {
         if (izquierda != -1 && izquierda > DISTANCIA_OBSTACULO_LATERAL) {
           Serial.println("Girando a la izquierda por más de 190 cm libres");
-          delay(500);
           Izquierda();
           contadorGiros++;
           tiempoUltimoGiro = millis();
           Adelante();
         } else if (derecha != -1 && derecha > DISTANCIA_OBSTACULO_LATERAL) {
           Serial.println("Girando a la derecha por más de 190 cm libres");
-          delay(500);
           Derecha();
           contadorGiros++;
           tiempoUltimoGiro = millis();
