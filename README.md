@@ -653,33 +653,112 @@ y datos apenas la pixy los procese
 
 - En cuanto al código utilizado para manejar el robot, consiste en una parte en la que se definen los pines del ESC y de los ultrasónicos. Dentro del código se arma el ESC, se inicializan los sensores y se inicializa una función llamada "doceVueltas", la cual se encarga de hacer una lectura constante de los sensores ultrasónicos para decidir en qué momento girar, así como de registrar los giros para que el robot se detenga al completar exitosamente 3 vueltas.
 
-En este apartado se inicializa el motor, y se prepara el robot para ejecutar la función que sigue:
+¡Por supuesto! Aquí tienes una explicación extensa y cohesionada del funcionamiento y lógica del código para el robot Heimdall en la WRO 2025, con ejemplos relevantes en C++ y todo en formato Markdown, abarcando desde la inicialización hasta las funciones de control, sin títulos enumerados sino como un texto continuo y didáctico:
+
+---
+
+### Apartado Programático
+
+#### Código por Componente
+
+##### Desafío Abierto
+
+El código desarrollado para el robot Heimdall en la categoría Futuros Ingenieros de la WRO 2025 está estructurado para automatizar las acciones del robot en la pista, desde la inicialización hasta la finalización de su recorrido. 
+
+ A continuación, se describe a lujo de detalle y con ejemplos de código cada parte fundamental de este sistema.
+
+Para empezar, se definen los pines y las constantes necesarias para la operación del hardware. Los sensores ultrasónicos se conectan a diferentes pines del ESP32, y se prepara el control del motor y del servo. También se establecen los umbrales de distancia y tiempos que serán usados para la lógica de navegación.
+
+```cpp
+#define USTFRONT 13
+#define USEFRONT 12
+#define USTLEFT 14
+#define USELEFT 27
+#define USTRIGHT 26
+#define USERIGHT 25
+
+#define MAX_DISTANCE 357
+#define IN2 17
+#define IN1 16
+#define PIN_SERVO 2
+#define PIN_BOTON 4
+
+const int DISTANCIA_OBSTACULO_FRONTAL = 20;
+const int DISTANCIA_OBSTACULO_LATERAL = 200;
+const unsigned long DURACION_GIRO_I = 460;
+const unsigned long DURACION_GIRO_D = 390;
+const unsigned long TIEMPO_ESPERA_GIRO = 1000;
+```
+
+El sistema utiliza librerías como `NewPing` para manejar los sensores ultrasónicos y `ESP32Servo` para el control del servo. La inicialización de estos dispositivos es esencial para que el robot tenga control de su entorno y de su propio movimiento:
+
+```cpp
+#include <Wire.h>
+#include <NewPing.h>
+#include <ESP32Servo.h>
+
+NewPing USFRONT(USTFRONT, USEFRONT, MAX_DISTANCE);
+NewPing USLEFT(USTLEFT, USELEFT, MAX_DISTANCE);
+NewPing USRIGHT(USTRIGHT, USERIGHT, MAX_DISTANCE);
+
+Servo myservo;
+```
+
+Las variables de control permiten al robot llevar registro de su estado, los giros realizados y el tiempo entre cada giro, para evitar movimientos no deseados o repetitivos. Estas variables se usan a lo largo del flujo principal del programa.
+
+```cpp
+bool programaIniciado = false;
+bool finalizado = false;
+
+unsigned long tiempoUltimoGiro = 0;
+int contadorGiros = 0;
+```
+
+La función `setup()` es la encargada de preparar todo el hardware. Aquí se asocia el servo, se configura la comunicación serial para mensajes de depuración y se definen los pines como entradas o salidas según su función. El servo se centra y todo el sistema espera la interacción del usuario antes de iniciar la lógica automática.
+
 ```cpp
 void setup() {
   myservo.attach(PIN_SERVO);
   Serial.begin(115200);
 
-  pinMode(PIN_BOTON, INPUT_PULLUP);  // Botón con resistencia interna pull-up
+  pinMode(PIN_BOTON, INPUT_PULLUP);
   pinMode(IN1, OUTPUT);
   pinMode(IN2, OUTPUT);
 
-  digitalWrite(IN1, LOW);     
-  digitalWrite(IN2, LOW); 
+  digitalWrite(IN1, LOW);
+  digitalWrite(IN2, LOW);
   myservo.write(99);  // Servo centrado
   delay(3000);
 
   Serial.println("Esperando pulsar botón para iniciar...");
+}
 ```
 
-Y en este, se llama a la función de doceGiros, la cual ejecuta los giros y ajustes específicos del robot 
+El ciclo principal del programa se encuentra en `loop()`, donde el robot permanece a la espera de que el usuario pulse el botón de inicio. Una vez detectada la pulsación, el programa entra en la rutina de navegación y ya no responde a más pulsaciones hasta que termina la secuencia de giros.
+
+```cpp
+void loop() {
+  if (!programaIniciado) {
+    if (digitalRead(PIN_BOTON) == LOW) {
+      programaIniciado = true;
+      Serial.println("Botón presionado, iniciando programa...");
+      delay(500);  // debounce
+    }
+  } else if (!finalizado) {
+    docegiros();
+  }
+}
+```
+
+La función `docegiros()` es la función principal dentro del código. Aquí se leen los sensores ultrasónicos, se decide si avanzar o girar, y se lleva el conteo de los giros. Un ejemplo de lectura de los sensores y validación de las lecturas sería:
 
 ```cpp
 void docegiros() {
   unsigned long ahora = millis();
 
-  int frontal = USFront.read();
-  int izquierda = USLeft.read();
-  int derecha = USRight.read();
+  int frontal = USFRONT.ping_cm();
+  int izquierda = USLEFT.ping_cm();
+  int derecha = USRIGHT.ping_cm();
 
   if (frontal == 357) frontal = -1;
   if (izquierda == 357) izquierda = -1;
@@ -693,42 +772,83 @@ void docegiros() {
   Serial.println(derecha);
 
   if (contadorGiros >= 12) {
-    // Avanzar 1 segundo más y detenerse definitivamente
     if (!finalizado) {
       Serial.println("Se alcanzaron 12 giros, avanzando 1 segundo más y deteniéndose.");
       Adelante();
-      delay(1500);
+      delay(700);
       Parar();
       finalizado = true;
     }
     return;
   }
 
-    if (frontal != -1 && frontal > DISTANCIA_OBSTACULO_FRONTAL) {
-      Adelante();
-      }
+  if (frontal != -1 && frontal > DISTANCIA_OBSTACULO_FRONTAL) {
+    Adelante();
+  }
 
-      if (ahora - tiempoUltimoGiro < TIEMPO_ESPERA_GIRO) {
-        Serial.println("Avanzando recto después del giro, sin girar");
-      } else {
-        if (izquierda != -1 && izquierda > DISTANCIA_OBSTACULO_LATERAL) {
-          Serial.println("Girando a la izquierda por más de 190 cm libres");
-          delay(500);
-          Izquierda();
-          contadorGiros++;
-          tiempoUltimoGiro = millis();
-          Adelante();
-        } else if (derecha != -1 && derecha > DISTANCIA_OBSTACULO_LATERAL) {
-          Serial.println("Girando a la derecha por más de 190 cm libres");
-          delay(500);
-          Derecha();
-          contadorGiros++;
-          tiempoUltimoGiro = millis();
-          Adelante();
-        }
-      }
-    } 
+  if (ahora - tiempoUltimoGiro < TIEMPO_ESPERA_GIRO) {
+    Serial.println("Avanzando recto después del giro, sin girar");
+  } else {
+    if (izquierda != -1 && izquierda > DISTANCIA_OBSTACULO_LATERAL) {
+      Serial.println("Girando a la izquierda por más de 190 cm libres");
+      Izquierda();
+      contadorGiros++;
+      tiempoUltimoGiro = millis();
+      Adelante();
+    } else if (derecha != -1 && derecha > DISTANCIA_OBSTACULO_LATERAL) {
+      Serial.println("Girando a la derecha por más de 190 cm libres");
+      Derecha();
+      contadorGiros++;
+      tiempoUltimoGiro = millis();
+      Adelante();
+    }
+  }
+}
 ```
+
+Las funciones auxiliares de movimiento encapsulan la lógica para avanzar, parar y girar. Por ejemplo, para avanzar el motor se activa y para parar se desactiva:
+
+```cpp
+void Adelante() {
+  digitalWrite(IN1, HIGH);
+  Serial.println("Motor en marcha hacia adelante");
+}
+
+void Parar() {
+  digitalWrite(IN1, LOW);
+  Serial.println("Motor detenido");
+}
+```
+
+Los giros a izquierda y derecha combinan el movimiento del motor con el ajuste del servo, utilizando temporizadores para asegurar que el giro tenga la duración adecuada. Así, el robot puede girar de manera controlada y precisa antes de volver a avanzar.
+
+```cpp
+void Izquierda() {
+  digitalWrite(IN1, HIGH);
+  myservo.write(150);
+  unsigned long inicio = millis();
+  while (millis() - inicio < DURACION_GIRO_I) {
+    delay(10);
+  }
+  myservo.write(97);  // Centrar servo
+  digitalWrite(IN1, LOW);
+  Serial.println("Giro izquierda completado");
+}
+
+void Derecha() {
+  digitalWrite(IN1, HIGH);
+  myservo.write(30);
+  unsigned long inicio = millis();
+  while (millis() - inicio < DURACION_GIRO_D) {
+    delay(10);
+  }
+  myservo.write(100);  // Centrar servo
+  digitalWrite(IN1, LOW);
+  Serial.println("Giro derecha completado");
+}
+```
+
+En resumen, este sistema permite que el robot navegue autónomamente por la pista, tome decisiones en tiempo real basadas en la información de los sensores, y complete el reto de realizar 12 giros antes de detenerse automáticamente. Se decidió usar funciones auxiliares para poder crear un "ecosistema" de herramientas que nos permitieran manejar el comportamiento y preferencias del robot de tal forma que su desempeño en la pista sea fácilmente optimizable. Esto también ocurre dentro del Desafío Cerrado
 
 ##### Desafío Cerrado
 
