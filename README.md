@@ -534,11 +534,7 @@ La **Pixy2** es una cámara de visión artificial diseñada para robots que requ
 
 4. **Pruebas en tiempo real**:  
    - Active `Frame view` en PixyMon para ver detecciones superpuestas (objetos = rectángulos, líneas = vectores).  
-   - Ajuste `Min/max area` para filtrar objetos por tamaño (evitar ruido).  
-
-### Conexiones y Circuitos
-
-##### Todos los módulos están conectados en un circuito organizado, minimizando interferencias y facilitando el mantenimiento.  
+   - Ajuste `Min/max area` para filtrar objetos por tamaño (evitar ruido).   
 
 #### Diagramas de Flujo
 
@@ -606,8 +602,8 @@ flowchart LR
 1.  **`Wire.h` (Comunicación I²C):**  
     Esencial para conectar sensores, pantallas (OLED) o memorias (EEPROM) que usen el bus I²C. Con `Wire.begin(SDA, SCL)` configuras los pines, luego usas `Wire.beginTransmission()`, `Wire.write()`, `Wire.read()` y `Wire.endTransmission()` para enviar/recibir datos. A partir de esta librería establecemos comunicación con el ESP-32.
 
-2.  **`Ultrasonic.h` (Sensor de Distancia):**  
-    Simplifica el uso de sensores como el HC-SR04. Con `Ultrasonic ultrasonic(TRIG, ECHO)` inicializas, y `ultrasonic.read()` devuelve la distancia en cm. Ideal para evadir los obstáculos de la pista y evitar colisiones con las paredes ya sean internas o externas. Así como sistemas de estacionamiento o cualquier proyecto que requiera detección de proximidad sin contacto, manejando automáticamente los pulsos de medición.
+2.  **`NewPing` (Sensor de Distancia Ultrasónico):**
+La librería NewPing simplifica y optimiza el uso de sensores ultrasónicos como el HC-SR04. Se inicializa con NewPing sonar(TRIG, ECHO, MAX_DISTANCE), y métodos como sonar.ping_cm() devuelven la distancia en centímetros de forma rápida y precisa. Es ideal para proyectos que requieren detección de proximidad sin contacto, como evitar obstáculos en pistas, prevenir colisiones con paredes internas o externas, sistemas de estacionamiento, y robótica móvil. NewPing maneja automáticamente la generación y recepción de pulsos ultrasónicos, mejora la velocidad de medición y reduce errores gracias a funciones avanzadas como mediciones medianas y control de tiempo máximo de eco.
 
 3.  **`ESP32Servo.h` (Control de Servomotores):**  
     Librería específica para manejar servos en el ESP32, ya que los timers PWM son distintos a Arduino. Con `servo.attach(PIN)` configuras y `servo.write(grados)` posicionas el servo (0°-180°). Crucial para manejar automatismos y conseguir movimiento angular preciso con motores de bajo torque.
