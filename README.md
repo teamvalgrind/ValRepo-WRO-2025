@@ -65,7 +65,7 @@ Somos **[Team ValGrind]**, entusiastas de la robótica y la innovación. Represe
    > **Rol:**  **Programador**  
 > *Se encarga principalmente de C++, Arduino IDE, y algunos aspectos de la electrónica.*  
 > **Fun Fact:**  
-> *Una vez le pidió a Sebastián imprimir un Pokémon gigante de filamento* 
+> *Una vez le pidió a Sebastián imprimir un Pokémon gigante de filamento*
  [![IMG-20250607-043532.jpg](https://i.postimg.cc/43XVFVRw/IMG-20250607-043532.jpg)](https://postimg.cc/WdfddD3J)
 
 - **Institución:** [Colegio Salto Ángel](https://www.instagram.com/colegiosaltoangel)
