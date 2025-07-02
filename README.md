@@ -372,7 +372,7 @@ Para el proyecto, decidimos usar;
 | Amperaje                                | 1 Amperios                                |
 | UPC                                     | 844949030014                              |
 | Fabricante                              | Tenergy                                   |
- cuadro de info
+
 
 ### **LM2596**
 
@@ -832,42 +832,28 @@ Dentro de `Desafio-abierto.ino` y `Desafio-cerrado.ino` está el resto de funcio
 
 | Producto | Cantidad | Precio | Tipo | Link |
 |---|---|---|---|---|
-| Qibaok Crimping Tool Kit Ratcheting Crimper con 1550PCS 2.54mm Dupont y 760pcs JST-XH Connectors | 1 | 35.99$ | Herramienta | [Enlace](https://a.co/d/52pePQ9) |
 | Tenergy TB-6AB Balance Charger Discharger 1S-6S | 1 | 39.99$ | Electrónico | [Enlace](https://a.co/d/g4CIJV4) |
 | Tenergy 2 Pack 12V 2000mAh Battery Packs RC | 1 | 39.99$ | Electrónico | [Enlace](https://a.co/d/7CcqbaV) |
-| Tenergy 7.2V Battery Pack 6-Cell 3000mAh NiMH Flat, 2-Pack | 1 | 34.99$ | Electrónico | [Enlace](https://a.co/d/9VhoVRz) |
 | 1683 Pcs M3 Screw Assortment | 2 | 16.99$ | Herramienta | [Enlace](https://a.co/d/hlXXkAq) |
 | Vertical Heat Press Machine-Heat Set Insert Tool | 1 | 56.99$ | Herramienta | [Enlace](https://a.co/d/0QgemD) |
 | FNIRSI HS-02A 100W Portable Corded Soldering Iron Kit | 1 | 95.99$ | Herramienta | [Enlace](https://a.co/d/7zn4xyp) |
 | Kit de amortiguación y dirección escala 1/24 | 1 | 33$ | Herramienta | [Enlace](https://a.co/d/1lKXhpT) |
 | Caja de engranajes diferenciales escala 1/28 | 1 | 14$ | Herramienta | [Enlace](https://a.co/d/7Y6jsIC) |
 | Diferenciales y ejes de transmisión 1/28 | 1 | 27$ | Mecánico | [Enlace](https://a.co/d/1KSovrP) |
-| Controlador y variador de velocidad brushed Injora MB-100 1/24 | 1 | 23$ | Mecánico | [Enlace](https://a.co/d/0YZ10tQ) |
-| Motor Brushed Injora 180 48T 1/24 | 1 | 16$ | Mecánico | [Enlace](https://a.co/d/g1eS85p) |
-| Ruedas de Drift 1/28 | 2 | 16$ | Mecánico | [Enlace](https://a.co/d/aXUcrXD) |
 | Conectores XT30 | 1 | 13$ | Electrónico | [Enlace](https://a.co/d/6dxQdtF) |
 | Conectores XT90 | 1 | 23$ | Electrónico | [Enlace](https://a.co/d/9AgJER6) |
 | Servomotores Injora 2065 7kg (3 Pcs) | 1 | 48$ | Mecánico | [Enlace](https://a.co/d/hfQbhOa) |
 | Brazo de Servomotor Injora 25T | 1 | 9$ | Mecánico | [Enlace](https://a.co/d/9PtCohQ) |
-| Controlador de servomotor compatible con Raspberry Pi 4 | 1 | 22$ | Mecánico | [Enlace](https://a.co/d/3NvZlyn) |
-| Controlador de servomotor compatible con Raspberry Pi Pico | 1 | 17$ | Mecánico | [Enlace](https://a.co/d/e6tPhUS) |
-| Kit de Raspberry Pi 4 | 1 | 135$ | Electrónico | [Enlace](https://a.co/d/hIZq7JG) |
-| Raspberry Pico w | 1 | 13.5$ | Electrónico | [Enlace](https://a.co/d/dlGN7me) |
-| Sensor Lidar 360° LDRobot D500 | 1 | 79$ | Electrónico | [Enlace](https://a.co/d/7UvLnMr) |
-| Cámara inteligente PixyCam 2.1 | 1 | 69.99$ | Electrónico | [Enlace](https://a.co/d/i1WNaRs) |
+| ESP32 | 1 | 10$ | Electrónico |  |
+| Step Down LM2596 | 1 | 6$ | Electrónico |  |
+| Puente H L298N | 1 | 8$ | Electrónico |  |
+| PixyCam 2 | 1 | 69.99$ | Electrónico | [Enlace](https://a.co/d/i1WNaRs) |
+| Motor Greartisan ZGA37IRG9I | 1 | 30$ | Mecánico |  |
 | Giroscopio acelerometro Mpu6050 (3pcs) | 1 | 11$ | Electrónico | [Enlace](https://a.co/d/4NUOxoY) |
-| Regulador de Voltaje 12V/24V a 5V para Raspberry Pi 4 (2Pcs) | 1 | 10$ | Electrónico | [Enlace](https://a.co/d/7VVY8Li) |
-| Chasis de fibra de carbono 1/24 | 1 | 16$ | Mecánico | [Enlace](https://a.co/d/4BM2sjG) |
 | Piñones de 5mm 1/8 13T y 14T | 1 | 12$ | Mecánico | [Enlace](https://a.co/d/0mrfcDG) |
 | Piñones de 5mm 1/8 11T y 12T | 1 | 12$ | Mecánico | [Enlace](https://a.co/d/7t5SzPr) |
-| Motor y base de motor 1/24 | 1 | 13$ | Mecánico | [Enlace](https://a.co/d/fIzBo5O) |
-| Raspberry pi 4 Case con refrigeración | 1 | 16$ | Electrónico | [Enlace](https://a.co/d/e5Gtccp) |
 | Kit de conectores JST y DUPONT | 1 | 36$ | Electrónico | [Enlace](https://a.co/d/52pePQ9) |
 | Kit de motor y variador de velocidad brushless, MBL32 y PURPLE VIPER 1721 1/18 | 1 | 60$ | Electrónico | [Enlace](https://a.co/d/6NRLPNy) |
-| Cargador de batería Tenergy TB6AB | 1 | 40$ | Electrónico | [Enlace](https://a.co/d/g4CIJV4) |
-| Batería de NIMH Tenergy 7.2V (2 Pcs) | 1 | 41$ | Electrónico | [Enlace](https://a.co/d/9VhoVRz) |
-| Batería de NIMH Tenergy 12V (2 Pcs) | 1 | 40$ | Electrónico | [Enlace](https://a.co/d/7CcqbaV) |
-| Baterías LI-ION 7.4V UNERGEX | 1 | 27$ | Electrónico | [Enlace](https://a.co/d/doEw3Jw) |
 | Tornillos M2 | 1 | 15$ | Mecánico | [Enlace](https://a.co/d/3gXOiNX) |
 | Tuercas de Seguridad M2 | 1 | 10$ | Mecánico | [Enlace](https://a.co/d/1h8A71e) |
 | Incertos roscados M2 | 1 | 9$ | Mecánico | [Enlace](https://a.co/d/eDrxGjF) |
@@ -890,14 +876,13 @@ Dentro de `Desafio-abierto.ino` y `Desafio-cerrado.ino` está el resto de funcio
 | Secador de Filamento Space Pi Plus | 1 | 140$ | Mecánico | [Enlace](https://articulo.mercadolibre.com.ve/MLV-821894608-creality-secador-de-filamento-space-pi-plus-_JM) |
 | Ejes de transmisión escala 1/18 | 1 | 11$ | Mecánico | [Enlace](https://www.amazon.com/dp/B09P1QV29K) |
 | Rolineras | 1 | 8.5$ | Mecánico | [Enlace](https://www.amazon.com/dp/B07XYPLPFL) |
-| Baterías lipo 7.4V | 1 | 27$ | Mecánico | [Enlace](https://www.amazon.com/dp/B0CYNVSN7W) |
 | Grasa 8cc | 1 | 8$ | Mecánico | [Enlace](https://www.amazon.com/dp/B009PBVYPK) |
 | Nudillos de cruce | 1 | 19$ | Mecánico | [Enlace](https://www.amazon.com/dp/B07D68MR25) |
 | Rolineras | 1 | 10$ | Mecánico | [Enlace](https://www.amazon.com/dp/B0DXV2QMN4) |
 | Ruedas de 40mm | 1 | 9$ | Mecánico | [Enlace](https://www.amazon.com/dp/B0DL8LJDH4) |
 | Espaciadores y tornillos de nylon m3 | 1 | 17$ | Mecánico | [Enlace](https://www.amazon.com/dp/B0CBPGKDP4) |
-| Regulador step down 12V a 5v 5A con salida usb c | 1 | 14$ | Electrónico | [Enlace](https://www.amazon.com/dp/B0CRVVWL4Y) |
 | Diferenciales y ejes de transmisión escala 1/18 | 1 | 22$ | Mecánico | [Enlace](https://www.amazon.com/dp/B08GHC4D5M) |
+
 ---
 
 > _¿Quieres contribuir o seguir nuestro avance? Síguenos en nuestras redes oficiales y revisa este repositorio para novedades y recursos._
