@@ -611,6 +611,9 @@ La librería NewPing simplifica y optimiza el uso de sensores ultrasónicos como
 4.  **`PixySPI2.h` (Cámara Inteligente Pixy2):**  
     Facilita la comunicación con la cámara Pixy2 (vía SPI) para visión artificial simple. Detecta objetos por color, formas (bloques) o líneas. Usas `pixy.init()` y `pixy.ccc.getBlocks()` para obtener datos. A partir de la pixy, podemos crear código que pueda identificar los bloques verdes, rojos, y el estacionamiento magenta para que actúe acorde y pueda realizar el desafío cerrado.
 
+5 **`SPI.h` (Comunicación SPI en Arduino):**
+    La librería SPI.h facilita la comunicación rápida y síncrona entre Arduino (como maestro) y dispositivos periféricos mediante el protocolo Serial Peripheral Interface (SPI). Se inicializa con SPI.begin(), y permite enviar y recibir datos simultáneamente con SPI.transfer(). Es ideal para conectar sensores, memorias, pantallas, y otros módulos que requieren alta velocidad y comunicación full-duplex en distancias cortas. SPI maneja automáticamente las señales de reloj, selección de esclavos (SS), y líneas de datos (MOSI y MISO), simplificando la gestión del bus. Además, ofrece funciones para configurar la velocidad, orden de bits y modo de reloj, adaptándose a distintos dispositivos y aplicaciones industriales o robóticas.
+
 ### ¿Por qué Pixy2SPI.h?
 
  La decisión entre usar **`Pixy2SPI.h`** (comunicación SPI) o **`Pixy2.h`** (comunicación I2C) fue un problema con el que nos encontramos apenas comenzamos a utilizar la PixyCam™. En nuestra experiencia, podemos declarar que el protocolo de comunicación SPI transmite datos de forma más rápida que mediante I²C, y por tanto creemos que vale la pena el elegir Pixy2SPI para poder recibir `signatures`
