@@ -1,3 +1,4 @@
+```mermaid
 flowchart LR
     A[Inicio] --> B[Esperar botón de inicio]
     B -- Botón presionado --> C[Iniciar programa]
@@ -16,3 +17,4 @@ flowchart LR
     M -- Sí --> N[Girar derecha, +1 giro, reset tiempo]
     N --> I
     M -- No --> I
+```
