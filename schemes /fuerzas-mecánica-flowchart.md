@@ -1,3 +1,4 @@
+```mermaid
 flowchart LR
     A[Motor] --> B[Diferencial]
     B --> C[Semieje der.\nRueda ext. ωₒ]
@@ -8,3 +9,4 @@ flowchart LR
     G --> H{Deflexión estructural?}
     H -->|Sí| I[Pérdida de Ackermann]
     H -->|No| J[Comportamiento ideal]
+```
