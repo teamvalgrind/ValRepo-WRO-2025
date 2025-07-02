@@ -41,18 +41,32 @@ Somos **[Team ValGrind]**, entusiastas de la robótica y la innovación. Represe
 - **Samuel Burgos**  
   17 años, 09/01/2008
 
-  - rol en el equipo, fun fact
+  > **Rol:** : **Programador**  
+> *Especialista en Python y arquitectura de soluciones complejas. Domina GitHub y PyCharm además de algoritmos complejos*.
+> **Fun Fact:**  
+> *Su banda favorita es Foo Fighters* 
+
 
 [![IMG-20250607-044258.jpg](https://i.postimg.cc/Rh55QMjr/IMG-20250607-044258.jpg)](https://postimg.cc/BLgVJGSN)
 
 - **Sebastián Salina**  
   17 años, 22/08/2008 
 
+  > **Rol:** **Capitán**
+> *Diseña piezas en 3D y además posee la capacidad de imprimir estos mismos al manejar una impresora 3D*  
+> **Fun Fact:**  
+> *Una vez imprimió un Pokémon gigante de filamento para Cristobal* 
+
 [![IMG-20250607-043801.jpg](https://i.postimg.cc/Bns7Qb1y/IMG-20250607-043801.jpg)](https://postimg.cc/GH7xXcKJ)
 
 - **Cristobal Mogollón**
    14 años, 14/07/2010
- [![IMG-20250607-043532.jpg](https://i.postimg.cc/43XVFVRw/IMG-20250607-043532.jpg)](https://postimg.cc/WdfddD3J)
+    
+   > **Rol:**  **Programador**  
+> *Se encarga principalmente de C++, Arduino IDE, y algunos aspectos de la electrónica.*  
+> **Fun Fact:**  
+> *Una vez le pidió a Sebastián imprimir un Pokémon gigante de filamento* 
+--- [![IMG-20250607-043532.jpg](https://i.postimg.cc/43XVFVRw/IMG-20250607-043532.jpg)](https://postimg.cc/WdfddD3J)
 
 - **Institución:** [Colegio Salto Ángel](https://www.instagram.com/colegiosaltoangel)
 - **Instagram Oficial:** [@team_valgrind](https://instagram.com/team_valgrind)
