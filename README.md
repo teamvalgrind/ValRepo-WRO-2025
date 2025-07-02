@@ -845,7 +845,7 @@ Dentro de `Desafio-abierto.ino` y `Desafio-cerrado.ino` está el resto de funcio
 | Servomotores Injora 2065 7kg (3 Pcs) | 1 | 48$ | Mecánico | [Enlace](https://a.co/d/hfQbhOa) |
 | Brazo de Servomotor Injora 25T | 1 | 9$ | Mecánico | [Enlace](https://a.co/d/9PtCohQ) |
 | ESP32 | 1 | 10$ | Electrónico |  |
-| Step Down LM2596 | 1 | 6$ | Electrónico |  |
+| Step Down LM2596 | 1 | 6$ | Electrónico | [Enlace](https://robu.in/product/l298-based-motor-driver-module-2a/) |
 | Puente H L298N | 1 | 8$ | Electrónico |  |
 | PixyCam 2 | 1 | 69.99$ | Electrónico | [Enlace](https://a.co/d/i1WNaRs) |
 | Motor Greartisan ZGA37IRG9I | 1 | 30$ | Mecánico |  |
@@ -867,9 +867,6 @@ Dentro de `Desafio-abierto.ino` y `Desafio-cerrado.ino` está el resto de funcio
 | Filamento PETG para impresión 3D | 1 | 27$ | Electrónico | [Enlace](https://a.co/d/5QT5sDC) |
 | Base de fijación de insertos roscados M2-M8 | 1 | 57$ | Electrónico | [Enlace](https://a.co/d/0QgemD) |
 | Cautin Inalambrico de 100W | 1 | 95$ | Electrónico | [Enlace](https://a.co/d/7zn4xyp) |
-| Envíos Prioritarios | NA | 150$ | Logística | NA |
-| Stickers del Equipo | 35 | 25$ | Logística | NA |
-| Franelas de Equipo | 3 | 70$ | Logística | NA |
 | Filamento Pet-cf con Fibra de Carbono Bambu Lab 0.5kg 1.75mm | 1 | 60$ | Mecánico | [Enlace](https://articulo.mercadolibre.com.ve/MLV-769899404-filamento-pet-cf-con-fibra-de-carbono-bambu-lab-05kg-175mm-_JM?attributes=COLOR_SECONDARY_COLOR%3ATMvcm8%3D) |
 | Kit de Actualización de Hotend Cerámico Ender V3 Se/Ke | 1 | 40$ | Mecánico | [Enlace](https://articulo.mercadolibre.com.ve/MLV-821933486-kit-de-actualizacion-de-hotend-ceramico-ender-3-v3-seke-_JM) |
 | Secador de Filamento Space Pi | 1 | 85$ | Mecánico | [Enlace](https://articulo.mercadolibre.com.ve/MLV-768138623-creality-secador-de-filamento-space-pi-_JM) |
