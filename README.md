@@ -7,32 +7,24 @@
 
 ## Índice
 
-1. [Nuestro Equipo](#nuestro-equipo)  
-   - [Integrantes](#integrantes)  
-   - [Orígenes](#orígenes)  
-   - [Nuestro Objetivo](#nuestro-objetivo)  
-2. [El Robot](#el-robot)  
-   - [Diseño Mecanico](#diseño-mecánico)  
-   - [Impresión 3D y Prototipado](#impresión-3d-y-prototipado)  
-     - [Sistemas de Movilidad](#sistemas-de-movilidad)  
-     - [Otros Mecanismos](#otros-mecanismos)
-   - [Diseño Electrónico](#diseño-electronico)  
-     - [Sensores Utilizados](#sensores-utilizados)  
-     - [Conexiones y Circuitos](#conexiones-y-circuitos)  
-     - [Microcontroladores y Placas](#microcontroladores-y-placas)
-   - [Desarrollo de Software](#desarrollo-de-software)  
-     - [Arquitectura del Código](#arquitectura-del-código)  
-     - [Algoritmos Principales](#algoritmos-principales)  
-     - [Código por Componente](#código-por-componente)
-
-4. [Resultados y Logros](#resultados-y-logros)  
-   - [Pruebas y Validaciones](#pruebas-y-validaciones)  
-   - [Competencias y Reconocimientos](#competencias-y-reconocimientos)
-
-5. [Recursos y Referencias](#recursos-y-referencias)  
-   - [Materiales y Herramientas Utilizadas](#materiales-y-herramientas-utilizadas)  
-   - [Bibliografía y Tutoriales](#bibliografía-y-tutoriales)  
-   - [Agradecimientos](#agradecimientos)
+1. [Nuestro Equipo](#nuestro-equipo)
+    - [Integrantes](#integrantes)
+    - [Origenes](#origenes)
+    - [Nuestro Objetivo](#nuestro-objetivo)
+2. [El Robot](#el-robot)
+    - [Apartado Mecanico](#apartado-mecanico)
+        - [Impresion 3D](#impresion-3d)
+        - [Movilidad](#movilidad)
+    - [Apartado Electronico](#apartado-electronico)
+        - [Sensores](#sensores)
+        - [Conexiones y Circuitos](#conexiones-y-circuitos)
+        - [Microcontroladores](#microcontroladores)
+    - [Apartado Programatico](#apartado-programatico)
+        - [Codigo por Componente](#codigo-por-componente)
+4. [Recursos para Hacer el Robot](#recdursos-para-hacer-el-robot)
+    - [Mecanica](#mecanica)
+    - [Electronica](#electronica)
+    - [Programacion](#programacion)
 
 ---
 
@@ -47,7 +39,9 @@ Somos **[Team ValGrind]**, entusiastas de la robótica y la innovación. Represe
 ### Integrantes
 
 - **Samuel Burgos**  
-  17 años, 09/01/2008  
+  17 años, 09/01/2008
+
+  - rol en el equipo, fun fact
 
 [![IMG-20250607-044258.jpg](https://i.postimg.cc/Rh55QMjr/IMG-20250607-044258.jpg)](https://postimg.cc/BLgVJGSN)
 
@@ -323,14 +317,7 @@ La reducción total del sistema es:
 Reducción total = Reducción interna del motor × (dientes engranaje grande / dientes piñón)
 ```
 
- Usando engranajes de 17 y 28 dientes y un piñón (Calculo de nuestro robot)
-```cpp
-Reducción total = 2.23 x 2.55 = 5.6865 
-```
-
-```cpp
-Revoluciones totales = 550 / 5.6865 = 96.7 (rpm)
-```
+ h
 
 ### ¿Por qué es importante la reducción?
 
