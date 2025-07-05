@@ -50,7 +50,7 @@ Somos **[Team ValGrind]**, entusiastas de la robótica y la innovación. Represe
   17 años, 22/08/2008 
 
   > **Rol:** **Capitán**
-> *Diseña piezas en 3D y además posee la capacidad de imprimir estos mismos al manejar una impresora 3D*  
+> *Diseña piezas en 3D y además posee la capacidad de imprimir estos mismos al manejar una impresora 3D además de ser el mecánico del equipo*  
 > **Fun Fact:**  
 > *Una vez imprimió un Pokémon gigante de filamento para Cristobal* 
 
