@@ -659,18 +659,6 @@ y datos apenas la pixy los procese
 
 ---
 
-### Apartado Programatico
-
-#### Codigo por Componente
-
-##### Desafío Abierto
-
-- En cuanto al código utilizado para manejar el robot, consiste en una parte en la que se definen los pines del ESC y de los ultrasónicos. Dentro del código se arma el ESC, se inicializan los sensores y se inicializa una función llamada "doceVueltas", la cual se encarga de hacer una lectura constante de los sensores ultrasónicos para decidir en qué momento girar, así como de registrar los giros para que el robot se detenga al completar exitosamente 3 vueltas.
-
-¡Por supuesto! Aquí tienes una explicación extensa y cohesionada del funcionamiento y lógica del código para el robot Heimdall en la WRO 2025, con ejemplos relevantes en C++ y todo en formato Markdown, abarcando desde la inicialización hasta las funciones de control, sin títulos enumerados sino como un texto continuo y didáctico:
-
----
-
 ### Apartado Programático
 
 #### Código por Componente
