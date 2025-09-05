@@ -57,7 +57,7 @@ Somos **[Team ValGrind]**, entusiastas de la robótica y la innovación. Represe
 [![IMG-20250607-043801.jpg](https://i.postimg.cc/Bns7Qb1y/IMG-20250607-043801.jpg)](https://postimg.cc/GH7xXcKJ)
 
 - **Cristobal Mogollón**
-   14 años, 14/07/2010
+   15 años, 14/07/2010
     
    > **Rol:**  **Programador**  
 > *Se encarga principalmente de C++, Arduino IDE, y algunos aspectos de la electrónica.*  
